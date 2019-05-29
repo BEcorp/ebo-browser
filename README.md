@@ -13,7 +13,7 @@ Please list all your changes to FORK_CHANGELOG.md. It should be easy to track ho
 After cloning this repo locally you rill need to set up a remote upstream
 `git remote add upstream https://github.com/MetaMask/metamask-extension.git`
 
-We are going to sync master branches which holds production ready code of the plugin
+We are going to sync master branch which holds production ready code of the plugin
 ```
 git fetch upstream
 git checkout master
