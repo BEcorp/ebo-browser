@@ -4,7 +4,7 @@
   align-items: center;
   min-height: 54px;
   border: 1px solid #dedede;
-  border-radius: 4px;
+  border-radius: 0;
   background-color: #fff;
   color: #4d4d4d;
   font-size: 1rem;
@@ -34,7 +34,7 @@
   &__input {
     color: #4d4d4d;
     font-size: 1rem;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     border: none;
     outline: 0 !important;
     max-width: 22ch;

@@ -8,6 +8,7 @@ const inputLabelBase = {
   transition: 'none',
   position: 'initial',
   color: '#5b5b5b',
+  fontFamily: 'Gilroy, Roboto',
 }
 
 const styles = {
@@ -45,7 +46,7 @@ const styles = {
     },
     border: '1px solid #d2d8dd',
     height: '48px',
-    borderRadius: '4px',
+    borderRadius: '0',
     padding: '0 16px',
     display: 'flex',
     alignItems: 'center',

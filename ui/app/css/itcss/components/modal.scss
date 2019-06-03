@@ -54,7 +54,7 @@
     height: 15vh;
     margin: 10px;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 0;
     border: 1px solid $black;
     padding: 0% 7%;
     justify-content: center;
@@ -98,7 +98,7 @@
     width: 20vw;
     height: 120px;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 0;
     border: 1px solid $black;
     margin: 0 8px;
     padding: 18px 0;
@@ -192,7 +192,7 @@
   position: relative;
   padding: 5px 0 31px 0;
   border: 1px solid $silver;
-  border-radius: 4px;
+  border-radius: 0;
   font-family: Gilroy, Roboto;
 
   button {
@@ -471,11 +471,8 @@
 }
 
 .new-account-modal-wrapper .btn-clear {
-  font-size: 14px;
-  font-weight: 700;
   background: $white;
   border: 1px solid;
-  border-radius: 2px;
   color: $tundora;
   flex: 1;
 }
@@ -484,7 +481,7 @@
 
 .hide-token-confirmation {
   min-height: 250.72px;
-  border-radius: 4px;
+  border-radius: 0;
   background-color: $white;
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, .5);
 

@@ -82,7 +82,7 @@ textarea.twelve-word-phrase {
 }
 
 .lock.unlocked:hover {
-  border-radius: 4px;
+  border-radius: 0;
   background: #e5e5e5;
   border: 1px solid #b1b1b1;
 }
@@ -245,7 +245,7 @@ textarea.twelve-word-phrase {
   padding: 2px;
   margin: 12px;
   margin-bottom: 24px;
-  border-radius: 4px;
+  border-radius: 0;
   border: 2px solid #f3c83e;
   background: #faf6f0;
 }
