@@ -20,6 +20,8 @@
     font-size: 28px;
     margin-bottom: 22px;
     margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
   &__description {
@@ -36,7 +38,7 @@
 
   .first-time-flow__button {
     width: 184px;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 44px;
   }
 }

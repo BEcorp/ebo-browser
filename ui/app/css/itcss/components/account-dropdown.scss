@@ -1,5 +1,5 @@
 .account-dropdown-name {
-  font-family: Roboto;
+  font-family: Gilroy, Roboto;
 }
 
 .account-dropdown-balance {
@@ -9,7 +9,7 @@
 
 .account-dropdown-edit-button {
   color: $dusty-gray;
-  font-family: Roboto;
+  font-family: Gilroy, Roboto;
 
   &:hover {
     color: $white;
@@ -69,7 +69,7 @@
 
   &__account-primary-balance,
   &__account-secondary-balance {
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     line-height: 16px;
     font-size: 12px;
   }
