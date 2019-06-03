@@ -31,16 +31,16 @@
 }
 
 .btn-primary {
-  color: $curious-blue;
-  border: 2px solid $spindle;
+  color: white;
+  background-color: $curious-blue;
+  border: 2px solid transparent;
 
   &:active {
-    background: $zumthor;
-    border-color: $curious-blue;
+    background-color: lighten($curious-blue, 10%);
   }
 
   &:hover {
-    border-color: $curious-blue;
+    background-color: lighten($curious-blue, 10%);
   }
 }
 

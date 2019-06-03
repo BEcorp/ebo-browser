@@ -37,7 +37,6 @@ export default class PageContainerFooter extends Component {
         <header>
           {!hideCancel && <Button
             type="default"
-            large
             className="page-container__footer-button"
             onClick={e => onCancel(e)}
           >
@@ -46,7 +45,6 @@ export default class PageContainerFooter extends Component {
 
           <Button
             type={submitButtonType || 'primary'}
-            large
             className="page-container__footer-button"
             disabled={disabled}
             onClick={e => onSubmit(e)}
