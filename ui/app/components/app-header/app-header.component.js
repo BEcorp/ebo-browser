@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import Identicon from '../identicon'
 import { DEFAULT_ROUTE } from '../../routes'
-const NetworkIndicator = require('../network')
 
 export default class AppHeader extends PureComponent {
   static propTypes = {
@@ -78,11 +77,7 @@ export default class AppHeader extends PureComponent {
   render () {
     const {
       history,
-      network,
-      provider,
       isUnlocked,
-      hideNetworkIndicator,
-      disabled,
     } = this.props
 
     return (
@@ -105,18 +100,6 @@ export default class AppHeader extends PureComponent {
             />
           </div>
           <div className="app-header__account-menu-container">
-            {
-              !hideNetworkIndicator && (
-                <div className="app-header__network-component-wrapper">
-                  <NetworkIndicator
-                    network={network}
-                    provider={provider}
-                    onClick={event => this.handleNetworkIndicatorClick(event)}
-                    disabled={disabled}
-                  />
-                </div>
-              )
-            }
             { this.renderAccountMenu() }
           </div>
         </div>
