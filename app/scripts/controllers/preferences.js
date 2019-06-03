@@ -34,7 +34,7 @@ class PreferencesController {
       assetImages: {},
       tokens: [],
       suggestedTokens: {},
-      useBlockie: false,
+      useBlockie: true,
 
       // WARNING: Do not use feature flags for security-sensitive things.
       // Feature flag toggling is available in the global namespace
