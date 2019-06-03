@@ -109,11 +109,12 @@ export default class UnlockPage extends Component {
       backgroundColor: '#00aaea',
       color: 'white',
       marginTop: '20px',
-      height: '60px',
+      height: '42px',
       fontWeight: '700',
       boxShadow: 'none',
       borderRadius: '0',
       fontFamily: 'Gilroy, Roboto',
+      fontSize: '11px',
       letterSpacing: '2px',
     }
 
