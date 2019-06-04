@@ -1,1 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="33" height="17"><path fill="#2c2c2c" d="M0 0h15v2H0zm0 7h15v2H0zm17-2h16v2H17zm0 5h16v2H17zM0 15h15v2H0zm17 0h16v2H17zm0-15h16v2H17zm14 0h2v17h-2zM17 0h2v17h-2zM0 0h2v17H0zm13 0h2v17h-2z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>ebo_o</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M512,1024 C229.230208,1024 0,794.769792 0,512 C0,229.230208 229.230208,0 512,0 C794.769792,0 1024,229.230208 1024,512 C1024,794.769792 794.769792,1024 512,1024 Z M512,927.536232 C741.494324,927.536232 927.536232,741.494324 927.536232,512 C927.536232,282.505676 741.494324,96.4637681 512,96.4637681 C282.505676,96.4637681 96.4637681,282.505676 96.4637681,512 C96.4637681,741.494324 282.505676,927.536232 512,927.536232 Z M512,831.072464 C335.781144,831.072464 192.927536,688.218856 192.927536,512 C192.927536,335.781144 335.781144,192.927536 512,192.927536 C688.218856,192.927536 831.072464,335.781144 831.072464,512 C831.072464,688.218856 688.218856,831.072464 512,831.072464 Z M430.323171,408.115942 C418.058457,408.115942 408.115942,418.058457 408.115942,430.323171 L408.115942,597.128127 C408.115942,609.392841 418.058457,619.335356 430.323171,619.335356 L597.128127,619.335356 C609.392841,619.335356 619.335356,609.392841 619.335356,597.128127 L619.335356,430.323171 C619.335356,418.058457 609.392841,408.115942 597.128127,408.115942 L430.323171,408.115942 Z" id="path-1"></path>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFE74C" offset="0%"></stop>
+            <stop stop-color="#6BF178" offset="50.5120355%"></stop>
+            <stop stop-color="#35A7FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02.1_eth_ebo_o" transform="translate(-38.000000, -38.000000)">
+            <g id="ebo_o" transform="translate(38.000000, 38.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="ebo" fill="#00FF78" xlink:href="#path-1"></use>
+                <rect id="Rectangle" fill="url(#linearGradient-3)" mask="url(#mask-2)" x="0" y="0" width="1024" height="1024"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
