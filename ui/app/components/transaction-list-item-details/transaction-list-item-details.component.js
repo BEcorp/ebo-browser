@@ -7,7 +7,6 @@ import TransactionActivityLog from '../transaction-activity-log'
 import TransactionBreakdown from '../transaction-breakdown'
 import Button from '../button'
 import Tooltip from '../tooltip'
-import prefixForNetwork from '../../../lib/etherscan-prefix-for-network'
 
 export default class TransactionListItemDetails extends PureComponent {
   static contextTypes = {
@@ -27,22 +26,20 @@ export default class TransactionListItemDetails extends PureComponent {
     justCopied: false,
   }
 
-  handleEtherscanClick = () => {
+  handleEtherblockchainClick = () => {
     const { transactionGroup: { primaryTransaction } } = this.props
-    const { hash, metamaskNetworkId } = primaryTransaction
-
-    const prefix = prefixForNetwork(metamaskNetworkId)
-    const etherscanUrl = `https://${prefix}etherscan.io/tx/${hash}`
+    const { hash } = primaryTransaction
+    const etherblockchainUrl = `https://etherblockchain.io/blockchain/transactions/${hash}`
 
     this.context.metricsEvent({
       eventOpts: {
         category: 'Navigation',
         action: 'Activity Log',
-        name: 'Clicked "View on Etherscan"',
+        name: 'Clicked "View on Etherblockchain.io"',
       },
     })
 
-    global.platform.openWindow({ url: etherscanUrl })
+    global.platform.openWindow({ url: etherblockchainUrl })
   }
 
   handleCancel = event => {
@@ -124,10 +121,10 @@ export default class TransactionListItemDetails extends PureComponent {
                 />
               </Button>
             </Tooltip>
-            <Tooltip title={t('viewOnEtherscan')}>
+            <Tooltip title={t('viewOnEtherblockchain')}>
               <Button
                 type="raised"
-                onClick={this.handleEtherscanClick}
+                onClick={this.handleEtherblockchainClick}
                 className="transaction-list-item-details__header-button"
                 >
                 <img src="/images/arrow-popout.svg" />

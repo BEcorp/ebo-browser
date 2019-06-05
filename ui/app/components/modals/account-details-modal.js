@@ -87,7 +87,7 @@ AccountDetailsModal.prototype.render = function () {
         type: 'primary',
         className: 'account-modal__button',
         onClick: () => global.platform.openWindow({ url: genAccountLink(address, network) }),
-      }, this.context.t('etherscanView')),
+      }, this.context.t('etherblockchainView')),
 
       // Holding on redesign for Export Private Key functionality
 

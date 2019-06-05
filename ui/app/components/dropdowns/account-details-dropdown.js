@@ -28,7 +28,7 @@ function mapDispatchToProps (dispatch) {
     showAccountDetailModal: () => {
       dispatch(actions.showModal({ name: 'ACCOUNT_DETAILS' }))
     },
-    viewOnEtherscan: (address, network) => {
+    viewOnEtherblockchain: (address, network) => {
       global.platform.openWindow({ url: genAccountLink(address, network) })
     },
     showRemoveAccountConfirmationModal: (identity) => {
@@ -55,7 +55,7 @@ AccountDetailsDropdown.prototype.render = function () {
     network,
     keyrings,
     showAccountDetailModal,
-    viewOnEtherscan,
+    viewOnEtherblockchain,
     showRemoveAccountConfirmationModal } = this.props
 
   const address = selectedIdentity.address
@@ -109,13 +109,13 @@ AccountDetailsDropdown.prototype.render = function () {
           eventOpts: {
             category: 'Navigation',
             action: 'Account Options',
-            name: 'Clicked View on Etherscan',
+            name: 'Clicked View on Etherblockchain.io',
           },
         })
-        viewOnEtherscan(address, network)
+        viewOnEtherblockchain(address, network)
         this.props.onClose()
       },
-      text: this.context.t('viewOnEtherscan'),
+      text: this.context.t('viewOnEtherblockchain'),
       icon: h(`img`, { src: 'images/open-etherscan.svg', style: { height: '15px' } }),
     }),
     isRemovable ? h(Item, {

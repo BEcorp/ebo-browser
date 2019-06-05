@@ -406,8 +406,8 @@
   "eth": {
     "message": "ETH"
   },
-  "etherscanView": {
-    "message": "Gade kont sou Etherscan"
+  "etherblockchainView": {
+    "message": "Gade kont sou Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Chanje to"
@@ -1312,8 +1312,8 @@
   "viewAccount": {
     "message": "Wè Kont"
   },
-  "viewOnEtherscan": {
-    "message": "Wè sou Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "Wè sou Etherblockchain.io"
   },
   "visitWebSite": {
     "message": "Vizite sit entènèt nou an"

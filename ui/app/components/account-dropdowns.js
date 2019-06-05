@@ -2,7 +2,6 @@ const Component = require('react').Component
 const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
 const actions = require('../actions')
-const genAccountLink = require('etherscan-link').createAccountLink
 const connect = require('react-redux').connect
 const Dropdown = require('./dropdown').Dropdown
 const DropdownMenuItem = require('./dropdown').DropdownMenuItem
@@ -10,6 +9,8 @@ const copyToClipboard = require('copy-to-clipboard')
 const { checksumAddress } = require('../util')
 
 import Identicon from './identicon'
+
+const genAccountLink = (address, network) => `https://www.etherblockchain.io/blockchain/accounts/${address}`
 
 class AccountDropdowns extends Component {
   constructor (props) {
@@ -193,7 +194,7 @@ class AccountDropdowns extends Component {
               global.platform.openWindow({ url })
             },
           },
-          this.context.t('etherscanView'),
+          this.context.t('etherblockchainView'),
         ),
         h(
           DropdownMenuItem,

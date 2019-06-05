@@ -502,8 +502,8 @@
   "eth": {
     "message": "ETH"
   },
-  "etherscanView": {
-    "message": "View account on Etherscan"
+  "etherblockchainView": {
+    "message": "View account on Etherblockchain.io"
   },
   "estimatedProcessingTimes": {
     "message": "Estimated Processing Times"
@@ -1639,8 +1639,8 @@
   "viewAccount": {
     "message": "View Account"
   },
-  "viewOnEtherscan": {
-    "message": "View on Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "View on Etherblockchain.io"
   },
   "visitWebSite": {
     "message": "Visit our web site"

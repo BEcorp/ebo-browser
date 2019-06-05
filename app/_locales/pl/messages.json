@@ -334,8 +334,8 @@
   "passwordsDontMatch": {
     "message": "Hasła są niezgodne"
   },
-  "etherscanView": {
-    "message": "Zobacz konto na Etherscan"
+  "etherblockchainView": {
+    "message": "Zobacz konto na Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Kurs wymiany"
@@ -1189,8 +1189,8 @@
   "viewAccount": {
     "message": "Zobacz konto"
   },
-  "viewOnEtherscan": {
-    "message": "Zobacz na Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "Zobacz na Etherblockchain.io"
   },
   "visitWebSite": {
     "message": "Odwiedź naszą stronę"

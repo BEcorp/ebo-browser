@@ -304,8 +304,8 @@
   "enterPasswordConfirm": {
     "message": "Введите ваш пароль для подтверждения"
   },
-  "etherscanView": {
-    "message": "Просмотреть счет на Etherscan"
+  "etherblockchainView": {
+    "message": "Просмотреть счет на Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Обменный курс"

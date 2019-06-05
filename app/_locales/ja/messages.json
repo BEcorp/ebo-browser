@@ -268,7 +268,7 @@
   "enterPassword": {
     "message": "パスワードを入力"
   },
-  "etherscanView": {
+  "etherblockchainView": {
     "message": "Etherscanでアカウントを確認"
   },
   "exchangeRate": {
@@ -784,7 +784,7 @@
   "viewAccount": {
     "message": "アカウントを見る"
   },
-  "viewOnEtherscan": {
+  "viewOnEtherblockchain": {
     "message": "Etherscan で見る"
   },
   "warning": {

@@ -310,8 +310,8 @@
   "passwordsDontMatch": {
     "message": "Parolalar eşleşmiyor"
   },
-  "etherscanView": {
-    "message": "Hesabı Etherscan üzerinde izle"
+  "etherblockchainView": {
+    "message": "Hesabı Etherblockchain.io üzerinde izle"
   },
   "exchangeRate": {
     "message": "Döviz kuru"

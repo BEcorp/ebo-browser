@@ -289,8 +289,8 @@
   "enterPasswordConfirm": {
     "message": "Introduza a sua palavra-passe para confirmar"
   },
-  "etherscanView": {
-    "message": "Ver conta no Etherscan"
+  "etherblockchainView": {
+    "message": "Ver conta no Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Taxa de Câmbio"

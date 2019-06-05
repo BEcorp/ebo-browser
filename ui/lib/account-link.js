@@ -3,19 +3,19 @@ module.exports = function (address, network) {
   let link
   switch (net) {
     case 1: // main net
-      link = `https://etherscan.io/address/${address}`
+      link = `https://etherblockchain.io/blockchain/accounts/${address}`
       break
     case 2: // morden test net
-      link = `https://morden.etherscan.io/address/${address}`
+      link = `https://morden.etherblockchain.io/blockchain/accounts/${address}`
       break
     case 3: // ropsten test net
-      link = `https://ropsten.etherscan.io/address/${address}`
+      link = `https://ropsten.etherblockchain.io/blockchain/accounts/${address}`
       break
     case 4: // rinkeby test net
-      link = `https://rinkeby.etherscan.io/address/${address}`
+      link = `https://rinkeby.etherblockchain.io/blockchain/accounts/${address}`
       break
     case 42: // kovan test net
-      link = `https://kovan.etherscan.io/address/${address}`
+      link = `https://kovan.etherblockchain.io/blockchain/accounts/${address}`
       break
     default:
       link = ''

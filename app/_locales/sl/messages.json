@@ -478,8 +478,8 @@
   "eth": {
     "message": "ETH"
   },
-  "etherscanView": {
-    "message": "Poglej račun na Etherscan"
+  "etherblockchainView": {
+    "message": "Poglej račun na Etherblockchain.io"
   },
   "estimatedProcessingTimes": {
     "message": "Predviden čas obdelave"
@@ -1507,8 +1507,8 @@
   "viewAccount": {
     "message": "Poglej račun"
   },
-  "viewOnEtherscan": {
-    "message": "Poglej na Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "Poglej na Etherblockchain.io"
   },
   "visitWebSite": {
     "message": "Obiščite našo spletno stran"

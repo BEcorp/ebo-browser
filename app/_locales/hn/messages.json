@@ -289,7 +289,7 @@
   "enterPasswordConfirm": {
     "message": "पुष्टि करने के लिए अपना पासवर्ड दर्ज करें"
   },
-  "etherscanView": {
+  "etherblockchainView": {
     "message": "ईथरस्कैन पर खाता देखें"
   },
   "exchangeRate": {

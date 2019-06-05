@@ -4,7 +4,6 @@ const h = require('react-hyperscript')
 const inherits = require('util').inherits
 const connect = require('react-redux').connect
 const actions = require('../../actions')
-const genAccountLink = require('etherscan-link').createAccountLink
 const { Menu, Item, CloseArea } = require('./components/menu')
 
 TokenMenuDropdown.contextTypes = {
@@ -12,6 +11,8 @@ TokenMenuDropdown.contextTypes = {
 }
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(TokenMenuDropdown)
+
+const genAccountLink = (address, network) => `https://www.etherblockchain.io/blockchain/accounts/${address}`
 
 function mapStateToProps (state) {
   return {
@@ -62,7 +63,7 @@ TokenMenuDropdown.prototype.render = function () {
         global.platform.openWindow({ url })
         this.props.onClose()
       },
-      text: this.context.t('viewOnEtherscan'),
+      text: this.context.t('viewOnEtherblockchain'),
     }),
   ])
 }

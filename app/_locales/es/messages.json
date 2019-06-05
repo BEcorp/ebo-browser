@@ -316,8 +316,8 @@
   "enterPasswordConfirm": {
     "message": "Ingresa tu contraseña para confirmar"
   },
-  "etherscanView": {
-    "message": "Ver la cuenta en Etherscan"
+  "etherblockchainView": {
+    "message": "Ver la cuenta en Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Tipo de cambio"
@@ -1483,8 +1483,8 @@
   "updatedWithDate": {
     "message": "Actualizado $1"
   },
-  "viewOnEtherscan": {
-    "message": "Ver en Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "Ver en Etherblockchain.io"
   },
   "welcomeBack": {
     "message": "¡Bienvenido de nuevo!"

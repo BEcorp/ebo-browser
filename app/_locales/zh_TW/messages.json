@@ -454,8 +454,8 @@
   "eth": {
     "message": "ETH"
   },
-  "etherscanView": {
-    "message": "在 Etherscan 上查看帳戶"
+  "etherblockchainView": {
+    "message": "在 Etherblockchain.io 上查看帳戶"
   },
   "estimatedProcessingTimes": {
     "message": "預估處理時間"
@@ -1530,8 +1530,8 @@
   "viewAccount": {
     "message": "查看帳戶"
   },
-  "viewOnEtherscan": {
-    "message": "在 Etherscan 上瀏覽"
+  "viewOnEtherblockchain": {
+    "message": "在 Etherblockchain.io 上瀏覽"
   },
   "visitWebSite": {
     "message": "造訪我們的網站"

@@ -322,8 +322,8 @@
   "passwordsDontMatch": {
     "message": "密码不匹配"
   },
-  "etherscanView": {
-    "message": "在 Etherscan 上查看账户"
+  "etherblockchainView": {
+    "message": "在 Etherblockchain.io 上查看账户"
   },
   "exchangeRate": {
     "message": "兑换比率"

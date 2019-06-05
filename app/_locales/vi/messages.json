@@ -241,8 +241,8 @@
   "enterPassword": {
     "message": "Nhập mật khẩu"
   },
-  "etherscanView": {
-    "message": "Xem tài khoản trên Etherscan"
+  "etherblockchainView": {
+    "message": "Xem tài khoản trên Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Tỷ giá"

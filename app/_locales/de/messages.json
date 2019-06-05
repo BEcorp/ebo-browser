@@ -307,8 +307,8 @@
   "passwordsDontMatch": {
     "message": "Passwörter stimmen nicht überein"
   },
-  "etherscanView": {
-    "message": "Account auf Etherscan anschauen"
+  "etherblockchainView": {
+    "message": "Account auf Etherblockchain.io anschauen"
   },
   "exchangeRate": {
     "message": "Wechselrate"

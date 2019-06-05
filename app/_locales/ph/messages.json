@@ -241,8 +241,8 @@
   "enterPassword": {
     "message": "I-enter ang password"
   },
-  "etherscanView": {
-    "message": "Tingnan ang account sa Etherscan"
+  "etherblockchainView": {
+    "message": "Tingnan ang account sa Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Exchange Rate"

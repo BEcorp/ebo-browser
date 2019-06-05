@@ -5,7 +5,6 @@ import { getEthConversionFromWeiHex, getValueFromWeiHex } from '../../helpers/co
 import { formatDate } from '../../util'
 import TransactionActivityLogIcon from './transaction-activity-log-icon'
 import { CONFIRMED_STATUS } from './transaction-activity-log.constants'
-import prefixForNetwork from '../../../lib/etherscan-prefix-for-network'
 
 export default class TransactionActivityLog extends PureComponent {
   static contextTypes = {
@@ -26,13 +25,9 @@ export default class TransactionActivityLog extends PureComponent {
   }
 
   handleActivityClick = hash => {
-    const { primaryTransaction } = this.props
-    const { metamaskNetworkId } = primaryTransaction
+    const etherblockchainUrl = `https://etherblockchain.io/blockchain/transactions/${hash}`
 
-    const prefix = prefixForNetwork(metamaskNetworkId)
-    const etherscanUrl = `https://${prefix}etherscan.io/tx/${hash}`
-
-    global.platform.openWindow({ url: etherscanUrl })
+    global.platform.openWindow({ url: etherblockchainUrl })
   }
 
   renderInlineRetry (index, activity) {

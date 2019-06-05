@@ -289,8 +289,8 @@
   "enterPasswordConfirm": {
     "message": "Voer uw wachtwoord in om te bevestigen"
   },
-  "etherscanView": {
-    "message": "Bekijk account op Etherscan"
+  "etherblockchainView": {
+    "message": "Bekijk account op Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Wisselkoers"

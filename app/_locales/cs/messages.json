@@ -310,8 +310,8 @@
   "passwordsDontMatch": {
     "message": "Hesla nejsou stejná"
   },
-  "etherscanView": {
-    "message": "Prohlédněte si účet na Etherscan"
+  "etherblockchainView": {
+    "message": "Prohlédněte si účet na Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Směnný kurz"

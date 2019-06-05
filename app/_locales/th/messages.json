@@ -289,8 +289,8 @@
   "enterPasswordConfirm": {
     "message": "ใส่รหัสผ่านอีกครั้งเพื่อยืนยัน"
   },
-  "etherscanView": {
-    "message": "ดูบัญชีบน Etherscan"
+  "etherblockchainView": {
+    "message": "ดูบัญชีบน Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "อัตราแลกเปลี่ยน"
