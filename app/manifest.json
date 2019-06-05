@@ -21,7 +21,7 @@
   },
   "applications": {
     "gecko": {
-      "id": "webextension@metamask.io"
+      "id": "webextension@ebo.io"
     }
   },
   "default_locale": "en",

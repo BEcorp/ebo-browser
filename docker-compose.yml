@@ -8,4 +8,4 @@ metamascara:
     VIRTUAL_PORT: "9001"
     VIRTUAL_HOST: "wallet.metamask.io"
     LETSENCRYPT_HOST: "wallet.metamask.io"
-    LETSENCRYPT_EMAIL: "admin@metamask.io"
+    LETSENCRYPT_EMAIL: "admin@ebo.io"
