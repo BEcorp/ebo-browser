@@ -66,7 +66,7 @@ const MetaMaskUiCss = require('../ui/css')
 const injectCss = require('inject-css')
 
 //
-// MetaMask Controller
+// EBO Controller
 //
 
 const controller = new MetamaskController({

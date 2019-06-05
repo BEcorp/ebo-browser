@@ -1,10 +1,10 @@
 # The Team
 
-Here is an overview of the current MetaMask team, and their primary roles and responsibilities, in the order they joined the team.
+Here is an overview of the current EBO team, and their primary roles and responsibilities, in the order they joined the team.
 
 ## Core Team Members
 
-The core team maintains aspects of the main product (the extension) and the core libraries (the MetaMask Controller, provider-engine, etc).
+The core team maintains aspects of the main product (the extension) and the core libraries (the EBO Controller, provider-engine, etc).
 
 ### Aaron Davis
 
@@ -25,7 +25,7 @@ Focused on the deliverable, user-valuable aspects of MetaMask, including usabili
 @frankiebee
 Software Engineer / Transaction Manager Lead
 
-Frankie contributes code throughout MetaMask, but has become especially specialized in the way MetaMask manages transactions. She is also the original lead of the [Mascara](https://github.com/MetaMask/mascara) project.
+Frankie contributes code throughout MetaMask, but has become especially specialized in the way EBO manages transactions. She is also the original lead of the [Mascara](https://github.com/MetaMask/mascara) project.
 
 ### Kevin Serrano
 
@@ -39,7 +39,7 @@ Kevin is a software engineer, but also spends a lot of his time keeping the team
 @tmashuang
 QA Engineer
 
-Thomas is the head of MetaMask Quality Assurance. He both takes the final pass of branches of code before we ship to production, and is also in charge of continuously improving our automated quality assurance process.
+Thomas is the head of EBO Quality Assurance. He both takes the final pass of branches of code before we ship to production, and is also in charge of continuously improving our automated quality assurance process.
 
 ### Christian Jeria
 
@@ -68,7 +68,7 @@ Herman is currently leading the Mustekala project, a JavaScript, IPFS-based Ethe
 
 ## Kyokan Team Members
 
-[Kyokan](http://kyokan.io/) is a consulting firm that has been working closely with the MetaMask team on the latest version of our user interface. Their team members are not members of ConsenSys LLC, but they contribute a lot to the project.
+[Kyokan](http://kyokan.io/) is a consulting firm that has been working closely with the EBO team on the latest version of our user interface. Their team members are not members of ConsenSys LLC, but they contribute a lot to the project.
 
 - Daniel Tsui (@sdsui)
 - Chi Kei Chan (@chikeichan)

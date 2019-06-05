@@ -1,12 +1,12 @@
-# MetaMask Browser Extension Fork
+# EBO Browser Extension Fork
 
-This is a forked version of MetaMask which is a start point for BEIO browser wallet.
+This is a forked version of EBO which is a start point for BEIO browser wallet.
 
 ## Fork notes
 
 We want to preserve as much of original code as possible and be able to keep our fork in sync with the original code base. This will allow us to reuse the improvements and bugfixes introduced there. Our goal is to focus on fork branding and maintaining only parts that are specific to our version of the plugin.
 
-Please list all your changes to FORK_CHANGELOG.md. It should be easy to track how much we are different from original and might need to be prepered for any breaking changes in the MetaMask plugin.
+Please list all your changes to FORK_CHANGELOG.md. It should be easy to track how much we are different from original and might need to be prepered for any breaking changes in the EBO plugin.
 
 ## Syncing with upstream
 

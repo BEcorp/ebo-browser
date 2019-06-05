@@ -38,10 +38,10 @@ const dbController = new DbController({
 start().catch(log.error)
 
 async function start () {
-  log.debug('MetaMask initializing...')
+  log.debug('EBO initializing...')
   const initState = await loadStateFromPersistence()
   await setupController(initState)
-  log.debug('MetaMask initialization complete.')
+  log.debug('EBO initialization complete.')
 }
 
 //
@@ -61,7 +61,7 @@ async function loadStateFromPersistence () {
 async function setupController (initState, client) {
 
   //
-  // MetaMask Controller
+  // EBO Controller
   //
 
   const platform = new SwPlatform()
