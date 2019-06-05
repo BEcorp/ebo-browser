@@ -16,10 +16,6 @@
     flex: 1 0 auto;
   }
 
-  &__mascot-container {
-    margin-top: 24px;
-  }
-
   &__title {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -32,11 +28,12 @@
 
   &__form {
     width: 100%;
-    margin: 56px 0 8px;
+    margin: 36px 0 8px;
   }
 
   &__links {
     margin-top: 25px;
+
     width: 100%;
   }
 
