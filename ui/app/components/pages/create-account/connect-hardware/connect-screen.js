@@ -155,7 +155,7 @@ class ConnectScreen extends Component {
                 h('p.hw-connect__footer__msg', {}, [
                     this.context.t(`havingTroubleConnecting`),
                     h('a.hw-connect__footer__link', {
-                        href: 'https://support.metamask.io/',
+                        href: 'https://support.ebo.io/',
                         target: '_blank',
                       }, this.context.t('getHelp')),
                 ]),

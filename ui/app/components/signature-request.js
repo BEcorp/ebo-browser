@@ -198,7 +198,7 @@ SignatureRequest.prototype.renderBody = function () {
       h('span.request-signature__help-link', {
         onClick: () => {
           global.platform.openWindow({
-            url: 'https://metamask.zendesk.com/hc/en-us/articles/360015488751',
+            url: 'https://ebo.zendesk.com/hc/en-us/articles/360015488751',
           })
         },
     }, this.context.t('learnMore'))]

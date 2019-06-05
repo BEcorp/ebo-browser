@@ -1,5 +1,5 @@
 const extension = require('extensionizer')
-const {createExplorerLink: explorerLink} = require('etherscan-link')
+const explorerLink = (hash, network) => `https://www.etherblockchain.io/blockchain/transactions/${hash}`
 
 class ExtensionPlatform {
 

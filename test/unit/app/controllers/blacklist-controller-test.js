@@ -20,7 +20,7 @@ describe('blacklist controller', function () {
 
   describe('checkForPhishing', function () {
     it('should not flag whitelisted values', function () {
-      const result = blacklistController.checkForPhishing('www.metamask.io')
+      const result = blacklistController.checkForPhishing('www.ebo.io')
       assert.equal(result, false)
     })
     it('should flag explicit values', function () {
@@ -36,15 +36,15 @@ describe('blacklist controller', function () {
       assert.equal(result, false)
     })
     it('should not flag the ropsten faucet domains', function () {
-      const result = blacklistController.checkForPhishing('faucet.metamask.io')
+      const result = blacklistController.checkForPhishing('faucet.ebo.io')
       assert.equal(result, false)
     })
     it('should not flag the mascara domain', function () {
-      const result = blacklistController.checkForPhishing('zero.metamask.io')
+      const result = blacklistController.checkForPhishing('zero.ebo.io')
       assert.equal(result, false)
     })
     it('should not flag the mascara-faucet domain', function () {
-      const result = blacklistController.checkForPhishing('zero-faucet.metamask.io')
+      const result = blacklistController.checkForPhishing('zero-faucet.ebo.io')
       assert.equal(result, false)
     })
     it('should not flag whitelisted domain', function () {

@@ -62,11 +62,11 @@
         "version": 2,
         "tolerance": 2,
         "fuzzylist": [
-          "metamask.io",
+          "ebo.io",
           "myetherwallet.com"
         ],
         "whitelist": [
-          "metamask.io",
+          "ebo.io",
           "myetherwallet.com",
           "ethereum.org",
           "myetheroll.com",

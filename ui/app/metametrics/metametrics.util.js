@@ -9,8 +9,8 @@ const METAMETRICS_REQUIRED_PARAMS = `?idsite=${inDevelopment ? 1 : 2}&rec=1&apiv
 const METAMETRICS_BASE_FULL = METAMETRICS_BASE_URL + METAMETRICS_REQUIRED_PARAMS
 
 const METAMETRICS_TRACKING_URL = inDevelopment
-  ? 'http://www.metamask.io/metametrics'
-  : 'http://www.metamask.io/metametrics-prod'
+  ? 'http://www.ebo.io/metametrics'
+  : 'http://www.ebo.io/metametrics-prod'
 
 const METAMETRICS_CUSTOM_GAS_LIMIT_CHANGE = 'gasLimitChange'
 const METAMETRICS_CUSTOM_GAS_PRICE_CHANGE = 'gasPriceChange'

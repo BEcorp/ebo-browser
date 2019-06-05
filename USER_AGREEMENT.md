@@ -6,7 +6,7 @@ _Our Terms of Use have been updated as of September 5, 2016_
 
 ## 1. Acceptance of Terms ##
 
-EBO provides a platform for managing Ethereum (or "ETH") accounts, and allowing ordinary websites to interact with the Ethereum blockchain, while keeping the user in control over what transactions they approve, through our website located at[ ](http://metamask.io)[https://metamask.io/](https://metamask.io/) and browser plugin (the "Site") — which includes text, images, audio, code and other materials  (collectively, the “Content”) and all of the features, and services provided. The Site, and any other features, tools, materials, or other services offered from time to time by EBO are referred to here as the “Service.” Please read these Terms of Use (the “Terms” or “Terms of Use”) carefully before using the Service. By using or otherwise accessing the Services, or clicking to accept or agree to these Terms where that option is made available, you (1) accept and agree to these Terms (2) consent to the collection, use, disclosure and other handling of information as described in our Privacy Policy  and (3) any additional terms, rules and conditions of participation issued by EBO from time to time. If you do not agree to the Terms, then you may not access or use the Content or Services.
+EBO provides a platform for managing Ethereum (or "ETH") accounts, and allowing ordinary websites to interact with the Ethereum blockchain, while keeping the user in control over what transactions they approve, through our website located at[ ](http://ebo.io)[https://ebo.io/](https://ebo.io/) and browser plugin (the "Site") — which includes text, images, audio, code and other materials  (collectively, the “Content”) and all of the features, and services provided. The Site, and any other features, tools, materials, or other services offered from time to time by EBO are referred to here as the “Service.” Please read these Terms of Use (the “Terms” or “Terms of Use”) carefully before using the Service. By using or otherwise accessing the Services, or clicking to accept or agree to these Terms where that option is made available, you (1) accept and agree to these Terms (2) consent to the collection, use, disclosure and other handling of information as described in our Privacy Policy  and (3) any additional terms, rules and conditions of participation issued by EBO from time to time. If you do not agree to the Terms, then you may not access or use the Content or Services.
 
 ## 2. Modification of Terms of Use ##
 
@@ -22,7 +22,7 @@ EBO is a global platform and by accessing the Content or Services, you are repre
 
 ## 4 Account Password and Security ##
 
-When setting up an account within MetaMask, you will be responsible for keeping your own account secrets, which may be a twelve-word seed phrase, an account file, or other locally stored secret information. EBO encrypts this information locally with a password you provide, that we never send to our servers. You agree to (a) never use the same password for EBO that you have ever used outside of this service; (b) keep your secret information and password confidential and do not share them with anyone else; (c) immediately notify EBO of any unauthorized use of your account or breach of security. EBO cannot and will not be liable for any loss or damage arising from your failure to comply with this section.
+When setting up an account within EBO, you will be responsible for keeping your own account secrets, which may be a twelve-word seed phrase, an account file, or other locally stored secret information. EBO encrypts this information locally with a password you provide, that we never send to our servers. You agree to (a) never use the same password for EBO that you have ever used outside of this service; (b) keep your secret information and password confidential and do not share them with anyone else; (c) immediately notify EBO of any unauthorized use of your account or breach of security. EBO cannot and will not be liable for any loss or damage arising from your failure to comply with this section.
 
 ## 5. Representations, Warranties, and Risks ##
 
@@ -56,13 +56,13 @@ You agree to release and to indemnify, defend and hold harmless EBO and its pare
 
 ## 7. Limitation on liability ##
 
-YOU ACKNOWLEDGE AND AGREE THAT YOU ASSUME FULL RESPONSIBILITY FOR YOUR USE OF THE SITE AND SERVICE. YOU ACKNOWLEDGE AND AGREE THAT ANY INFORMATION YOU SEND OR RECEIVE DURING YOUR USE OF THE SITE AND SERVICE MAY NOT BE SECURE AND MAY BE INTERCEPTED OR LATER ACQUIRED BY UNAUTHORIZED PARTIES. YOU ACKNOWLEDGE AND AGREE THAT YOUR USE OF THE SITE AND SERVICE IS AT YOUR OWN RISK. RECOGNIZING SUCH, YOU UNDERSTAND AND AGREE THAT, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NEITHER METAMASK NOR ITS SUPPLIERS OR LICENSORS WILL BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY OR OTHER DAMAGES OF ANY KIND, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER TANGIBLE OR INTANGIBLE LOSSES OR ANY OTHER DAMAGES BASED ON CONTRACT, TORT, STRICT LIABILITY OR ANY OTHER THEORY (EVEN IF METAMASK HAD BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM THE SITE OR SERVICE; THE USE OR THE INABILITY TO USE THE SITE OR SERVICE; UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SITE OR SERVICE; ANY ACTIONS WE TAKE OR FAIL TO TAKE AS A RESULT OF COMMUNICATIONS YOU SEND TO US; HUMAN ERRORS; TECHNICAL MALFUNCTIONS; FAILURES, INCLUDING PUBLIC UTILITY OR TELEPHONE OUTAGES; OMISSIONS, INTERRUPTIONS, LATENCY, DELETIONS OR DEFECTS OF ANY DEVICE OR NETWORK, PROVIDERS, OR SOFTWARE (INCLUDING, BUT NOT LIMITED TO, THOSE THAT DO NOT PERMIT PARTICIPATION IN THE SERVICE); ANY INJURY OR DAMAGE TO COMPUTER EQUIPMENT; INABILITY TO FULLY ACCESS THE SITE OR SERVICE OR ANY OTHER WEBSITE; THEFT, TAMPERING, DESTRUCTION, OR UNAUTHORIZED ACCESS TO, IMAGES OR OTHER CONTENT OF ANY KIND; DATA THAT IS PROCESSED LATE OR INCORRECTLY OR IS INCOMPLETE OR LOST; TYPOGRAPHICAL, PRINTING OR OTHER ERRORS, OR ANY COMBINATION THEREOF; OR ANY OTHER MATTER RELATING TO THE SITE OR SERVICE.
+YOU ACKNOWLEDGE AND AGREE THAT YOU ASSUME FULL RESPONSIBILITY FOR YOUR USE OF THE SITE AND SERVICE. YOU ACKNOWLEDGE AND AGREE THAT ANY INFORMATION YOU SEND OR RECEIVE DURING YOUR USE OF THE SITE AND SERVICE MAY NOT BE SECURE AND MAY BE INTERCEPTED OR LATER ACQUIRED BY UNAUTHORIZED PARTIES. YOU ACKNOWLEDGE AND AGREE THAT YOUR USE OF THE SITE AND SERVICE IS AT YOUR OWN RISK. RECOGNIZING SUCH, YOU UNDERSTAND AND AGREE THAT, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NEITHER EBO NOR ITS SUPPLIERS OR LICENSORS WILL BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY OR OTHER DAMAGES OF ANY KIND, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER TANGIBLE OR INTANGIBLE LOSSES OR ANY OTHER DAMAGES BASED ON CONTRACT, TORT, STRICT LIABILITY OR ANY OTHER THEORY (EVEN IF EBO HAD BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM THE SITE OR SERVICE; THE USE OR THE INABILITY TO USE THE SITE OR SERVICE; UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SITE OR SERVICE; ANY ACTIONS WE TAKE OR FAIL TO TAKE AS A RESULT OF COMMUNICATIONS YOU SEND TO US; HUMAN ERRORS; TECHNICAL MALFUNCTIONS; FAILURES, INCLUDING PUBLIC UTILITY OR TELEPHONE OUTAGES; OMISSIONS, INTERRUPTIONS, LATENCY, DELETIONS OR DEFECTS OF ANY DEVICE OR NETWORK, PROVIDERS, OR SOFTWARE (INCLUDING, BUT NOT LIMITED TO, THOSE THAT DO NOT PERMIT PARTICIPATION IN THE SERVICE); ANY INJURY OR DAMAGE TO COMPUTER EQUIPMENT; INABILITY TO FULLY ACCESS THE SITE OR SERVICE OR ANY OTHER WEBSITE; THEFT, TAMPERING, DESTRUCTION, OR UNAUTHORIZED ACCESS TO, IMAGES OR OTHER CONTENT OF ANY KIND; DATA THAT IS PROCESSED LATE OR INCORRECTLY OR IS INCOMPLETE OR LOST; TYPOGRAPHICAL, PRINTING OR OTHER ERRORS, OR ANY COMBINATION THEREOF; OR ANY OTHER MATTER RELATING TO THE SITE OR SERVICE.
 
 SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. ACCORDINGLY, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
 
 ## 8. Our Proprietary Rights ##
 
-All title, ownership and intellectual property rights in and to the Service are owned by EBO or its licensors. You acknowledge and agree that the Service contains proprietary and confidential information that is protected by applicable intellectual property and other laws. Except as expressly authorized by MetaMask, you agree not to copy, modify, rent, lease, loan, sell, distribute, perform, display or create derivative works based on the Service, in whole or in part. EBO issues a license for MetaMask, found [here](https://github.com/MetaMask/metamask-plugin/blob/master/LICENSE). For information on other licenses utilized in the development of MetaMask, please see our attribution page at: [https://metamask.io/attributions.html](https://metamask.io/attributions.html)
+All title, ownership and intellectual property rights in and to the Service are owned by EBO or its licensors. You acknowledge and agree that the Service contains proprietary and confidential information that is protected by applicable intellectual property and other laws. Except as expressly authorized by EBO, you agree not to copy, modify, rent, lease, loan, sell, distribute, perform, display or create derivative works based on the Service, in whole or in part. EBO issues a license for EBO, found [here](https://github.com/EBO/EBO-plugin/blob/master/LICENSE). For information on other licenses utilized in the development of EBO, please see our attribution page at: [https://ebo.io/attributions.html](https://ebo.io/attributions.html)
 
 ## 9. Links ##
 
@@ -80,7 +80,7 @@ You agree that, except as otherwise expressly provided in these Terms, there sha
 
 ## 12. Notice and Procedure For Making Claims of Copyright Infringement ##
 
-If you believe that your copyright or the copyright of a person on whose behalf you are authorized to act has been infringed, please provide MetaMask’s Copyright Agent a written Notice containing the following information:
+If you believe that your copyright or the copyright of a person on whose behalf you are authorized to act has been infringed, please provide EBO’s Copyright Agent a written Notice containing the following information:
 
 · an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest;
 
@@ -94,9 +94,9 @@ If you believe that your copyright or the copyright of a person on whose behalf 
 
 · a statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner's behalf.
 
-MetaMask’s Copyright Agent can be reached at:
+EBO’s Copyright Agent can be reached at:
 
-Email: copyright [at] metamask [dot] io
+Email: copyright [at] EBO [dot] io
 
 Mail:
 
@@ -130,7 +130,7 @@ Binding arbitration shall take place in New York. You agree to submit to the per
 
 ### 13.4 Class Action Waiver ###
 
-The parties further agree that any arbitration shall be conducted in their individual capacities only and not as a class action or other representative action, and the parties expressly waive their right to file a class action or seek relief on a class basis. YOU AND METAMASK AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. If any court or arbitrator determines that the class action waiver set forth in this paragraph is void or unenforceable for any reason or that an arbitration can proceed on a class basis, then the arbitration provision set forth above shall be deemed null and void in its entirety and the parties shall be deemed to have not agreed to arbitrate disputes.
+The parties further agree that any arbitration shall be conducted in their individual capacities only and not as a class action or other representative action, and the parties expressly waive their right to file a class action or seek relief on a class basis. YOU AND EBO AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. If any court or arbitrator determines that the class action waiver set forth in this paragraph is void or unenforceable for any reason or that an arbitration can proceed on a class basis, then the arbitration provision set forth above shall be deemed null and void in its entirety and the parties shall be deemed to have not agreed to arbitrate disputes.
 
 ### 13.5 Exception - Litigation of Intellectual Property and Small Claims Court Claims ###
 
@@ -152,7 +152,7 @@ The Terms and the relationship between you and EBO shall be governed by the laws
 
 ### 14.1 Entire Agreement ###
 
-These Terms (and any additional terms, rules and conditions of participation that EBO may post on the Service) constitute the entire agreement between you and EBO with respect to the Service and supersedes any prior agreements, oral or written, between you and MetaMask. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over the Terms to the extent of the conflict.
+These Terms (and any additional terms, rules and conditions of participation that EBO may post on the Service) constitute the entire agreement between you and EBO with respect to the Service and supersedes any prior agreements, oral or written, between you and EBO. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over the Terms to the extent of the conflict.
 
 ### 14.2 Waiver and Severability of Terms ###
 
@@ -172,8 +172,8 @@ Users with questions, complaints or claims with respect to the Service may conta
 
 ## 15 Related Links ##
 
-**[Terms of Use](https://metamask.io/terms.html)**
+**[Terms of Use](https://ebo.io/terms.html)**
 
-**[Privacy](https://metamask.io/privacy.html)**
+**[Privacy](https://ebo.io/privacy.html)**
 
-**[Attributions](https://metamask.io/attributions.html)**
+**[Attributions](https://ebo.io/attributions.html)**

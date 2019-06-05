@@ -6,7 +6,7 @@
     "isInitialized": true,
     "isUnlocked": true,
     "currentDomain": "example.com",
-    "rpcTarget": "https://rawtestrpc.metamask.io/",
+    "rpcTarget": "https://rawtestrpc.ebo.io/",
     "shapeShiftTxList":[
       {
         "depositAddress": "1L8BJCR6KHkCiVceDqibt7zJscqPpH7pFw",
