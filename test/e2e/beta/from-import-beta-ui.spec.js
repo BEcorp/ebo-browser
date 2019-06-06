@@ -20,7 +20,7 @@ const {
 const fetchMockResponses = require('./fetch-mocks.js')
 
 
-describe('Using MetaMask with an existing account', function () {
+describe('Using EBO with an existing account', function () {
   let extensionId
   let driver
 

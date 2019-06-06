@@ -32,19 +32,20 @@ export default class TransactionListItemDetails extends PureComponent {
     cancelDisabled: false,
   }
 
-  handleEtherscanClick = () => {
-    const { transactionGroup: { primaryTransaction }, rpcPrefs } = this.props
-    const { hash, metamaskNetworkId } = primaryTransaction
+  handleEtherblockchainClick = () => {
+    const { transactionGroup: { primaryTransaction } } = this.props
+    const { hash } = primaryTransaction
+    const etherblockchainUrl = `https://etherblockchain.io/blockchain/transactions/${hash}`
 
     this.context.metricsEvent({
       eventOpts: {
         category: 'Navigation',
         action: 'Activity Log',
-        name: 'Clicked "View on Etherscan"',
+        name: 'Clicked "View on Etherblockchain.io"',
       },
     })
 
-    global.platform.openWindow({ url: getBlockExplorerUrlForTx(metamaskNetworkId, hash, rpcPrefs) })
+    global.platform.openWindow({ url: etherblockchainUrl })
   }
 
   handleCancel = event => {
@@ -159,10 +160,10 @@ export default class TransactionListItemDetails extends PureComponent {
                 />
               </Button>
             </Tooltip>
-            <Tooltip title={blockExplorerUrl ? t('viewOnCustomBlockExplorer', [blockExplorerUrl]) : t('viewOnEtherscan')}>
+            <Tooltip title={t('viewOnEtherblockchain')}>
               <Button
                 type="raised"
-                onClick={this.handleEtherscanClick}
+                onClick={this.handleEtherblockchainClick}
                 className="transaction-list-item-details__header-button"
                 >
                 <img src="/images/arrow-popout.svg" />

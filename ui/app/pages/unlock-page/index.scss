@@ -16,24 +16,24 @@
     flex: 1 0 auto;
   }
 
-  &__mascot-container {
-    margin-top: 24px;
-  }
-
   &__title {
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 2rem;
-    font-weight: 800;
     color: $tundora;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   &__form {
     width: 100%;
-    margin: 56px 0 8px;
+    margin: 36px 0 8px;
   }
 
   &__links {
     margin-top: 25px;
+
     width: 100%;
   }
 

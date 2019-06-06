@@ -29,7 +29,6 @@ export default class MetaMetricsOptInModal extends Component {
               <img
                 className="app-header__metafox-logo app-header__metafox-logo--icon"
                 src="/images/logo/metamask-fox.svg"
-                height={42}
                 width={42}
               />
             </div>
@@ -39,11 +38,11 @@ export default class MetaMetricsOptInModal extends Component {
             <div className="metametrics-opt-in__title">Help Us Improve MetaMask</div>
             <div className="metametrics-opt-in__body">
               <div className="metametrics-opt-in__description">
-               MetaMask would like to gather usage data to better understand how our users interact with the extension. This data
-               will be used to continually improve the usability and user experience of our product and the Ethereum ecosystem.
+               EBO would like to gather usage data to better understand how our users interact with the extension. This data
+               will be used to continually improve the usability and user experience of our product and the etheruem ecosystem.
               </div>
               <div className="metametrics-opt-in__description">
-               MetaMask will..
+               EBO will..
               </div>
 
               <div className="metametrics-opt-in__committments">

@@ -1,6 +1,6 @@
 const version = 3
-const oldTestRpc = 'https://rawtestrpc.metamask.io/'
-const newTestRpc = 'https://testrpc.metamask.io/'
+const oldTestRpc = 'https://rawtestrpc.ebo.io/'
+const newTestRpc = 'https://testrpc.ebo.io/'
 
 const clone = require('clone')
 

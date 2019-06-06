@@ -29,8 +29,8 @@ function mapDispatchToProps (dispatch) {
     showAccountDetailModal: () => {
       dispatch(actions.showModal({ name: 'ACCOUNT_DETAILS' }))
     },
-    viewOnEtherscan: (address, network, rpcPrefs) => {
-      global.platform.openWindow({ url: genAccountLink(address, network, rpcPrefs) })
+    viewOnEtherblockchain: (address, network) => {
+      global.platform.openWindow({ url: genAccountLink(address, network) })
     },
     showRemoveAccountConfirmationModal: (identity) => {
       return dispatch(actions.showModal({ name: 'CONFIRM_REMOVE_ACCOUNT', identity }))
@@ -56,10 +56,8 @@ AccountDetailsDropdown.prototype.render = function () {
     network,
     keyrings,
     showAccountDetailModal,
-    viewOnEtherscan,
-    showRemoveAccountConfirmationModal,
-    rpcPrefs,
-   } = this.props
+    viewOnEtherblockchain,
+    showRemoveAccountConfirmationModal } = this.props
 
   const address = selectedIdentity.address
 
@@ -112,15 +110,13 @@ AccountDetailsDropdown.prototype.render = function () {
           eventOpts: {
             category: 'Navigation',
             action: 'Account Options',
-            name: 'Clicked View on Etherscan',
+            name: 'Clicked View on Etherblockchain.io',
           },
         })
-        viewOnEtherscan(address, network, rpcPrefs)
+        viewOnEtherblockchain(address, network)
         this.props.onClose()
       },
-      text: (rpcPrefs.blockExplorerUrl
-        ? this.context.t('blockExplorerView', [rpcPrefs.blockExplorerUrl.match(/^https?:\/\/(.+)/)[1]])
-        : this.context.t('viewOnEtherscan')),
+      text: this.context.t('viewOnEtherblockchain'),
       icon: h(`img`, { src: 'images/open-etherscan.svg', style: { height: '15px' } }),
     }),
     isRemovable ? h(Item, {

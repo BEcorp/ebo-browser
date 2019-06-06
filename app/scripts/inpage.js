@@ -69,9 +69,9 @@ inpageProvider._metamask = new Proxy({
   },
 
   /**
-   * Determines if MetaMask is unlocked by the user
+   * Determines if EBO is unlocked by the user
    *
-   * @returns {Promise<boolean>} - Promise resolving to true if MetaMask is currently unlocked
+   * @returns {Promise<boolean>} - Promise resolving to true if EBO is currently unlocked
    */
   isUnlocked: async function () {
     const { isUnlocked } = await getPublicConfigWhenReady()
@@ -81,7 +81,7 @@ inpageProvider._metamask = new Proxy({
   get: function (obj, prop) {
     !warned && console.warn('Heads up! ethereum._metamask exposes methods that have ' +
     'not been standardized yet. This means that these methods may not be implemented ' +
-    'in other dapp browsers and may be removed from MetaMask in the future.')
+    'in other dapp browsers and may be removed from EBO in the future.')
     warned = true
     return obj[prop]
   },
@@ -115,18 +115,18 @@ window.ethereum = createStandardProvider(proxiedInpageProvider)
 //
 
 if (typeof window.web3 !== 'undefined') {
-  throw new Error(`MetaMask detected another web3.
-     MetaMask will not work reliably with another web3 extension.
+  throw new Error(`EBO detected another web3.
+     EBO will not work reliably with another web3 extension.
      This usually happens if you have two MetaMasks installed,
-     or MetaMask and another web3 extension. Please remove one
+     or EBO and another web3 extension. Please remove one
      and try again.`)
 }
 
 const web3 = new Web3(proxiedInpageProvider)
 web3.setProvider = function () {
-  log.debug('MetaMask - overrode web3.setProvider')
+  log.debug('EBO - overrode web3.setProvider')
 }
-log.debug('MetaMask - injected web3')
+log.debug('EBO - injected web3')
 
 setupDappAutoReload(web3, inpageProvider.publicConfigStore)
 
@@ -177,7 +177,7 @@ function cleanContextForImports () {
   try {
     global.define = undefined
   } catch (_) {
-    console.warn('MetaMask - global.define could not be deleted.')
+    console.warn('EBO - global.define could not be deleted.')
   }
 }
 
@@ -188,6 +188,6 @@ function restoreContextAfterImports () {
   try {
     global.define = __define
   } catch (_) {
-    console.warn('MetaMask - global.define could not be overwritten.')
+    console.warn('EBO - global.define could not be overwritten.')
   }
 }

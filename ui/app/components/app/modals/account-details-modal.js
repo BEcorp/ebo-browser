@@ -88,12 +88,8 @@ AccountDetailsModal.prototype.render = function () {
       h(Button, {
         type: 'secondary',
         className: 'account-modal__button',
-        onClick: () => {
-          global.platform.openWindow({ url: genAccountLink(address, network, rpcPrefs) })
-        },
-      }, (rpcPrefs.blockExplorerUrl
-        ? this.context.t('blockExplorerView', [rpcPrefs.blockExplorerUrl.match(/^https?:\/\/(.+)/)[1]])
-        : this.context.t('viewOnEtherscan'))),
+        onClick: () => global.platform.openWindow({ url: genAccountLink(address, network) }),
+      }, this.context.t('etherblockchainView')),
 
       // Holding on redesign for Export Private Key functionality
 

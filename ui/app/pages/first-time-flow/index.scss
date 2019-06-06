@@ -42,6 +42,8 @@
     font-size: 2.5rem;
     margin-bottom: 24px;
     color: black;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
   &__subheader {
@@ -70,10 +72,10 @@
 
   &__textarea {
     font-size: 1rem;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     height: 190px;
     border: 1px solid #CDCDCD;
-    border-radius: 6px;
+    border-radius: 0;
     background-color: #FFFFFF;
     padding: 16px;
     margin-top: 8px;
@@ -144,7 +146,7 @@
   }
 
   &__checkbox-label {
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-style: normal;
     font-weight: normal;
     line-height: normal;

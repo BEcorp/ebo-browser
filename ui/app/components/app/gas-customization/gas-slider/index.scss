@@ -32,12 +32,12 @@
     position: absolute;
     top: 16px;
     z-index: 0;
-    border-radius: 4px;
+    border-radius: 0;
   }
 
   &__colored {
     height: 6px;
-    border-radius: 4px;
+    border-radius: 0;
     margin-left: 102px; 
     width: 322px;
     z-index: 1;

@@ -162,7 +162,7 @@ describe('Transaction Controller', function () {
 
       txController.newUnapprovedTransaction(txParams)
       .catch((err) => {
-        if (err.message === 'MetaMask Tx Signature: User denied transaction signature.') done()
+        if (err.message === 'EBO Tx Signature: User denied transaction signature.') done()
         else done(err)
       })
     })
@@ -239,7 +239,7 @@ describe('Transaction Controller', function () {
       txController.networkStore = new ObservableStore('loading')
       txController.addUnapprovedTransaction({ from: selectedAddress, to: '0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2' })
       .catch((err) => {
-        if (err.message === 'MetaMask is having trouble connecting to the network') done()
+        if (err.message === 'EBO is having trouble connecting to the network') done()
         else done(err)
       })
     })

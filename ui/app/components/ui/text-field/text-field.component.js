@@ -8,6 +8,7 @@ const inputLabelBase = {
   transition: 'none',
   position: 'initial',
   color: '#5b5b5b',
+  fontFamily: 'Gilroy, Roboto',
 }
 
 const styles = {
@@ -24,7 +25,7 @@ const styles = {
   materialFocused: {},
   materialUnderline: {
     '&:after': {
-      borderBottom: '2px solid #f7861c',
+      borderBottom: '2px solid #00aaea',
     },
   },
   materialError: {},
@@ -45,7 +46,7 @@ const styles = {
     },
     border: '2px solid #BBC0C5',
     height: '48px',
-    borderRadius: '6px',
+    borderRadius: '0',
     padding: '0 16px',
     display: 'flex',
     alignItems: 'center',

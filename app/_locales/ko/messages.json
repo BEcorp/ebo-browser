@@ -508,7 +508,8 @@
   "eth": {
     "message": "ETH"
   },
-  "etherscanView": {
+  "etherscanView": {},
+  "etherblockchainView": {
     "message": "이더스캔에서 계정보기"
   },
   "estimatedProcessingTimes": {
@@ -1585,7 +1586,7 @@
   "viewAccount": {
     "message": "계정 보기"
   },
-  "viewOnEtherscan": {
+  "viewOnEtherblockchain": {
     "message": "이더스캔에서 보기"
   },
   "visitWebSite": {

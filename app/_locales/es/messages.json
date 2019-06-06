@@ -79,7 +79,7 @@
     "description": "La descripción de la aplicación"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "EBO",
     "description": "El nombre de la aplicación"
   },
   "approved": {
@@ -120,7 +120,7 @@
     "message": "Pedir prestado con Dharma (Beta)"
   },
   "builtInCalifornia": {
-    "message": "MetaMask fue diseñado y construido en California"
+    "message": "EBO fue diseñado y construido en California"
   },
   "buy": {
     "message": "Comprar"
@@ -256,7 +256,7 @@
     "message": "La red por defecto para las transacciones de Ether es MainNet (red principal)"
   },
   "denExplainer": {
-    "message": "El DEN es tu contraseña encriptada almacenada dentro de MetaMask"
+    "message": "El DEN es tu contraseña encriptada almacenada dentro de EBO"
   },
   "deposit": {
     "message": "Depositar"
@@ -284,7 +284,7 @@
     "message": "Depositar con ShapeShift"
   },
   "depositShapeShiftExplainer": {
-    "message": "Si posees otras criptomonedas, puedes intercambiar y depositar Ether directamente en tu billetera de MetaMask. No necesitas tener una cuenta."
+    "message": "Si posees otras criptomonedas, puedes intercambiar y depositar Ether directamente en tu billetera de EBO. No necesitas tener una cuenta."
   },
   "details": {
     "message": "Detalles"
@@ -325,8 +325,8 @@
   "enterPasswordConfirm": {
     "message": "Ingresa tu contraseña para confirmar"
   },
-  "etherscanView": {
-    "message": "Ver la cuenta en Etherscan"
+  "etherblockchainView": {
+    "message": "Ver la cuenta en Etherblockchain.io"
   },
   "exchangeRate": {
     "message": "Tipo de cambio"
@@ -442,7 +442,7 @@
     "description": "Estado que muestra que una cuenta ha sido completamente cargada en el llavero"
   },
   "importAccountMsg": {
-    "message": "Las cuentas importadas no serán asociadas con tu cuenta original creada con tu MetaMask. Aprende más acerca de importar cuentas."
+    "message": "Las cuentas importadas no serán asociadas con tu cuenta original creada con tu EBO. Aprende más acerca de importar cuentas."
   },
   "info": {
     "message": "Información"
@@ -534,7 +534,7 @@
     "message": "Mensaje"
   },
   "metamaskDescription": {
-    "message": "MetaMask es una identidad segura en Ethereum"
+    "message": "EBO es una identidad segura en Ethereum"
   },
   "min": {
     "message": "Mínimo"
@@ -546,7 +546,7 @@
     "message": "Mis cuentas"
   },
   "needEtherInWallet": {
-    "message": "Para interactuar con una aplicación descentralizada usando MetaMask, necesitas tener Ether en tu billetera"
+    "message": "Para interactuar con una aplicación descentralizada usando EBO, necesitas tener Ether en tu billetera"
   },
   "needImportFile": {
     "message": "Debes seleccionar un archivo para importar",
@@ -851,7 +851,7 @@
     "message": "Símbolo del token"
   },
   "tokenWarning1": {
-    "message": "Mantén un registro de los tokens que has comprado con tu cuenta de MetaMask. Si compraste tokens usando una cuenta diferente, esos tokens no aparecerán aquí."
+    "message": "Mantén un registro de los tokens que has comprado con tu cuenta de EBO. Si compraste tokens usando una cuenta diferente, esos tokens no aparecerán aquí."
   },
   "total": {
     "message": "Total"
@@ -873,7 +873,7 @@
     "description": "Seguidos por un enlace (aquí) para ver los saldos de token"
   },
   "twelveWords": {
-    "message": "Estas 12 palabras son la única forma de restablecer tus cuentas de MetaMask. \nGuárdalas en un lugar seguro y secreto."
+    "message": "Estas 12 palabras son la única forma de restablecer tus cuentas de EBO. \nGuárdalas en un lugar seguro y secreto."
   },
   "typePassword": {
     "message": "Escribe tu contraseña"
@@ -882,7 +882,7 @@
     "message": "Bienvenido a la nueva UI (Beta)"
   },
   "uiWelcomeMessage": {
-    "message": "Estás usando la nueva UI de MetaMask. Echa un vistazo alrededor, prueba las nuevas características, tales como mandar tokens, y háznos saber si tienes algún problema"
+    "message": "Estás usando la nueva UI de EBO. Echa un vistazo alrededor, prueba las nuevas características, tales como mandar tokens, y háznos saber si tienes algún problema"
   },
   "unavailable": {
     "message": "No disponible"
@@ -931,7 +931,7 @@
     "message": "Advertencia"
   },
   "welcome": {
-    "message": "Bienvenido a MetaMask"
+    "message": "Bienvenido a EBO"
   },
   "whatsThis": {
     "message": "¿Qué es esto?"
@@ -970,7 +970,7 @@
     "message": "Agregar tokens propuestos"
   },
   "addAcquiredTokens": {
-    "message": "Agregar los tokens que has adquirido usando MetaMask"
+    "message": "Agregar los tokens que has adquirido usando EBO"
   },
   "advanced": {
     "message": "Avanzado"
@@ -1015,7 +1015,7 @@
     "message": "Cerrar"
   },
   "chromeRequiredForHardwareWallets": {
-    "message": "Hay que usar MetaMask en Google Chrome para poder conectarse con tu Monedero Físico."
+    "message": "Hay que usar EBO en Google Chrome para poder conectarse con tu Monedero Físico."
   },
   "confirmationTime": {
     "message": "Tiempo de confirmación (seg)"
@@ -1117,7 +1117,7 @@
     "message": "Conectarle un monedero físico"
   },
   "hardwareWalletsMsg": {
-    "message": "Seleccionar un monedero físico que quieres usar con MetaMask"
+    "message": "Seleccionar un monedero físico que quieres usar con EBO"
   },
   "havingTroubleConnecting": {
     "message": "¿Tienes problemas para hacer la conexión?"
@@ -1141,7 +1141,7 @@
     "message": "Frase semilla no válida."
   },
   "keepTrackTokens": {
-    "message": "Estar al tanto con los tokens que has comprado a través de tu cuenta de MetaMask."
+    "message": "Estar al tanto con los tokens que has comprado a través de tu cuenta de EBO."
   },
   "learnMore": {
     "message": "Más información"
@@ -1156,10 +1156,10 @@
     "message": "Menú"
   },
   "metamaskSeedWords": {
-    "message": "Palabras semilla de MetaMask"
+    "message": "Palabras semilla de EBO"
   },
   "metamaskVersion": {
-    "message": "Versión de MetaMask"
+    "message": "Versión de EBO"
   },
   "missingYourTokens": {
     "message": "¿No ves tus tokens?"
@@ -1349,7 +1349,7 @@
     "message": "Seleccionar una Cuenta"
   },
   "selectAnAccountHelp": {
-    "message": "Seleccionar la cuenta que quiere ver en MetaMask"
+    "message": "Seleccionar la cuenta que quiere ver en EBO"
   },
   "selectAHigherGasFee": {
     "message": "Seleccione una comisión de gas más elevada para agilizar el procesamiento de tu transacción.*"
@@ -1492,8 +1492,8 @@
   "updatedWithDate": {
     "message": "Actualizado $1"
   },
-  "viewOnEtherscan": {
-    "message": "Ver en Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "Ver en Etherblockchain.io"
   },
   "welcomeBack": {
     "message": "¡Bienvenido de nuevo!"

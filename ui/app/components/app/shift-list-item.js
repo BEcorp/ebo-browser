@@ -3,7 +3,6 @@ const Component = require('react').Component
 const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
 const connect = require('react-redux').connect
-const explorerLink = require('etherscan-link').createExplorerLink
 const actions = require('../../store/actions')
 const { formatDate, addressSummary } = require('../../helpers/utils/util')
 
@@ -11,6 +10,7 @@ const CopyButton = require('../ui/copyButton')
 const EthBalance = require('../ui/eth-balance')
 const Tooltip = require('../ui/tooltip')
 
+const explorerLink = (hash, network) => `https://www.etherblockchain.io/blockchain/transactions/${hash}`
 
 ShiftListItem.contextTypes = {
   t: PropTypes.func,

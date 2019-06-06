@@ -319,7 +319,7 @@
   "passwordsDontMatch": {
     "message": "கடவுச்சொற்கள் பொருந்தாதே"
   },
-  "etherscanView": {
+  "etherblockchainView": {
     "message": "Etherscan கணக்கைப் பார்க்கவும்"
   },
   "exchangeRate": {

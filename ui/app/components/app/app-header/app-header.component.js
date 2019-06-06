@@ -78,11 +78,7 @@ export default class AppHeader extends PureComponent {
   render () {
     const {
       history,
-      network,
-      provider,
       isUnlocked,
-      hideNetworkIndicator,
-      disabled,
     } = this.props
 
     return (
@@ -101,23 +97,10 @@ export default class AppHeader extends PureComponent {
             <img
               className="app-header__metafox-logo app-header__metafox-logo--icon"
               src="/images/logo/metamask-fox.svg"
-              height={42}
               width={42}
             />
           </div>
           <div className="app-header__account-menu-container">
-            {
-              !hideNetworkIndicator && (
-                <div className="app-header__network-component-wrapper">
-                  <NetworkIndicator
-                    network={network}
-                    provider={provider}
-                    onClick={event => this.handleNetworkIndicatorClick(event)}
-                    disabled={disabled}
-                  />
-                </div>
-              )
-            }
             { this.renderAccountMenu() }
           </div>
         </div>

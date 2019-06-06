@@ -28,15 +28,20 @@
     position: relative;
     margin-top: 20px;
 
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 700;
     line-height: normal;
     font-size: 42px;
+    text-transform: uppercase;
   }
 
   &__body-graphic {
-    margin-top: 25px;
+    margin-top: 40px;
+    
+    img {
+      height: 30px;
+    }
 
     .fa-bar-chart {
       color: #C4C4C4;
@@ -44,7 +49,7 @@
   }
 
   &__description {
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-style: normal;
     font-weight: normal;
     line-height: 21px;

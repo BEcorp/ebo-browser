@@ -2,7 +2,7 @@ import assert from 'assert'
 import reduceMetamask from '../../../../../ui/app/ducks/metamask/metamask'
 import * as actions from '../../../../../ui/app/store/actions'
 
-describe('MetaMask Reducers', () => {
+describe('EBO Reducers', () => {
 
   it('init state', () => {
     const initState = reduceMetamask({metamask: {}}, {})
@@ -54,7 +54,7 @@ describe('MetaMask Reducers', () => {
         selectedAddress: 'test address',
       },
     }
-    const lockMetaMask = reduceMetamask(unlockMetaMaskState, {
+    const lockEBO = reduceMetamask(unlockMetaMaskState, {
       type: actions.LOCK_METAMASK,
     })
 
