@@ -73,6 +73,8 @@ async function startApp (metamaskState, accountManager, opts) {
     },
   }
 
+  global.metamask.setProviderType('mainnet')
+
   // start app
   render(
     h(Root, {
