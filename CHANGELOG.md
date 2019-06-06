@@ -2,6 +2,105 @@
 
 ## Current Develop Branch
 
+## 6.6.0 Mon Jun 03 2019
+
+- [#6659](https://github.com/MetaMask/metamask-extension/pull/6659): Enable Ledger hardware wallet support on Firefox
+- [#6671](https://github.com/MetaMask/metamask-extension/pull/6671): bugfix: reject enable promise on user rejection
+- [#6625](https://github.com/MetaMask/metamask-extension/pull/6625): Ensures that transactions cannot be confirmed if gas limit is below 21000.
+- [#6633](https://github.com/MetaMask/metamask-extension/pull/6633): Fix grammatical error in i18n endOfFlowMessage6
+
+## 6.5.3 Thu May 16 2019
+
+- [#6619](https://github.com/MetaMask/metamask-extension/pull/6619): bugfix: show extension window if locked regardless of approval
+- [#6388](https://github.com/MetaMask/metamask-extension/pull/6388): Transactions/pending - check nonce against the network and mark as dropped if not included in a block
+- [#6606](https://github.com/MetaMask/metamask-extension/pull/6606): Improve ENS Address Input
+- [#6615](https://github.com/MetaMask/metamask-extension/pull/6615): Adds e2e test for removing imported accounts.
+
+## 6.5.2 Wed May 15 2019
+
+- [#6613](https://github.com/MetaMask/metamask-extension/pull/6613): Hardware Wallet Fix
+## 6.5.1 Tue May 14 2019
+
+- Fix bug where approve method would show a warning. #6602
+- [#6593](https://github.com/MetaMask/metamask-extension/pull/6593): Fix wording of autoLogoutTimeLimitDescription
+
+## 6.5.0 Fri May 10 2019
+
+- [#6568](https://github.com/MetaMask/metamask-extension/pull/6568): feature: integrate gaba/PhishingController
+- [#6490](https://github.com/MetaMask/metamask-extension/pull/6490): Redesign custom RPC form
+- [#6558](https://github.com/MetaMask/metamask-extension/pull/6558): Adds auto logout with customizable time frame
+- [#6578](https://github.com/MetaMask/metamask-extension/pull/6578): Fixes ability to send to token contract addresses
+- [#6557](https://github.com/MetaMask/metamask-extension/pull/6557): Adds drag and drop functionality to seed phrase entry.
+- [#6526](https://github.com/MetaMask/metamask-extension/pull/6526): Include token checksum address in prices lookup for token rates
+- [#6502](https://github.com/MetaMask/metamask-extension/pull/6502): Add subheader to all settings subviews
+- [#6501](https://github.com/MetaMask/metamask-extension/pull/6501): Improve confirm screen loading performance by fixing home screen rendering bug
+
+## 6.4.1 Fri Apr 26 2019
+
+- [#6521](https://github.com/MetaMask/metamask-extension/pull/6521): Revert "Adds 4byte registry fallback to getMethodData()" to fix stalling bug.
+
+## 6.4.0 Wed Apr 17 2019
+
+- [#6445](https://github.com/MetaMask/metamask-extension/pull/6445): * Move send to pages/
+- [#6470](https://github.com/MetaMask/metamask-extension/pull/6470): update publishing.md with dev diagram
+- [#6403](https://github.com/MetaMask/metamask-extension/pull/6403): Update to eth-method-registry@1.2.0
+- [#6468](https://github.com/MetaMask/metamask-extension/pull/6468): Fix switcher height when Custom RPC is selected or loading
+- [#6459](https://github.com/MetaMask/metamask-extension/pull/6459): feature: add Goerli support
+- [#6444](https://github.com/MetaMask/metamask-extension/pull/6444): Fixes #6321 & #6421 - Add Localhost 8545 for network dropdown names
+- [#6454](https://github.com/MetaMask/metamask-extension/pull/6454): Bump eth-contract-metadata
+- [#6448](https://github.com/MetaMask/metamask-extension/pull/6448): Remove unneeded array cloning in getSendToAccounts selector
+- [#6056](https://github.com/MetaMask/metamask-extension/pull/6056): repeated getSelectedAddress() func send.selectors.js removed
+- [#6422](https://github.com/MetaMask/metamask-extension/pull/6422): Added Chrome limited site access solution doc
+- [#6424](https://github.com/MetaMask/metamask-extension/pull/6424): feature: switch token pricing to CoinGecko API
+- [#6428](https://github.com/MetaMask/metamask-extension/pull/6428): Don't inject web3 on sharefile.com
+- [#6417](https://github.com/MetaMask/metamask-extension/pull/6417): Metrics updates
+- [#6420](https://github.com/MetaMask/metamask-extension/pull/6420): Fix links to MetamaskInpageProvider in porting_to_new_environment.md
+- [#6362](https://github.com/MetaMask/metamask-extension/pull/6362): Remove broken image walkthrough from metamaskbot comment
+- [#6401](https://github.com/MetaMask/metamask-extension/pull/6401): metamask-controller - use improved provider-as-middleware utility
+- [#6406](https://github.com/MetaMask/metamask-extension/pull/6406): remove user actions controller
+- [#6399](https://github.com/MetaMask/metamask-extension/pull/6399): doc - publishing - typo fix
+- [#6396](https://github.com/MetaMask/metamask-extension/pull/6396): pin eth-contract-metadata to last commit hash
+- [#6397](https://github.com/MetaMask/metamask-extension/pull/6397): Change coinbase to wyre
+- [#6395](https://github.com/MetaMask/metamask-extension/pull/6395): bump ledger and trezor keyring
+- [#6389](https://github.com/MetaMask/metamask-extension/pull/6389): Fix display of gas chart on Ethereum networks
+- [#6382](https://github.com/MetaMask/metamask-extension/pull/6382): Remove NoticeController
+
+## 6.3.2 Mon Apr 8 2019
+
+- [#6389](https://github.com/MetaMask/metamask-extension/pull/6389): Fix display of gas chart on ethereum networks
+- [#6395](https://github.com/MetaMask/metamask-extension/pull/6395): Fixes for signing methods for ledger and trezor devices
+- [#6397](https://github.com/MetaMask/metamask-extension/pull/6397): Fix Wyre link
+
+## 6.3.1 Fri Mar 26 2019
+
+- [#6353](https://github.com/MetaMask/metamask-extension/pull/6353): Open restore vault in full screen when clicked from popup
+- [#6372](https://github.com/MetaMask/metamask-extension/pull/6372): Prevents duplicates of account addresses from showing in send screen "To" dropdown
+- [#6374](https://github.com/MetaMask/metamask-extension/pull/6374): Ensures users are placed on correct confirm screens even when registry service fails
+
+## 6.3.0 Mon Mar 25 2019
+
+- [#6300](https://github.com/MetaMask/metamask-extension/pull/6300): Gas chart hidden on custom networks
+- [#6301](https://github.com/MetaMask/metamask-extension/pull/6301): Fix gas fee in the submitted step of the transaction details activity log
+- [#6302](https://github.com/MetaMask/metamask-extension/pull/6302): Replaces the coinbase link in the deposit modal with one for wyre
+- [#6307](https://github.com/MetaMask/metamask-extension/pull/6307): Centre the notification in the current window
+- [#6312](https://github.com/MetaMask/metamask-extension/pull/6312): Fixes popups not showing when screen size is odd
+- [#6326](https://github.com/MetaMask/metamask-extension/pull/6326): Fix oversized loading overlay on gas customization modal.
+- [#6330](https://github.com/MetaMask/metamask-extension/pull/6330): Stop reloading dapps on network change allowing dapps to decide if it should refresh or not
+- [#6332](https://github.com/MetaMask/metamask-extension/pull/6332): Enable mobile sync
+- [#6333](https://github.com/MetaMask/metamask-extension/pull/6333): Redesign of the settings screen
+- [#6340](https://github.com/MetaMask/metamask-extension/pull/6340): Cancel transactions and signature requests on the closing of notification windows
+- [#6341](https://github.com/MetaMask/metamask-extension/pull/6341): Disable transaction "Cancel" button when balance is insufficient
+- [#6347](https://github.com/MetaMask/metamask-extension/pull/6347): Enable privacy mode by default for first time users
+
+## 6.2.2 Tue Mar 12 2019
+
+- [#6271](https://github.com/MetaMask/metamask-extension/pull/6271): Centre all notification popups
+- [#6268](https://github.com/MetaMask/metamask-extension/pull/6268): Improve Korean translations
+- [#6279](https://github.com/MetaMask/metamask-extension/pull/6279): Nonmultiple notifications for batch txs
+- [#6280](https://github.com/MetaMask/metamask-extension/pull/6280): No longer check network when validating checksum addresses
+
+## 6.2.1 Wed Mar 06 2019
+
 ## 6.2.0 Tue Mar 05 2019
 - [#6192](https://github.com/MetaMask/metamask-extension/pull/6192): Improves design and UX of onboarding flow
 - [#6195](https://github.com/MetaMask/metamask-extension/pull/6195): Fixes gas estimation when sending to contracts
