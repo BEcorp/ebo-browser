@@ -68,7 +68,7 @@ class ExtensionPlatform {
     const nonce = parseInt(txMeta.txParams.nonce, 16)
 
     const title = 'Confirmed transaction'
-    const message = `Transaction ${nonce} confirmed! View on EtherScan`
+    const message = `Transaction ${nonce} confirmed! View on Etherblockchain.io`
     this._showNotification(title, message, url)
   }
 
@@ -98,9 +98,9 @@ class ExtensionPlatform {
   }
 
   _viewOnEtherScan (txId) {
-    if (txId.startsWith('http://')) {
+    // if (txId.startsWith('http://')) {
       extension.tabs.create({ url: txId })
-    }
+    // }
   }
 }
 
