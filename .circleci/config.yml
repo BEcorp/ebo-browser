@@ -262,7 +262,7 @@ jobs:
           name: github gh-pages docs publish
           command: >
             git config --global user.name "metamaskbot" &&
-            git config --global user.email "admin@ebo.io" &&
+            git config --global user.email "support@ebo.io" &&
             npm run publish-docs
 
   test-unit:

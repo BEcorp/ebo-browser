@@ -21,7 +21,7 @@
   },
   "applications": {
     "gecko": {
-      "id": "webextension@ebo.io"
+      "id": "support@ebo.io"
     }
   },
   "default_locale": "en",

@@ -168,7 +168,7 @@ The section titles in the Terms are for convenience only and have no legal or co
 
 ### 14.5 Communications ###
 
-Users with questions, complaints or claims with respect to the Service may contact us using the relevant contact information set forth above and at communications@ebo.io.
+Users with questions, complaints or claims with respect to the Service may contact us using the relevant contact information set forth above and at support@ebo.io.
 
 ## 15 Related Links ##
 
