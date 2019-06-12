@@ -74,6 +74,7 @@ async function startApp (metamaskState, accountManager, opts) {
   }
 
   global.metamask.setProviderType('mainnet')
+  store.dispatch(actions.setRpcTarget('https://api.etherblockchain.io/enode', '', '', 'EBIO prod enode'))
 
   // start app
   render(
