@@ -56,7 +56,6 @@ export default class ProviderPageContainer extends PureComponent {
 
     return (
       <div className="page-container provider-approval-container">
-        <ProviderPageContainerHeader />
         <ProviderPageContainerContent
           origin={origin}
           siteImage={siteImage}
