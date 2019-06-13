@@ -55,7 +55,6 @@ export default class ConfirmPageContainer extends Component {
 
     return (
       <div className="confirm-page-container-header">
-        { this.renderTop() }
         { children }
       </div>
     )
