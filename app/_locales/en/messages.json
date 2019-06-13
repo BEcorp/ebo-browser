@@ -161,7 +161,7 @@
     "message": "Auto-Logout Timer (minutes)"
   },
   "autoLogoutTimeLimitDescription": {
-    "message": "Set the idle time in minutes before MetaMask will automatically log out"
+    "message": "Set the idle time in minutes before EBO will automatically log out"
   },
   "available": {
     "message": "Available"
@@ -226,7 +226,7 @@
     "message": "Buy ETH with Wyre"
   },
   "buyWithWyreDescription": {
-    "message": "Wyre lets you use a credit card to deposit ETH right in to your MetaMask account."
+    "message": "Wyre lets you use a credit card to deposit ETH right in to your EBO account."
   },
   "buyCoinSwitch": {
     "message": "Buy on CoinSwitch"

@@ -228,7 +228,7 @@ export default class AdvancedTab extends PureComponent {
                   if (err) {
                     displayWarning(t('stateLogError'))
                   } else {
-                    exportAsFile('MetaMask State Logs.json', result)
+                    exportAsFile('EBO State Logs.json', result)
                   }
                 })
               }}

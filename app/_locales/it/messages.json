@@ -161,7 +161,7 @@
     "message": "Timer di Logout Automatico (minuti)"
   },
   "autoLogoutTimeLimitDescription": {
-    "message": "Imposta il tempo di inattività dopo il quale MetaMask fa il log out automaticamente"
+    "message": "Imposta il tempo di inattività dopo il quale EBO fa il log out automaticamente"
   },
   "available": {
     "message": "Disponibile"
@@ -226,7 +226,7 @@
     "message": "Compra ETH con Wyre"
   },
   "buyWithWyreDescription": {
-    "message": "Wyre ti consente di usare la carta di credito per depositare ETH direttamente nel tuo account MetaMask."
+    "message": "Wyre ti consente di usare la carta di credito per depositare ETH direttamente nel tuo account EBO."
   },
   "buyCoinSwitch": {
     "message": "Compra su CoinSwitch"
@@ -546,7 +546,7 @@
     "message": "Non condividerla mai con nessuno."
   },
   "endOfFlowMessage5": {
-    "message": "Stai attento al phishing! MetaMask non ti chiederà mai spontaneamente la tua frase seed."
+    "message": "Stai attento al phishing! EBO non ti chiederà mai spontaneamente la tua frase seed."
   },
   "endOfFlowMessage6": {
     "message": "Se vorrai fare nuovamente un backup della frase, la puoi trovare in Impostazioni -> Sicurezza & Privacy."
@@ -555,7 +555,7 @@
     "message": "Se hai delle domande o vedi delle attività sospette, manda una mail a support@metamask.io."
   },
   "endOfFlowMessage8": {
-    "message": "MetaMask non può recuperare la tua frase seed. Impara di più."
+    "message": "EBO non può recuperare la tua frase seed. Impara di più."
   },
   "ensNameNotFound": {
     "message": "Nome ENS non trovato"
@@ -988,7 +988,7 @@
     "message": "Nuova Rete"
   },
   "newToMetaMask": {
-    "message": "Nuovo a MetaMask?"
+    "message": "Nuovo a EBO?"
   },
   "noAlreadyHaveSeed": {
     "message": "No, ho già una frase seed"
@@ -997,7 +997,7 @@
     "message": "Proteggi le tue chiavi!"
   },
   "protectYourKeysMessage1": {
-    "message": "Stai attento con la tua frase seed - ci sono stati report di siti web che hanno tentato di imitare MetaMask. MetaMask non ti chiederà mai la tua frase seed!"
+    "message": "Stai attento con la tua frase seed - ci sono stati report di siti web che hanno tentato di imitare EBO. EBO non ti chiederà mai la tua frase seed!"
   },
   "protectYourKeysMessage2": {
     "message": "Tieni la tua frase al sicuro. Se vedi qualcosa di sospetto, o non sei sicuro di un sito web, manda una mail a support@metamask.io"
@@ -1101,7 +1101,7 @@
     "message": "Participa in MetaMetrics"
   },
   "participateInMetaMetricsDescription": {
-    "message": "Participa in MetaMetrics per aiutarci a rendere MetaMask migliore"
+    "message": "Participa in MetaMetrics per aiutarci a rendere EBO migliore"
   },
   "password": {
     "message": "Password"
@@ -1530,19 +1530,19 @@
     "message": "Sincronizza con dispositivo mobile"
   },
   "syncWithMobileDesc": {
-    "message": "Puoi sincronizzare i tuoi account e le tue informazioni con il tuo dispositivo mobile. Apri l'app di MetaMask, vai su \"Impostazioni\" e tocca \"Sincronizza da Estensione sul Browser\""
+    "message": "Puoi sincronizzare i tuoi account e le tue informazioni con il tuo dispositivo mobile. Apri l'app di EBO, vai su \"Impostazioni\" e tocca \"Sincronizza da Estensione sul Browser\""
   },
   "syncWithMobileDescNewUsers": {
-    "message": "Se hai appena aperto l'app di MetaMask per la prima volta, segui i passaggi sul tuo telefono."
+    "message": "Se hai appena aperto l'app di EBO per la prima volta, segui i passaggi sul tuo telefono."
   },
   "syncWithMobileScanThisCode": {
-    "message": "Scansiona questo codice con l'app di MetaMask"
+    "message": "Scansiona questo codice con l'app di EBO"
   },
   "syncWithMobileBeCareful": {
     "message": "Assicurati che nessun'altro stia guardando al tuo schermo quando scansioni questo codice"
   },
   "syncWithMobileComplete": {
-    "message": "I tuoi dati sono stati sincronizzati con successo. Goditi l'app di MetaMask!"
+    "message": "I tuoi dati sono stati sincronizzati con successo. Goditi l'app di EBO!"
   },
   "takesTooLong": {
     "message": "Ci sta mettendo troppo?"
@@ -1800,7 +1800,7 @@
     "message": "Vedrai questa immagine ogni volta che dovrai confermare una transazione."
   },
   "yourUniqueAccountImageDescription3": {
-    "message": "MetaMask non ti chiederà mai la tua frase seed!"
+    "message": "EBO non ti chiederà mai la tua frase seed!"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Prezzo del gas maggiore di zero"
