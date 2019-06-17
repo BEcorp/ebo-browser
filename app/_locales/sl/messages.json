@@ -654,7 +654,7 @@
     "message": "Uvoz računa"
   },
   "importAccountMsg": {
-    "message": " Uvoženi računa ne bodo povezani s prvotnim seed phase. Preberite več o uvoženih računih "
+    "message": " Uvoženi računa ne bodo povezani s prvotnim seed phase."
   },
   "importAnAccount": {
     "message": "IUvozi račun"

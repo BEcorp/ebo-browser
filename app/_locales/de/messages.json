@@ -423,7 +423,7 @@
     "message": "Account importieren"
   },
   "importAccountMsg": {
-    "message": " Importierte Accounts werden nicht mit der Seed-Wörterfolge  deines ursprünglichen EBO Accounts verknüpft. Erfahre mehr über importierte Accounts."
+    "message": " Importierte Accounts werden nicht mit der Seed-Wörterfolge  deines ursprünglichen EBO Accounts verknüpft."
   },
   "importAnAccount": {
     "message": "Einen Account importieren"

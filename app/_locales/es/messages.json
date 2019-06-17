@@ -442,7 +442,7 @@
     "description": "Estado que muestra que una cuenta ha sido completamente cargada en el llavero"
   },
   "importAccountMsg": {
-    "message": "Las cuentas importadas no serán asociadas con tu cuenta original creada con tu EBO. Aprende más acerca de importar cuentas."
+    "message": "Las cuentas importadas no serán asociadas con tu cuenta original creada con tu EBO."
   },
   "info": {
     "message": "Información"

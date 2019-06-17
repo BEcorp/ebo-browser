@@ -757,7 +757,7 @@
     "message": "Importa Account"
   },
   "importAccountMsg": {
-    "message": " Gli account importati non saranno associati alla frase seed originariamente creata con EBO. Scopri di più sugli account importati "
+    "message": " Gli account importati non saranno associati alla frase seed originariamente creata con EBO."
   },
   "importAccountSeedPhrase": {
     "message": "Importa un Account con una Frase Seed"

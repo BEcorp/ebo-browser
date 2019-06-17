@@ -417,7 +417,7 @@
     "message": "Import účtu"
   },
   "importAccountMsg": {
-    "message": "Importované účty nebudou spojeny s vaší původní EBOovou klíčovou frází. Zjistěte více o importovaných účtech "
+    "message": "Importované účty nebudou spojeny s vaší původní EBOovou klíčovou frází."
   },
   "importAnAccount": {
     "message": "Import účtu"

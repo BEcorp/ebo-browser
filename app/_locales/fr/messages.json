@@ -546,7 +546,7 @@
     "message": "Importer un compte"
   },
   "importAccountMsg": {
-    "message": " Les comptes importés ne seront pas associés avec votre phrase Seed que vous avez créé au départ dans EBO. Obtenir plus d'information sur les comptes importés"
+    "message": " Les comptes importés ne seront pas associés avec votre phrase Seed que vous avez créé au départ dans EBO."
   },
   "importAnAccount": {
     "message": "Importer un compte"
