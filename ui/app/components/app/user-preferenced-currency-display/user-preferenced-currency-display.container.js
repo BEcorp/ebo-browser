@@ -47,11 +47,11 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     prefix = propsPrefix || fiatPrefix
   }
 
-  if (!isMainnet && !showFiatInTestnets) {
-    currency = nativeCurrency || ETH
-    numberOfDecimals = propsNumberOfDecimals || ethNumberOfDecimals || 6
-    prefix = propsPrefix || ethPrefix
-  }
+  // if (!isMainnet && !showFiatInTestnets) {
+  //   currency = nativeCurrency || ETH
+  //   numberOfDecimals = propsNumberOfDecimals || ethNumberOfDecimals || 6
+  //   prefix = propsPrefix || ethPrefix
+  // }
 
   return {
     ...restStateProps,

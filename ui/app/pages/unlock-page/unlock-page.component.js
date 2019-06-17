@@ -70,7 +70,7 @@ export default class UnlockPage extends Component {
       })
 
       if (newState.participateInMetaMetrics === null || newState.participateInMetaMetrics === undefined) {
-        showOptInModal()
+        // showOptInModal()
       }
     } catch ({ message }) {
       if (message === 'Incorrect password') {

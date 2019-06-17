@@ -52,7 +52,7 @@ class PreferencesController {
       seedWords: null,
       forgottenPassword: false,
       preferences: {
-        useNativeCurrencyAsPrimaryCurrency: true,
+        useNativeCurrencyAsPrimaryCurrency: false,
       },
       completedOnboarding: false,
       completedUiMigration: true,

@@ -49,7 +49,7 @@ function reduceMetamask (state, action) {
     currentLocale: '',
     preferences: {
       useNativeCurrencyAsPrimaryCurrency: true,
-      showFiatInTestnets: false,
+      showFiatInTestnets: true,
     },
     firstTimeFlowType: null,
     completedOnboarding: false,

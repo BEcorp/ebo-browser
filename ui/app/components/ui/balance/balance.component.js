@@ -23,7 +23,8 @@ export default class Balance extends PureComponent {
   }
 
   renderBalance () {
-    const { account, nativeCurrency, needsParse, showFiat } = this.props
+    const { account, nativeCurrency, needsParse } = this.props
+    const showFiat = true
     const balanceValue = account && account.balance
     const formattedBalance = balanceValue
       ? formatBalance(balanceValue, 6, needsParse, nativeCurrency)
