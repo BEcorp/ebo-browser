@@ -137,11 +137,6 @@ export default class FirstTimeFlow extends PureComponent {
           />
           <Route
             exact
-            path={INITIALIZE_METAMETRICS_OPT_IN_ROUTE}
-            component={MetaMetricsOptInScreen}
-          />
-          <Route
-            exact
             path="*"
             component={FirstTimeFlowSwitch}
           />

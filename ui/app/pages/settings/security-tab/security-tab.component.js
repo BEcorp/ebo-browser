@@ -184,7 +184,6 @@ export default class SecurityTab extends PureComponent {
         { this.renderPrivacyOptIn() }
         { this.renderClearApproval() }
         { this.renderSeedWords() }
-        { this.renderMetaMetricsOptIn() }
       </div>
     )
   }
