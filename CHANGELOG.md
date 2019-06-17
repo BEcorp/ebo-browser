@@ -359,7 +359,7 @@
 - [#4524](https://github.com/MetaMask/metamask-extension/pull/4524): Fix for Brave i18n getAcceptLanguages.
 - [#4557](https://github.com/MetaMask/metamask-extension/pull/4557): Fix bug where nonce mutex was never released.
 - [#4566](https://github.com/MetaMask/metamask-extension/pull/4566): Add phishing notice.
-- [#4591](https://github.com/MetaMask/metamask-extension/pull/4591): Allow Copying Token Addresses and link to Token on Etherblockchain.io.
+- [#4591](https://github.com/MetaMask/metamask-extension/pull/4591): Allow Copying Token Addresses and link to Token on EtherBlockchain.io.
 
 ## 4.7.4 Tue Jun 05 2018
 
@@ -691,7 +691,7 @@ rollback to 3.10.0 due to bug
 - Fix bug with network version serialization over synchronous RPC
 - Add EBO version to state logs.
 - Add the total amount of tokens when multiple tokens are added under the token list
-- Use HTTPS links for Etherblockchain.io.
+- Use HTTPS links for EtherBlockchain.io.
 - Update Support center link to new one with HTTPS.
 - Make web3 deprecation notice more useful by linking to a descriptive article.
 
@@ -1151,7 +1151,7 @@ popup notification opens up.
 
 - Added static image as fallback for when WebGL isn't supported.
 - Transaction history now has a hard limit.
-- Added info link on account screen that visits Etherblockchain.io.
+- Added info link on account screen that visits EtherBlockchain.io.
 - Fixed bug where a message signing request would be lost if the vault was locked.
 - Added shortcut to open EBO (Ctrl+Alt+M or Cmd+Opt/Alt+M)
 - Prevent API calls in tests.
@@ -1373,7 +1373,7 @@ popup notification opens up.
 
 - Added ability to send ether.
 - Fixed bugs related to using Javascript numbers, which lacked appropriate precision.
-- Replaced Etherblockchain.io main-net provider with our own production RPC.
+- Replaced EtherBlockchain.io main-net provider with our own production RPC.
 
 ## 1.4.0 2016-04-08
 

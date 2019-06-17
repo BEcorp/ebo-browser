@@ -464,7 +464,7 @@
     "message": "ETH"
   },
   "etherblockchainView": {
-    "message": "在 Etherblockchain.io 上查看帳戶"
+    "message": "在 EtherBlockchain.io 上查看帳戶"
   },
   "estimatedProcessingTimes": {
     "message": "預估處理時間"
@@ -1540,7 +1540,7 @@
     "message": "查看帳戶"
   },
   "viewOnEtherblockchain": {
-    "message": "在 Etherblockchain.io 上瀏覽"
+    "message": "在 EtherBlockchain.io 上瀏覽"
   },
   "visitWebSite": {
     "message": "造訪我們的網站"

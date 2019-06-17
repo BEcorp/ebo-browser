@@ -407,7 +407,7 @@
     "message": "Entrez votre mot de passe pour continuer"
   },
   "etherblockchainView": {
-    "message": "Afficher le compte sur Etherblockchain.io"
+    "message": "Afficher le compte sur EtherBlockchain.io"
   },
   "exchangeRate": {
     "message": "Taux de change"
@@ -1301,7 +1301,7 @@
     "message": "Afficher le compte"
   },
   "viewOnEtherblockchain": {
-    "message": "Voir sur Etherblockchain.io"
+    "message": "Voir sur EtherBlockchain.io"
   },
   "visitWebSite": {
     "message": "Visitez notre site web"

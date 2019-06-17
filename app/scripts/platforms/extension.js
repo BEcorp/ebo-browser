@@ -68,7 +68,7 @@ class ExtensionPlatform {
     const nonce = parseInt(txMeta.txParams.nonce, 16)
 
     const title = 'Confirmed transaction'
-    const message = `Transaction ${nonce} confirmed! View on Etherblockchain.io`
+    const message = `Transaction ${nonce} confirmed! View on EtherBlockchain.io`
     this._showNotification(title, message, url)
   }
 

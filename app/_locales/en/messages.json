@@ -573,7 +573,7 @@
     "message": "ETH"
   },
   "etherblockchainView": {
-    "message": "View account on Etherblockchain.io"
+    "message": "View account on EtherBlockchain.io"
   },
   "estimatedProcessingTimes": {
     "message": "Estimated Processing Times"
@@ -1749,7 +1749,7 @@
     "message": "View on Etherscan"
   },
   "viewOnEtherblockchain": {
-    "message": "View on Etherblockchain.io"
+    "message": "View on EtherBlockchain.io"
   },
   "viewNetworkInfo": {
     "message": "View Network Info"

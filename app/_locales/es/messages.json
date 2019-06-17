@@ -326,7 +326,7 @@
     "message": "Ingresa tu contraseña para confirmar"
   },
   "etherblockchainView": {
-    "message": "Ver la cuenta en Etherblockchain.io"
+    "message": "Ver la cuenta en EtherBlockchain.io"
   },
   "exchangeRate": {
     "message": "Tipo de cambio"
@@ -1493,7 +1493,7 @@
     "message": "Actualizado $1"
   },
   "viewOnEtherblockchain": {
-    "message": "Ver en Etherblockchain.io"
+    "message": "Ver en EtherBlockchain.io"
   },
   "welcomeBack": {
     "message": "¡Bienvenido de nuevo!"

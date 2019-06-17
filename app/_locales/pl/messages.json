@@ -335,7 +335,7 @@
     "message": "Hasła są niezgodne"
   },
   "etherblockchainView": {
-    "message": "Zobacz konto na Etherblockchain.io"
+    "message": "Zobacz konto na EtherBlockchain.io"
   },
   "exchangeRate": {
     "message": "Kurs wymiany"
@@ -1190,7 +1190,7 @@
     "message": "Zobacz konto"
   },
   "viewOnEtherblockchain": {
-    "message": "Zobacz na Etherblockchain.io"
+    "message": "Zobacz na EtherBlockchain.io"
   },
   "visitWebSite": {
     "message": "Odwiedź naszą stronę"

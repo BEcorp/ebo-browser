@@ -110,7 +110,7 @@ AccountDetailsDropdown.prototype.render = function () {
           eventOpts: {
             category: 'Navigation',
             action: 'Account Options',
-            name: 'Clicked View on Etherblockchain.io',
+            name: 'Clicked View on EtherBlockchain.io',
           },
         })
         viewOnEtherblockchain(address, network)

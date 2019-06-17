@@ -41,7 +41,7 @@ export default class TransactionListItemDetails extends PureComponent {
       eventOpts: {
         category: 'Navigation',
         action: 'Activity Log',
-        name: 'Clicked "View on Etherblockchain.io"',
+        name: 'Clicked "View on EtherBlockchain.io"',
       },
     })
 
