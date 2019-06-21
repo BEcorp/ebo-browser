@@ -1,7 +1,4 @@
-const Component = require('react').Component
-const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
-const inherits = require('util').inherits
 const connect = require('react-redux').connect
 const actions = require('../../../store/actions')
 const AccountModalContainer = require('./account-modal-container')
@@ -9,8 +6,88 @@ const { getSelectedIdentity, getRpcPrefsForCurrentProvider } = require('../../..
 const genAccountLink = require('../../../../lib/account-link.js')
 const QrView = require('../../ui/qr-code')
 const EditableLabel = require('../../ui/editable-label')
+const Tooltip = require('../../ui/tooltip-v2.js').default
 
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import copyToClipboard from 'copy-to-clipboard'
 import Button from '../../ui/button'
+
+class AccountDetailsModal extends Component {
+  state = {
+    copied: false,
+  }
+
+  static contextTypes = {
+    t: PropTypes.func,
+  }
+
+  render () {
+    const {
+      selectedIdentity,
+      network,
+      showExportPrivateKeyModal,
+      setAccountLabel,
+      keyrings,
+      rpcPrefs,
+    } = this.props
+    const { name, address } = selectedIdentity
+
+    const keyring = keyrings.find((kr) => {
+      return kr.accounts.includes(address)
+    })
+
+    let exportPrivateKeyFeatureEnabled = true
+    // This feature is disabled for hardware wallets
+    if (keyring && keyring.type.search('Hardware') !== -1) {
+      exportPrivateKeyFeatureEnabled = false
+    }
+
+    console.log('chuj')
+    console.log(this.state.copied)
+
+    return h(AccountModalContainer, {}, [
+        h(EditableLabel, {
+          className: 'account-modal__name',
+          defaultValue: name,
+          onSubmit: label => setAccountLabel(address, label),
+        }),
+
+        h(QrView, {
+          Qr: {
+            data: address,
+            network: network,
+          },
+        }),
+
+        h('div.account-modal-divider'),
+
+        exportPrivateKeyFeatureEnabled ? h(Tooltip, {
+          position: 'bottom',
+          title: this.state.copied ? this.context.t('copiedExclamation') : this.context.t('copyToClipboard'),
+        }, [
+          h(Button, {
+            type: 'secondary',
+            className: 'account-modal__button',
+            onClick: () => {
+              console.log('chuj 2')
+              this.setState({ copied: true })
+              setTimeout(() => this.setState({ copied: false }), 3000)
+              copyToClipboard(address)
+            },
+          }, this.context.t('exportPrivateKey')),
+        ]) : null,
+
+        h(Button, {
+          type: 'secondary',
+          className: 'account-modal__button',
+          onClick: () => global.platform.openWindow({ url: genAccountLink(address, network) }),
+        }, this.context.t('etherblockchainView')),
+
+    ])
+  }
+}
+
 
 function mapStateToProps (state) {
   return {
@@ -33,71 +110,4 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-inherits(AccountDetailsModal, Component)
-function AccountDetailsModal () {
-  Component.call(this)
-}
-
-AccountDetailsModal.contextTypes = {
-  t: PropTypes.func,
-}
-
 module.exports = connect(mapStateToProps, mapDispatchToProps)(AccountDetailsModal)
-
-
-// Not yet pixel perfect todos:
-  // fonts of qr-header
-
-AccountDetailsModal.prototype.render = function () {
-  const {
-    selectedIdentity,
-    network,
-    showExportPrivateKeyModal,
-    setAccountLabel,
-    keyrings,
-    rpcPrefs,
-  } = this.props
-  const { name, address } = selectedIdentity
-
-  const keyring = keyrings.find((kr) => {
-    return kr.accounts.includes(address)
-  })
-
-  let exportPrivateKeyFeatureEnabled = true
-  // This feature is disabled for hardware wallets
-  if (keyring && keyring.type.search('Hardware') !== -1) {
-    exportPrivateKeyFeatureEnabled = false
-  }
-
-  return h(AccountModalContainer, {}, [
-      h(EditableLabel, {
-        className: 'account-modal__name',
-        defaultValue: name,
-        onSubmit: label => setAccountLabel(address, label),
-      }),
-
-      h(QrView, {
-        Qr: {
-          data: address,
-          network: network,
-        },
-      }),
-
-      h('div.account-modal-divider'),
-
-      h(Button, {
-        type: 'secondary',
-        className: 'account-modal__button',
-        onClick: () => global.platform.openWindow({ url: genAccountLink(address, network) }),
-      }, this.context.t('etherblockchainView')),
-
-      // Holding on redesign for Export Private Key functionality
-
-      exportPrivateKeyFeatureEnabled ? h(Button, {
-        type: 'secondary',
-        className: 'account-modal__button',
-        onClick: () => showExportPrivateKeyModal(),
-      }, this.context.t('exportPrivateKey')) : null,
-
-  ])
-}

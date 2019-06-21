@@ -585,7 +585,7 @@
     "message": "Expand View"
   },
   "exportPrivateKey": {
-    "message": "Export Private Key"
+    "message": "Share"
   },
   "exportPrivateKeyWarning": {
     "message": "Export private keys at your own risk."
