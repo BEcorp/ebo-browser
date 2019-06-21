@@ -73,11 +73,11 @@ class ExtensionPlatform {
   }
 
   _showFailedTransaction (txMeta, errorMessage) {
-
+    const url = explorerLink(txMeta.hash, parseInt(txMeta.metamaskNetworkId))
     const nonce = parseInt(txMeta.txParams.nonce, 16)
     const title = 'Failed transaction'
     const message = `Transaction ${nonce} failed! ${errorMessage || txMeta.err.message}`
-    this._showNotification(title, message)
+    this._showNotification(title, message, url)
   }
 
   _showNotification (title, message, url) {
