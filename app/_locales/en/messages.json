@@ -458,7 +458,7 @@
     "message": "Your DEN is your password-encrypted storage within EBO."
   },
   "deposit": {
-    "message": "Deposit"
+    "message": "Receive"
   },
   "depositBTC": {
     "message": "Deposit your BTC to the address below:"
