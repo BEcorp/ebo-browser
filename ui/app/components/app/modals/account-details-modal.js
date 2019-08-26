@@ -43,9 +43,6 @@ class AccountDetailsModal extends Component {
       exportPrivateKeyFeatureEnabled = false
     }
 
-    console.log('chuj')
-    console.log(this.state.copied)
-
     return h(AccountModalContainer, {}, [
         h(EditableLabel, {
           className: 'account-modal__name',
@@ -70,7 +67,6 @@ class AccountDetailsModal extends Component {
             type: 'secondary',
             className: 'account-modal__button',
             onClick: () => {
-              console.log('chuj 2')
               this.setState({ copied: true })
               setTimeout(() => this.setState({ copied: false }), 3000)
               copyToClipboard(address)

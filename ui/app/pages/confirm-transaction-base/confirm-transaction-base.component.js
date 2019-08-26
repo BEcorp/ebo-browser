@@ -502,6 +502,8 @@ export default class ConfirmTransactionBase extends Component {
       },
     })
 
+    global.gasUpdate()
+
     if (getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_NOTIFICATION) {
       window.onbeforeunload = () => {
         metricsEvent({

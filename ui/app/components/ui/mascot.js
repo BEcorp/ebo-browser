@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 
 export default class Mascot extends PureComponent {
   static propTypes = {
-    width: PropTypes.number,
-    height: PropTypes.number,
+    width: PropTypes.string,
   }
 
   render () {
-    const {width, height} = this.props
+    const {width} = this.props
 
     return (
       <div id="#metamask-mascot-container">

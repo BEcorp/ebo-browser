@@ -41,7 +41,6 @@ import {
   getGasEstimatesLoadingStatus,
   getCustomGasLimit,
   getCustomGasPrice,
-  getDefaultActiveButtonIndex,
   getEstimatedGasPrices,
   getEstimatedGasTimes,
   getRenderableBasicEstimateData,
@@ -75,6 +74,7 @@ import { addHexPrefix } from 'ethereumjs-util'
 import { getAdjacentGasPrices, extrapolateY } from '../gas-price-chart/gas-price-chart.utils'
 import { getMaxModeOn } from '../../../../pages/send/send-content/send-amount-row/amount-max-button/amount-max-button.selectors'
 import { calcMaxAmount } from '../../../../pages/send/send-content/send-amount-row/amount-max-button/amount-max-button.utils'
+import { loadLocalStorageData } from '../../../../../lib/local-storage-helpers'
 
 const mapStateToProps = (state, ownProps) => {
   const { transaction = {} } = ownProps
@@ -133,7 +133,7 @@ const mapStateToProps = (state, ownProps) => {
     maxModeOn,
     gasPriceButtonGroupProps: {
       buttonDataLoading,
-      defaultActiveButtonIndex: getDefaultActiveButtonIndex(gasButtonInfo, customModalGasPriceInHex),
+      defaultActiveButtonIndex: Number.isInteger(loadLocalStorageData('gasButtonId')) ? loadLocalStorageData('gasButtonId') : 1,
       gasButtonInfo,
     },
     gasChartProps: {

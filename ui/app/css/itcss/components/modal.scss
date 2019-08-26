@@ -18,7 +18,7 @@
 }
 
 .qr-ellip-address, .ellip-address {
-  width: 247px;
+  width: 350px;
   border: none;
   font-family: Gilroy, Roboto;
   font-size: 14px;
@@ -251,11 +251,11 @@
   .ellip-address-wrapper {
     display: flex;
     justify-content: center;
-    border: 1px solid $alto;
+    border: none;
     padding: 5px 10px;
     font-family: Gilroy, Roboto;
     margin-top: 7px;
-    width: 286px;
+    width: 350px;
   }
 
   .account-modal__button {

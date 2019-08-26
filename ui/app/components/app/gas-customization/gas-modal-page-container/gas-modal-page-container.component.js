@@ -53,6 +53,8 @@ export default class GasModalPageContainer extends Component {
       .then(blockTime => {
         this.props.fetchGasEstimates(blockTime)
       })
+
+    global.gasUpdate()
   }
 
   renderBasicTabContent (gasPriceButtonGroupProps) {

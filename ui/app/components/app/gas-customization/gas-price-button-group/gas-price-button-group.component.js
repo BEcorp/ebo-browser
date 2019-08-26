@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ButtonGroup from '../../../ui/button-group'
 import Button from '../../../ui/button'
+import { saveLocalStorageData } from '../../../../../lib/local-storage-helpers'
 
 const GAS_OBJECT_PROPTYPES_SHAPE = {
   label: PropTypes.string,
@@ -55,7 +56,10 @@ export default class GasPriceButtonGroup extends Component {
   }, index) {
     return (
       <Button
-        onClick={() => handleGasPriceSelection(priceInHexWei)}
+        onClick={() => {
+          saveLocalStorageData(index, 'gasButtonId')
+          handleGasPriceSelection(priceInHexWei)
+        }}
         key={`gas-price-button-${index}`}
       >
         {this.renderButtonContent(renderableGasInfo, buttonContentPropsAndFlags)}
@@ -66,12 +70,15 @@ export default class GasPriceButtonGroup extends Component {
   render () {
     const {
       gasButtonInfo,
-      defaultActiveButtonIndex = 1,
+      defaultActiveButtonIndex,
       newActiveButtonIndex,
       noButtonActiveByDefault = false,
       buttonDataLoading,
       ...buttonPropsAndFlags
     } = this.props
+
+    console.log('button')
+    console.log(defaultActiveButtonIndex)
 
     return (
       !buttonDataLoading
