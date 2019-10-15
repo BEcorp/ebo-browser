@@ -90,7 +90,7 @@
     "message": "Dodaj priporočene žetone"
   },
   "addAcquiredTokens": {
-    "message": "Dodaj žetone pridobljene z MetaMask"
+    "message": "Dodaj žetone pridobljene z EBO"
   },
   "advanced": {
     "message": "Napredno"
@@ -109,7 +109,7 @@
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "EBO",
     "description": "The name of the application"
   },
   "approve": {
@@ -201,7 +201,7 @@
     "message": "Vaš brskalnik ni podptrt ..."
   },
   "builtInCalifornia": {
-    "message": "MetaMask je zasnovan in ustvarjen v Kaliforniji."
+    "message": "EBO je zasnovan in ustvarjen v Kaliforniji."
   },
   "buy": {
     "message": "Kupi"
@@ -217,6 +217,12 @@
   },
   "ok": {
     "message": "V redu"
+  },
+  "buyCoinSwitch": {
+    "message": "Kupi na CoinSwitch"
+  },
+  "buyCoinSwitchExplainer": {
+    "message": "CoinSwitch je destinacija na enem mestu za izmenjavo več kot 300 kriptokotovitev po najboljši hitrosti."
   },
   "cancel": {
     "message": "Prekliči"
@@ -305,6 +311,9 @@
   "continueToCoinbase": {
     "message": "Nadaljuj na Coinbase"
   },
+  "continueToCoinSwitch": {
+    "message": "Nadaljuj na CoinSwitch"
+  },
   "contractDeployment": {
     "message": "Ustvarjanje pogodbe"
   },
@@ -391,7 +400,7 @@
     "message": "Privzeto omrežje za transkacije je glavno omrežje."
   },
   "denExplainer": {
-    "message": "Vaš DEN je z geslom šifrirana shramba v MetaMask."
+    "message": "Vaš DEN je z geslom šifrirana shramba v EBO."
   },
   "deposit": {
     "message": "Vplačaj"
@@ -419,7 +428,7 @@
     "message": "Vplačilo z ShapeShift"
   },
   "depositShapeShiftExplainer": {
-    "message": "Če imate druge kriptovalute, lahko Ether vplačate neposredno v MetaMask. Brez računov."
+    "message": "Če imate druge kriptovalute, lahko Ether vplačate neposredno v EBO. Brez računov."
   },
   "details": {
     "message": "Podrobnosti"
@@ -431,7 +440,7 @@
     "message": "Neposredno vplačilo ehera"
   },
   "directDepositEtherExplainer": {
-    "message": "Če že imate Ether, ga lahko najhitreje dobite v MetaMask z neposrednim vplačilom."
+    "message": "Če že imate Ether, ga lahko najhitreje dobite v EBO z neposrednim vplačilom."
   },
   "done": {
     "message": "Končano"
@@ -478,8 +487,8 @@
   "eth": {
     "message": "ETH"
   },
-  "etherscanView": {
-    "message": "Poglej račun na Etherscan"
+  "etherblockchainView": {
+    "message": "Poglej račun na EtherBlockchain.io"
   },
   "estimatedProcessingTimes": {
     "message": "Predviden čas obdelave"
@@ -645,7 +654,7 @@
     "message": "Uvoz računa"
   },
   "importAccountMsg": {
-    "message": " Uvoženi računa ne bodo povezani s prvotnim seed phase. Preberite več o uvoženih računih "
+    "message": " Uvoženi računa ne bodo povezani s prvotnim seed phase."
   },
   "importAnAccount": {
     "message": "IUvozi račun"
@@ -707,7 +716,7 @@
     "description": "format for importing an account"
   },
   "keepTrackTokens": {
-    "message": "Sledite žetonom, ki ste jih pridobili z MetaMask."
+    "message": "Sledite žetonom, ki ste jih pridobili z EBO."
   },
   "kovan": {
     "message": "Testno omrežje Kovan"
@@ -771,7 +780,7 @@
     "message": "Sporočilo"
   },
   "metamaskDescription": {
-    "message": "MetaMask je varen identitetni sklad za Ethereum."
+    "message": "EBO je varen identitetni sklad za Ethereum."
   },
   "metamaskSeedWords": {
     "message": "Seed Words"
@@ -1187,7 +1196,7 @@
     "message": "Izberi račun"
   },
   "selectAnAccountHelp": {
-    "message": "Izberi račun za prikaz v MetaMask"
+    "message": "Izberi račun za prikaz v EBO"
   },
   "selectAHigherGasFee": {
     "message": "Izberite višji gas fee, da pospešite obdelavo vaše transakcije.*"
@@ -1344,7 +1353,7 @@
     "message": "Simbol žetona"
   },
   "tokenWarning1": {
-    "message": "Sledite žetonom, ki ste jih kupili z MetaMask metamask računom. Če ste jih kupili drugje, ne bodo prikazani tukaj."
+    "message": "Sledite žetonom, ki ste jih kupili z EBO metamask računom. Če ste jih kupili drugje, ne bodo prikazani tukaj."
   },
   "total": {
     "message": "Skupno"
@@ -1426,10 +1435,10 @@
     "message": "Poskusi znova"
   },
   "twelveWords": {
-    "message": "Edini način za obnovitev MetaMask računa, je teh 12 besed.\nShranite jih na varno in skrivno mesto."
+    "message": "Edini način za obnovitev EBO računa, je teh 12 besed.\nShranite jih na varno in skrivno mesto."
   },
   "typePassword": {
-    "message": "Vnesite vaše MetaMask geslo"
+    "message": "Vnesite vaše EBO geslo"
   },
   "uiWelcome": {
     "message": "Dobrodošli v nov UI (Beta)"
@@ -1507,8 +1516,8 @@
   "viewAccount": {
     "message": "Poglej račun"
   },
-  "viewOnEtherscan": {
-    "message": "Poglej na Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "Poglej na EtherBlockchain.io"
   },
   "visitWebSite": {
     "message": "Obiščite našo spletno stran"
@@ -1523,7 +1532,7 @@
     "message": "Dobrodošli nazaj!"
   },
   "welcome": {
-    "message": "Dobrodošli v MetaMask"
+    "message": "Dobrodošli v EBO"
   },
   "whatsThis": {
     "message": "Kaj je to?"

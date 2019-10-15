@@ -34,13 +34,15 @@ class PreferencesController {
       assetImages: {},
       tokens: [],
       suggestedTokens: {},
-      useBlockie: false,
+      useBlockie: true,
 
       // WARNING: Do not use feature flags for security-sensitive things.
       // Feature flag toggling is available in the global namespace
       // for convenient testing of pre-release features, and should never
       // perform sensitive operations.
-      featureFlags: {},
+      featureFlags: {
+        privacyMode: true,
+      },
       knownMethodData: {},
       participateInMetaMetrics: null,
       firstTimeFlowType: null,
@@ -50,7 +52,7 @@ class PreferencesController {
       seedWords: null,
       forgottenPassword: false,
       preferences: {
-        useNativeCurrencyAsPrimaryCurrency: true,
+        useNativeCurrencyAsPrimaryCurrency: false,
       },
       completedOnboarding: false,
       completedUiMigration: true,
@@ -113,6 +115,14 @@ class PreferencesController {
       this.store.updateState({ metaMetricsId })
     }
     return metaMetricsId
+  }
+
+  getMetaMetricsId () {
+    return this.store.getState().metaMetricsId
+  }
+
+  getParticipateInMetaMetrics () {
+    return this.store.getState().participateInMetaMetrics
   }
 
   setMetaMetricsSendCount (val) {
@@ -329,7 +339,7 @@ class PreferencesController {
   }
 
   removeSuggestedTokens () {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.store.updateState({ suggestedTokens: {} })
       resolve({})
     })
@@ -386,7 +396,7 @@ class PreferencesController {
     const newEntry = { address, symbol, decimals }
     const tokens = this.store.getState().tokens
     const assetImages = this.getAssetImages()
-    const previousEntry = tokens.find((token, index) => {
+    const previousEntry = tokens.find((token) => {
       return token.address === address
     })
     const previousIndex = tokens.indexOf(previousEntry)
@@ -451,7 +461,7 @@ class PreferencesController {
    *
    */
   setCurrentAccountTab (currentAccountTab) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.store.updateState({ currentAccountTab })
       resolve()
     })
@@ -478,8 +488,8 @@ class PreferencesController {
       rpcList[index] = updatedRpc
       this.store.updateState({ frequentRpcListDetail: rpcList })
     } else {
-      const { rpcUrl, chainId, ticker, nickname } = newRpcDetails
-      return this.addToFrequentRpcList(rpcUrl, chainId, ticker, nickname)
+      const { rpcUrl, chainId, ticker, nickname, rpcPrefs = {} } = newRpcDetails
+      return this.addToFrequentRpcList(rpcUrl, chainId, ticker, nickname, rpcPrefs)
     }
     return Promise.resolve(rpcList)
   }
@@ -493,22 +503,22 @@ class PreferencesController {
    * @returns {Promise<array>} Promise resolving to updated frequentRpcList.
    *
    */
-  addToFrequentRpcList (url, chainId, ticker = 'ETH', nickname = '') {
-    const rpcList = this.getFrequentRpcListDetail()
-    const index = rpcList.findIndex((element) => { return element.rpcUrl === url })
-    if (index !== -1) {
-      rpcList.splice(index, 1)
-    }
-    if (url !== 'http://localhost:8545') {
-      let checkedChainId
-      if (!!chainId && !Number.isNaN(parseInt(chainId))) {
-        checkedChainId = chainId
+    addToFrequentRpcList (url, chainId, ticker = 'ETH', nickname = '', rpcPrefs = {}) {
+      const rpcList = this.getFrequentRpcListDetail()
+      const index = rpcList.findIndex((element) => { return element.rpcUrl === url })
+      if (index !== -1) {
+        rpcList.splice(index, 1)
       }
-      rpcList.push({ rpcUrl: url, chainId: checkedChainId, ticker, nickname })
+      if (url !== 'http://localhost:8545') {
+        let checkedChainId
+        if (!!chainId && !Number.isNaN(parseInt(chainId))) {
+          checkedChainId = chainId
+        }
+        rpcList.push({ rpcUrl: url, chainId: checkedChainId, ticker, nickname, rpcPrefs })
+      }
+      this.store.updateState({ frequentRpcListDetail: rpcList })
+      return Promise.resolve(rpcList)
     }
-    this.store.updateState({ frequentRpcListDetail: rpcList })
-    return Promise.resolve(rpcList)
-  }
 
   /**
    * Removes custom RPC url from state.

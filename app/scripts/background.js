@@ -102,12 +102,10 @@ setupMetamaskMeshMetrics()
  * @property {boolean} isInitialized - Whether the first vault has been created.
  * @property {boolean} isUnlocked - Whether the vault is currently decrypted and accounts are available for selection.
  * @property {boolean} isAccountMenuOpen - Represents whether the main account selection UI is currently displayed.
- * @property {boolean} isMascara - True if the current context is the extensionless MetaMascara project.
  * @property {boolean} isPopup - Returns true if the current view is an externally-triggered notification.
  * @property {string} rpcTarget - DEPRECATED - The URL of the current RPC provider.
  * @property {Object} identities - An object matching lower-case hex addresses to Identity objects with "address" and "name" (nickname) keys.
  * @property {Object} unapprovedTxs - An object mapping transaction hashes to unapproved transactions.
- * @property {boolean} noActiveNotices - False if there are notices the user should confirm before using the application.
  * @property {Array} frequentRpcList - A list of frequently used RPCs, including custom user-provided ones.
  * @property {Array} addressBook - A list of previously sent to addresses.
  * @property {address} selectedTokenAddress - Used to indicate if a token is globally selected. Should be deprecated in favor of UI-centric token selection.
@@ -123,7 +121,7 @@ setupMetamaskMeshMetrics()
  * @property {string} currentLocale - A locale string matching the user's preferred display language.
  * @property {Object} provider - The current selected network provider.
  * @property {string} provider.rpcTarget - The address for the RPC API, if using an RPC API.
- * @property {string} provider.type - An identifier for the type of network selected, allows MetaMask to use custom provider strategies for known networks.
+ * @property {string} provider.type - An identifier for the type of network selected, allows EBO to use custom provider strategies for known networks.
  * @property {string} network - A stringified number of the current network ID.
  * @property {Object} accounts - An object mapping lower-case hex addresses to objects with "balance" and "address" keys, both storing hex string values.
  * @property {hex} currentBlockGasLimit - The most recently seen block gas limit, in a lower case hex prefixed string.
@@ -151,19 +149,19 @@ setupMetamaskMeshMetrics()
 
 /**
  * @typedef VersionedData
- * @property {MetaMaskState} data - The data emitted from MetaMask controller, or used to initialize it.
+ * @property {MetaMaskState} data - The data emitted from EBO controller, or used to initialize it.
  * @property {Number} version - The latest migration version that has been run.
  */
 
 /**
- * Initializes the MetaMask controller, and sets up all platform configuration.
+ * Initializes the EBO controller, and sets up all platform configuration.
  * @returns {Promise} Setup complete.
  */
 async function initialize () {
   const initState = await loadStateFromPersistence()
   const initLangCode = await getFirstPreferredLangCode()
   await setupController(initState, initLangCode)
-  log.debug('MetaMask initialization complete.')
+  log.debug('EBO initialization complete.')
 }
 
 //
@@ -196,14 +194,14 @@ async function loadStateFromPersistence () {
       // we were able to recover (though it might be old)
       versionedData = diskStoreState
       const vaultStructure = getObjStructure(versionedData)
-      sentry.captureMessage('MetaMask - Empty vault found - recovered from diskStore', {
+      sentry.captureMessage('EBO - Empty vault found - recovered from diskStore', {
         // "extra" key is required by Sentry
         extra: { vaultStructure },
       })
     } else {
       // unable to recover, clear state
       versionedData = migrator.generateInitialState(firstTimeState)
-      sentry.captureMessage('MetaMask - Empty vault found - unable to recover')
+      sentry.captureMessage('EBO - Empty vault found - unable to recover')
     }
   }
 
@@ -220,7 +218,7 @@ async function loadStateFromPersistence () {
   // migrate data
   versionedData = await migrator.migrateData(versionedData)
   if (!versionedData) {
-    throw new Error('MetaMask - migrator returned undefined')
+    throw new Error('EBO - migrator returned undefined')
   }
 
   // write to disk
@@ -229,7 +227,7 @@ async function loadStateFromPersistence () {
   } else {
     // throw in setTimeout so as to not block boot
     setTimeout(() => {
-      throw new Error('MetaMask - Localstore not supported')
+      throw new Error('EBO - Localstore not supported')
     })
   }
 
@@ -238,7 +236,7 @@ async function loadStateFromPersistence () {
 }
 
 /**
- * Initializes the MetaMask Controller with any initial state and default language.
+ * Initializes the EBO Controller with any initial state and default language.
  * Configures platform-specific error reporting strategy.
  * Streams emitted state updates to platform-specific storage strategy.
  * Creates platform listeners for new Dapps/Contexts, and sets up their data connections to the controller.
@@ -249,7 +247,7 @@ async function loadStateFromPersistence () {
  */
 function setupController (initState, initLangCode) {
   //
-  // MetaMask Controller
+  // EBO Controller
   //
 
   const controller = new MetamaskController({
@@ -289,7 +287,7 @@ function setupController (initState, initLangCode) {
     storeTransform(versionifyData),
     createStreamSink(persistData),
     (error) => {
-      log.error('MetaMask - Persistence pipeline failed', error)
+      log.error('EBO - Persistence pipeline failed', error)
     }
   )
 
@@ -305,10 +303,10 @@ function setupController (initState, initLangCode) {
 
   async function persistData (state) {
     if (!state) {
-      throw new Error('MetaMask - updated state is missing', state)
+      throw new Error('EBO - updated state is missing', state)
     }
     if (!state.data) {
-      throw new Error('MetaMask - updated state does not have data', state)
+      throw new Error('EBO - updated state does not have data', state)
     }
     if (localStore.isSupported) {
       try {
@@ -348,7 +346,7 @@ function setupController (initState, initLangCode) {
    */
 
   /**
-   * Connects a Port to the MetaMask controller via a multiplexed duplex stream.
+   * Connects a Port to the EBO controller via a multiplexed duplex stream.
    * This method identifies trusted (MetaMask) interfaces, and connects them differently from untrusted (web pages).
    * @param {Port} remotePort - The port provided by a new context.
    */
@@ -448,7 +446,7 @@ function setupController (initState, initLangCode) {
 function triggerUi () {
   extension.tabs.query({ active: true }, tabs => {
     const currentlyActiveMetamaskTab = Boolean(tabs.find(tab => openMetamaskTabsIDs[tab.id]))
-    if (!popupIsOpen && !currentlyActiveMetamaskTab) {
+    if (!popupIsOpen && !currentlyActiveMetamaskTab && !notificationIsOpen) {
       notificationManager.showPopup()
       notificationIsOpen = true
     }

@@ -79,7 +79,7 @@
     "description": "De beschrijving van de applicatie"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "EBO",
     "description": "De naam van de applicatie"
   },
   "attemptingConnect": {
@@ -117,7 +117,7 @@
     "message": "Lenen met Dharma (Beta)"
   },
   "builtInCalifornia": {
-    "message": "MetaMask is ontworpen en gebouwd in Californië."
+    "message": "EBO is ontworpen en gebouwd in Californië."
   },
   "buy": {
     "message": "Kopen"
@@ -127,6 +127,12 @@
   },
   "buyCoinbaseExplainer": {
     "message": "Coinbase is 's werelds populairste manier om Bitcoin, Ethereum en Litecoin te kopen en verkopen."
+  },
+  "buyCoinSwitch": {
+    "message": "Koop op CoinSwitch"
+  },
+  "buyCoinSwitchExplainer": {
+    "message": "CoinSwitch is de one-stop-bestemming om meer dan 300 cryptocurrencies tegen de beste prijs in te wisselen."
   },
   "cancel": {
     "message": "Annuleer"
@@ -154,6 +160,9 @@
   },
   "continueToCoinbase": {
     "message": "Ga verder naar Coinbase"
+  },
+  "continueToCoinSwitch": {
+    "message": "Ga verder naar CoinSwitch"
   },
   "contractDeployment": {
     "message": "Contractimplementatie"
@@ -223,7 +232,7 @@
     "message": "Het standaardnetwerk voor Ether-transacties is Main Net."
   },
   "denExplainer": {
-    "message": "Uw DEN is uw wachtwoord-gecodeerde opslag binnen MetaMask."
+    "message": "Uw DEN is uw wachtwoord-gecodeerde opslag binnen EBO."
   },
   "deposit": {
     "message": "Storting"
@@ -251,7 +260,7 @@
     "message": "Stort met ShapeShift"
   },
   "depositShapeShiftExplainer": {
-    "message": "Als u andere cryptocurrencies bezit, kunt u Ether direct in uw MetaMask-portemonnee ruilen en storten. Geen account nodig."
+    "message": "Als u andere cryptocurrencies bezit, kunt u Ether direct in uw EBO-portemonnee ruilen en storten. Geen account nodig."
   },
   "details": {
     "message": "Details"
@@ -289,8 +298,8 @@
   "enterPasswordConfirm": {
     "message": "Voer uw wachtwoord in om te bevestigen"
   },
-  "etherscanView": {
-    "message": "Bekijk account op Etherscan"
+  "etherblockchainView": {
+    "message": "Bekijk account op EtherBlockchain.io"
   },
   "exchangeRate": {
     "message": "Wisselkoers"
@@ -396,7 +405,7 @@
     "message": "Account importeren"
   },
   "importAccountMsg": {
-    "message": " Geïmporteerde accounts worden niet gekoppeld aan de seedphrase van uw oorspronkelijk gemaakte MetaMask-account. Meer informatie over geïmporteerde accounts"
+    "message": " Geïmporteerde accounts worden niet gekoppeld aan de seedphrase van uw oorspronkelijk gemaakte EBO-account."
   },
   "importAnAccount": {
     "message": "Importeer een account"
@@ -486,7 +495,7 @@
     "message": "Bericht"
   },
   "metamaskDescription": {
-    "message": "MetaMask is een veilige identiteitskluis voor Ethereum."
+    "message": "EBO is een veilige identiteitskluis voor Ethereum."
   },
   "min": {
     "message": "Minimum"
@@ -498,7 +507,7 @@
     "message": "Moet ten minste één token selecteren."
   },
   "needEtherInWallet": {
-    "message": "Om te communiceren met gedecentraliseerde applicaties met MetaMask, heb je Ether nodig in je portemonnee."
+    "message": "Om te communiceren met gedecentraliseerde applicaties met EBO, heb je Ether nodig in je portemonnee."
   },
   "needImportFile": {
     "message": "U moet een bestand selecteren om te importeren.",
@@ -776,7 +785,7 @@
     "message": "Token Symbol"
   },
   "tokenWarning1": {
-    "message": "Houd de tokens bij die je hebt gekocht met je MetaMask-account. Als je tokens met een ander account hebt gekocht, worden die tokens hier niet weergegeven."
+    "message": "Houd de tokens bij die je hebt gekocht met je EBO-account. Als je tokens met een ander account hebt gekocht, worden die tokens hier niet weergegeven."
   },
   "total": {
     "message": "Totaal"
@@ -798,7 +807,7 @@
     "description": "Gevolgd door een link (hier) om tegensaldi te bekijken"
   },
   "twelveWords": {
-    "message": "Deze 12 woorden zijn de enige manier om uw MetaMask-accounts te herstellen.\nBewaar ze ergens veilig en geheim."
+    "message": "Deze 12 woorden zijn de enige manier om uw EBO-accounts te herstellen.\nBewaar ze ergens veilig en geheim."
   },
   "typePassword": {
     "message": "Typ uw wachtwoord"
@@ -807,7 +816,7 @@
     "message": "Welkom bij de nieuwe gebruikersinterface (bèta)"
   },
   "uiWelcomeMessage": {
-    "message": "U gebruikt nu de nieuwe gebruikersinterface van MetaMask. Kijk rond, probeer nieuwe functies uit zoals het verzenden van tokens en laat ons weten of u problemen ondervindt."
+    "message": "U gebruikt nu de nieuwe gebruikersinterface van EBO. Kijk rond, probeer nieuwe functies uit zoals het verzenden van tokens en laat ons weten of u problemen ondervindt."
   },
   "unavailable": {
     "message": "Niet beschikbaar"
@@ -850,7 +859,7 @@
     "message": "Waarschuwing"
   },
   "welcome": {
-    "message": "Welkom bij MetaMask"
+    "message": "Welkom bij EBO"
   },
   "whatsThis": {
     "message": "Wat is dit?"

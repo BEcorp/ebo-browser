@@ -1,10 +1,20 @@
+
+import { addHexPrefix } from 'ethereumjs-util'
+import { loadLocalStorageData } from './lib/local-storage-helpers'
+import { setGasPrice } from './app/store/actions'
+import { fetchBasicGasAndTimeEstimates, setCustomGasPrice, setCustomGasLimit } from './app/ducks/gas/gas.duck.js'
+import { getRenderableEstimateDataForSmallButtonsFromGWEI, getCustomGasLimit, getFastPriceEstimateInHexWEI } from './app/selectors/custom-gas'
+import { getSelectedToken } from './app/pages/send/send.selectors'
+import { submittedPendingTransactionsSelector } from './app/selectors/transactions'
+import { updateGasAndCalculate } from './app/ducks/confirm-transaction/confirm-transaction.duck'
+
 const render = require('react-dom').render
 const h = require('react-hyperscript')
-const Root = require('./app/root')
-const actions = require('./app/actions')
-const configureStore = require('./app/store')
+const Root = require('./app/pages')
+const actions = require('./app/store/actions')
+const configureStore = require('./app/store/store')
 const txHelper = require('./lib/tx-helper')
-const { fetchLocale } = require('./i18n-helper')
+const { fetchLocale } = require('./app/helpers/utils/i18n-helper')
 const log = require('loglevel')
 
 module.exports = launchMetamaskUi
@@ -72,6 +82,42 @@ async function startApp (metamaskState, accountManager, opts) {
       store.dispatch(actions.setProviderType(type))
     },
   }
+
+  global.gasUpdate = async () => {
+    await store.dispatch(fetchBasicGasAndTimeEstimates())
+    const buttonId = Number.isInteger(loadLocalStorageData('gasButtonId')) ? loadLocalStorageData('gasButtonId') : 1
+    const state = store.getState()
+    const gasButtonInfo = getRenderableEstimateDataForSmallButtonsFromGWEI(state)
+    const gasPrice = gasButtonInfo[buttonId].priceInHexWei
+    const { transaction } = state.appState.sidebar.props
+    const { gas: currentGasLimit } = getTxParams(state, transaction && transaction.id)
+    const gasLimit = getCustomGasLimit(state) || currentGasLimit
+    store.dispatch(setGasPrice(addHexPrefix(gasPrice)))
+    store.dispatch(setCustomGasPrice(addHexPrefix(gasPrice)))
+    store.dispatch(setCustomGasLimit(addHexPrefix(gasLimit.toString(16))))
+    store.dispatch(updateGasAndCalculate({ gasLimit, gasPrice }))
+  }
+
+  function getTxParams (state, transactionId) {
+    const { confirmTransaction: { txData }, metamask: { send } } = state
+    const pendingTransactions = submittedPendingTransactionsSelector(state)
+    const pendingTransaction = pendingTransactions.find(({ id }) => id === transactionId)
+    const { txParams: pendingTxParams } = pendingTransaction || {}
+    return txData.txParams || pendingTxParams || {
+      from: send.from,
+      gas: send.gasLimit || '0x5208',
+      gasPrice: send.gasPrice || getFastPriceEstimateInHexWEI(state, true),
+      to: send.to,
+      value: getSelectedToken(state) ? '0x0' : send.amount,
+    }
+  }
+
+  // Switch to our Enode
+  global.metamask.setProviderType('mainnet')
+  store.dispatch(actions.setRpcTarget('https://api.etherblockchain.io/enode/', '', '', 'EBIO prod enode'))
+
+  // Set default gas price or load user selection
+  setTimeout(() => global.gasUpdate(), 1000)
 
   // start app
   render(

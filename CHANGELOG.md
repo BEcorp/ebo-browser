@@ -2,6 +2,105 @@
 
 ## Current Develop Branch
 
+## 6.6.0 Mon Jun 03 2019
+
+- [#6659](https://github.com/MetaMask/metamask-extension/pull/6659): Enable Ledger hardware wallet support on Firefox
+- [#6671](https://github.com/MetaMask/metamask-extension/pull/6671): bugfix: reject enable promise on user rejection
+- [#6625](https://github.com/MetaMask/metamask-extension/pull/6625): Ensures that transactions cannot be confirmed if gas limit is below 21000.
+- [#6633](https://github.com/MetaMask/metamask-extension/pull/6633): Fix grammatical error in i18n endOfFlowMessage6
+
+## 6.5.3 Thu May 16 2019
+
+- [#6619](https://github.com/MetaMask/metamask-extension/pull/6619): bugfix: show extension window if locked regardless of approval
+- [#6388](https://github.com/MetaMask/metamask-extension/pull/6388): Transactions/pending - check nonce against the network and mark as dropped if not included in a block
+- [#6606](https://github.com/MetaMask/metamask-extension/pull/6606): Improve ENS Address Input
+- [#6615](https://github.com/MetaMask/metamask-extension/pull/6615): Adds e2e test for removing imported accounts.
+
+## 6.5.2 Wed May 15 2019
+
+- [#6613](https://github.com/MetaMask/metamask-extension/pull/6613): Hardware Wallet Fix
+## 6.5.1 Tue May 14 2019
+
+- Fix bug where approve method would show a warning. #6602
+- [#6593](https://github.com/MetaMask/metamask-extension/pull/6593): Fix wording of autoLogoutTimeLimitDescription
+
+## 6.5.0 Fri May 10 2019
+
+- [#6568](https://github.com/MetaMask/metamask-extension/pull/6568): feature: integrate gaba/PhishingController
+- [#6490](https://github.com/MetaMask/metamask-extension/pull/6490): Redesign custom RPC form
+- [#6558](https://github.com/MetaMask/metamask-extension/pull/6558): Adds auto logout with customizable time frame
+- [#6578](https://github.com/MetaMask/metamask-extension/pull/6578): Fixes ability to send to token contract addresses
+- [#6557](https://github.com/MetaMask/metamask-extension/pull/6557): Adds drag and drop functionality to seed phrase entry.
+- [#6526](https://github.com/MetaMask/metamask-extension/pull/6526): Include token checksum address in prices lookup for token rates
+- [#6502](https://github.com/MetaMask/metamask-extension/pull/6502): Add subheader to all settings subviews
+- [#6501](https://github.com/MetaMask/metamask-extension/pull/6501): Improve confirm screen loading performance by fixing home screen rendering bug
+
+## 6.4.1 Fri Apr 26 2019
+
+- [#6521](https://github.com/MetaMask/metamask-extension/pull/6521): Revert "Adds 4byte registry fallback to getMethodData()" to fix stalling bug.
+
+## 6.4.0 Wed Apr 17 2019
+
+- [#6445](https://github.com/MetaMask/metamask-extension/pull/6445): * Move send to pages/
+- [#6470](https://github.com/MetaMask/metamask-extension/pull/6470): update publishing.md with dev diagram
+- [#6403](https://github.com/MetaMask/metamask-extension/pull/6403): Update to eth-method-registry@1.2.0
+- [#6468](https://github.com/MetaMask/metamask-extension/pull/6468): Fix switcher height when Custom RPC is selected or loading
+- [#6459](https://github.com/MetaMask/metamask-extension/pull/6459): feature: add Goerli support
+- [#6444](https://github.com/MetaMask/metamask-extension/pull/6444): Fixes #6321 & #6421 - Add Localhost 8545 for network dropdown names
+- [#6454](https://github.com/MetaMask/metamask-extension/pull/6454): Bump eth-contract-metadata
+- [#6448](https://github.com/MetaMask/metamask-extension/pull/6448): Remove unneeded array cloning in getSendToAccounts selector
+- [#6056](https://github.com/MetaMask/metamask-extension/pull/6056): repeated getSelectedAddress() func send.selectors.js removed
+- [#6422](https://github.com/MetaMask/metamask-extension/pull/6422): Added Chrome limited site access solution doc
+- [#6424](https://github.com/MetaMask/metamask-extension/pull/6424): feature: switch token pricing to CoinGecko API
+- [#6428](https://github.com/MetaMask/metamask-extension/pull/6428): Don't inject web3 on sharefile.com
+- [#6417](https://github.com/MetaMask/metamask-extension/pull/6417): Metrics updates
+- [#6420](https://github.com/MetaMask/metamask-extension/pull/6420): Fix links to MetamaskInpageProvider in porting_to_new_environment.md
+- [#6362](https://github.com/MetaMask/metamask-extension/pull/6362): Remove broken image walkthrough from metamaskbot comment
+- [#6401](https://github.com/MetaMask/metamask-extension/pull/6401): metamask-controller - use improved provider-as-middleware utility
+- [#6406](https://github.com/MetaMask/metamask-extension/pull/6406): remove user actions controller
+- [#6399](https://github.com/MetaMask/metamask-extension/pull/6399): doc - publishing - typo fix
+- [#6396](https://github.com/MetaMask/metamask-extension/pull/6396): pin eth-contract-metadata to last commit hash
+- [#6397](https://github.com/MetaMask/metamask-extension/pull/6397): Change coinbase to wyre
+- [#6395](https://github.com/MetaMask/metamask-extension/pull/6395): bump ledger and trezor keyring
+- [#6389](https://github.com/MetaMask/metamask-extension/pull/6389): Fix display of gas chart on Ethereum networks
+- [#6382](https://github.com/MetaMask/metamask-extension/pull/6382): Remove NoticeController
+
+## 6.3.2 Mon Apr 8 2019
+
+- [#6389](https://github.com/MetaMask/metamask-extension/pull/6389): Fix display of gas chart on ethereum networks
+- [#6395](https://github.com/MetaMask/metamask-extension/pull/6395): Fixes for signing methods for ledger and trezor devices
+- [#6397](https://github.com/MetaMask/metamask-extension/pull/6397): Fix Wyre link
+
+## 6.3.1 Fri Mar 26 2019
+
+- [#6353](https://github.com/MetaMask/metamask-extension/pull/6353): Open restore vault in full screen when clicked from popup
+- [#6372](https://github.com/MetaMask/metamask-extension/pull/6372): Prevents duplicates of account addresses from showing in send screen "To" dropdown
+- [#6374](https://github.com/MetaMask/metamask-extension/pull/6374): Ensures users are placed on correct confirm screens even when registry service fails
+
+## 6.3.0 Mon Mar 25 2019
+
+- [#6300](https://github.com/MetaMask/metamask-extension/pull/6300): Gas chart hidden on custom networks
+- [#6301](https://github.com/MetaMask/metamask-extension/pull/6301): Fix gas fee in the submitted step of the transaction details activity log
+- [#6302](https://github.com/MetaMask/metamask-extension/pull/6302): Replaces the coinbase link in the deposit modal with one for wyre
+- [#6307](https://github.com/MetaMask/metamask-extension/pull/6307): Centre the notification in the current window
+- [#6312](https://github.com/MetaMask/metamask-extension/pull/6312): Fixes popups not showing when screen size is odd
+- [#6326](https://github.com/MetaMask/metamask-extension/pull/6326): Fix oversized loading overlay on gas customization modal.
+- [#6330](https://github.com/MetaMask/metamask-extension/pull/6330): Stop reloading dapps on network change allowing dapps to decide if it should refresh or not
+- [#6332](https://github.com/MetaMask/metamask-extension/pull/6332): Enable mobile sync
+- [#6333](https://github.com/MetaMask/metamask-extension/pull/6333): Redesign of the settings screen
+- [#6340](https://github.com/MetaMask/metamask-extension/pull/6340): Cancel transactions and signature requests on the closing of notification windows
+- [#6341](https://github.com/MetaMask/metamask-extension/pull/6341): Disable transaction "Cancel" button when balance is insufficient
+- [#6347](https://github.com/MetaMask/metamask-extension/pull/6347): Enable privacy mode by default for first time users
+
+## 6.2.2 Tue Mar 12 2019
+
+- [#6271](https://github.com/MetaMask/metamask-extension/pull/6271): Centre all notification popups
+- [#6268](https://github.com/MetaMask/metamask-extension/pull/6268): Improve Korean translations
+- [#6279](https://github.com/MetaMask/metamask-extension/pull/6279): Nonmultiple notifications for batch txs
+- [#6280](https://github.com/MetaMask/metamask-extension/pull/6280): No longer check network when validating checksum addresses
+
+## 6.2.1 Wed Mar 06 2019
+
 ## 6.2.0 Tue Mar 05 2019
 - [#6192](https://github.com/MetaMask/metamask-extension/pull/6192): Improves design and UX of onboarding flow
 - [#6195](https://github.com/MetaMask/metamask-extension/pull/6195): Fixes gas estimation when sending to contracts
@@ -68,7 +167,7 @@
 - [#6008](https://github.com/MetaMask/metamask-extension/pull/6008): Fix confirm screen for sending ether tx with hex data
 - [#5999](https://github.com/MetaMask/metamask-extension/pull/5999): Refine app description
 - [#5997](https://github.com/MetaMask/metamask-extension/pull/5997): Harden Drizzle test runner script
-- [#5995](https://github.com/MetaMask/metamask-extension/pull/5995): Fix bug where MetaMask user calls non-standard ERC20 methods such as `mint`, `tokenData` will be `undefined` and an uncaught error will break the UI
+- [#5995](https://github.com/MetaMask/metamask-extension/pull/5995): Fix bug where EBO user calls non-standard ERC20 methods such as `mint`, `tokenData` will be `undefined` and an uncaught error will break the UI
 - [#5970](https://github.com/MetaMask/metamask-extension/pull/5970): Fixed a word in french translation (several occurrences of connection instead of connexion)
 - [#5977](https://github.com/MetaMask/metamask-extension/pull/5977): Fix Component#componentDidUpdate usage
 - [#5992](https://github.com/MetaMask/metamask-extension/pull/5992): Add scrolling button to account list
@@ -122,7 +221,7 @@
 - [#5827](https://github.com/MetaMask/metamask-extension/pull/5827): Trim whitespace from seed phrase during import
 - [#5832](https://github.com/MetaMask/metamask-extension/pull/5832): Show Connect Requests count in extension badge
 - [#5816](https://github.com/MetaMask/metamask-extension/pull/5816): Increase Token Symbol length to twelve
-- [#5819](https://github.com/MetaMask/metamask-extension/pull/5819): With the EIP 1102 updates, MetaMask *does* now open itself when visiting some websites. Changed the wording here to clarify that MetaMask will not open itself to ask you for your seed phrase.
+- [#5819](https://github.com/MetaMask/metamask-extension/pull/5819): With the EIP 1102 updates, EBO *does* now open itself when visiting some websites. Changed the wording here to clarify that EBO will not open itself to ask you for your seed phrase.
 - [#5810](https://github.com/MetaMask/metamask-extension/pull/5810): Bump Node version to 8.13
 - [#5797](https://github.com/MetaMask/metamask-extension/pull/5797): Add Firefox and Brave support for Trezor
 - [#5799](https://github.com/MetaMask/metamask-extension/pull/5799): Fix usage of setState in ConfirmTransactionBase#handleSubmit
@@ -260,7 +359,7 @@
 - [#4524](https://github.com/MetaMask/metamask-extension/pull/4524): Fix for Brave i18n getAcceptLanguages.
 - [#4557](https://github.com/MetaMask/metamask-extension/pull/4557): Fix bug where nonce mutex was never released.
 - [#4566](https://github.com/MetaMask/metamask-extension/pull/4566): Add phishing notice.
-- [#4591](https://github.com/MetaMask/metamask-extension/pull/4591): Allow Copying Token Addresses and link to Token on Etherscan.
+- [#4591](https://github.com/MetaMask/metamask-extension/pull/4591): Allow Copying Token Addresses and link to Token on EtherBlockchain.io.
 
 ## 4.7.4 Tue Jun 05 2018
 
@@ -357,7 +456,7 @@
 ## 4.4.0 Mon Mar 26 2018
 
 - Internationalization: Taiwanese, Thai, Slovenian
-- Fixes bug where MetaMask would not open once its storage grew too large.
+- Fixes bug where EBO would not open once its storage grew too large.
 - Updates design of new-ui Add Token screen
 - New-ui can send to ens addresses
 - Update new-ui button styles
@@ -379,7 +478,7 @@
 - Add a welcome screen to new-ui onboarding flow
 - Make new-ui create password screen responsive
 - Hide network dropdown before account is initialized
-- Fix bug that could prevent MetaMask from saving the latest vault.
+- Fix bug that could prevent EBO from saving the latest vault.
 
 ## 4.2.0 Tue Mar 06 2018
 
@@ -417,13 +516,13 @@
 
 ## 4.0.0 2018-2-22
 
-- Introduce new MetaMask user interface.
+- Introduce new EBO user interface.
 
 ## 3.14.2 2018-2-15
 
 - Fix bug where log subscriptions would break when switching network.
 - Fix bug where storage values were cached across blocks.
-- Add MetaMask light client [testing container](https://github.com/MetaMask/mesh-testing)
+- Add EBO light client [testing container](https://github.com/MetaMask/mesh-testing)
 
 ## 3.14.1 2018-2-1
 
@@ -590,9 +689,9 @@ rollback to 3.10.0 due to bug
 - Make eth_sign deprecation warning less noisy
 - Add useful link to eth_sign deprecation warning.
 - Fix bug with network version serialization over synchronous RPC
-- Add MetaMask version to state logs.
+- Add EBO version to state logs.
 - Add the total amount of tokens when multiple tokens are added under the token list
-- Use HTTPS links for Etherscan.
+- Use HTTPS links for EtherBlockchain.io.
 - Update Support center link to new one with HTTPS.
 - Make web3 deprecation notice more useful by linking to a descriptive article.
 
@@ -932,7 +1031,7 @@ rollback to 3.10.0 due to bug
 ## 2.13.9 2016-11-21
 
 - Add support for the new, default Ropsten Test Network.
-- Fix bug that would cause MetaMask to occasionally lose its StreamProvider connection and drop requests.
+- Fix bug that would cause EBO to occasionally lose its StreamProvider connection and drop requests.
 - Fix bug that would cause the Custom RPC menu item to not appear when Localhost 8545 was selected.
 - Point ropsten faucet button to actual faucet.
 - Phase out ethereumjs-util from our encryptor module.
@@ -983,8 +1082,8 @@ rollback to 3.10.0 due to bug
 ## 2.13.2 2016-10-4
 
 - Fix bug where chosen FIAT exchange rate does no persist when switching networks
-- Fix additional parameters that made MetaMask sometimes receive errors from Parity.
-- Fix bug where invalid transactions would still open the MetaMask popup.
+- Fix additional parameters that made EBO sometimes receive errors from Parity.
+- Fix bug where invalid transactions would still open the EBO popup.
 - Removed hex prefix from private key export, to increase compatibility with Geth, MyEtherWallet, and Jaxx.
 
 ## 2.13.1 2016-09-23
@@ -1001,14 +1100,14 @@ too help visualize transactions and to where they are going.
 
 ## 2.12.1 2016-09-14
 
-- Fixed bug where if you send a transaction from within MetaMask extension the
+- Fixed bug where if you send a transaction from within EBO extension the
 popup notification opens up.
 - Fixed bug where some tx errors would block subsequent txs until the plugin was refreshed.
 
 ## 2.12.0 2016-09-14
 
 - Add a QR button to the Account detail screen
-- Fixed bug where opening MetaMask could close a non-metamask popup.
+- Fixed bug where opening EBO could close a non-metamask popup.
 - Fixed memory leak that caused occasional crashes.
 
 ## 2.11.1 2016-09-12
@@ -1019,10 +1118,10 @@ popup notification opens up.
 
 - Fix bug where pending transactions from Test net (or other networks) show up In Main net.
 - Add fiat conversion values to more views.
-- On fresh install, open a new tab with the MetaMask Introduction video. Does not open on update.
+- On fresh install, open a new tab with the EBO Introduction video. Does not open on update.
 - Block negative values from transactions.
 - Fixed a memory leak.
-- MetaMask logo now renders as super lightweight SVG, improving compatibility and performance.
+- EBO logo now renders as super lightweight SVG, improving compatibility and performance.
 - Now showing loading indication during vault unlocking, to clarify behavior for users who are experiencing slow unlocks.
 - Now only initially creates one wallet when restoring a vault, to reduce some users' confusion.
 
@@ -1033,7 +1132,7 @@ popup notification opens up.
 ## 2.10.1 2016-09-02
 
 - Fix bug where provider menu did not allow switching to custom network from a custom network.
-- Sending a transaction from within MetaMask no longer triggers a popup.
+- Sending a transaction from within EBO no longer triggers a popup.
 - The ability to build without livereload features (such as for production) can be enabled with the gulp --disableLiveReload flag.
 - Fix Ethereum JSON RPC Filters bug.
 
@@ -1052,9 +1151,9 @@ popup notification opens up.
 
 - Added static image as fallback for when WebGL isn't supported.
 - Transaction history now has a hard limit.
-- Added info link on account screen that visits Etherscan.
+- Added info link on account screen that visits EtherBlockchain.io.
 - Fixed bug where a message signing request would be lost if the vault was locked.
-- Added shortcut to open MetaMask (Ctrl+Alt+M or Cmd+Opt/Alt+M)
+- Added shortcut to open EBO (Ctrl+Alt+M or Cmd+Opt/Alt+M)
 - Prevent API calls in tests.
 - Fixed bug where sign message confirmation would sometimes render blank.
 
@@ -1093,7 +1192,7 @@ popup notification opens up.
 
 - Added a Warning screen about storing ETH
 - Add buy Button!
-- MetaMask now throws descriptive errors when apps try to use synchronous web3 methods.
+- EBO now throws descriptive errors when apps try to use synchronous web3 methods.
 - Removed firefox-specific line in manifest.
 
 ## 2.6.2 2016-07-20
@@ -1133,7 +1232,7 @@ popup notification opens up.
 
 ## 2.4.5 2016-06-29
 
-- Fixed bug where MetaMask interfered with PDF loading.
+- Fixed bug where EBO interfered with PDF loading.
 - Moved switch account icon into menu bar.
 - Changed status shapes to be a yellow warning sign for failure and ellipsis for pending transactions.
 - Now enforce 20 character limit on wallet names.
@@ -1274,7 +1373,7 @@ popup notification opens up.
 
 - Added ability to send ether.
 - Fixed bugs related to using Javascript numbers, which lacked appropriate precision.
-- Replaced Etherscan main-net provider with our own production RPC.
+- Replaced EtherBlockchain.io main-net provider with our own production RPC.
 
 ## 1.4.0 2016-04-08
 

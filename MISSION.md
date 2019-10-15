@@ -1,4 +1,4 @@
-# MetaMask Philosophy
+# EBO Philosophy
 
 ## Mission
 

@@ -1,7 +1,7 @@
 .account-dropdown-mini {
   height: 22px;
   background-color: $white;
-  font-family: Roboto;
+  font-family: Gilroy, Roboto;
   line-height: 16px;
   font-size: 12px;
   width: 124px;
@@ -21,7 +21,7 @@
     height: 180px;
     width: 96pxpx;
     border: 1px solid $geyser;
-    border-radius: 4px;
+    border-radius: 0;
     background-color: $white;
     box-shadow: 0 3px 6px 0 rgba(0 ,0 ,0 ,.11);
     overflow-y: scroll;

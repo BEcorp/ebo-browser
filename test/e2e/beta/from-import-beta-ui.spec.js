@@ -20,13 +20,15 @@ const {
 const fetchMockResponses = require('./fetch-mocks.js')
 
 
-describe('Using MetaMask with an existing account', function () {
+describe('Using EBO with an existing account', function () {
   let extensionId
   let driver
 
-  const testSeedPhrase = 'phrase upgrade clock rough situate wedding elder clever doctor stamp excess tent'
-  const testAddress = '0xE18035BF8712672935FDB4e5e431b1a0183d2DFC'
+  const testSeedPhrase = 'forum vessel pink push lonely enact gentle tail admit parrot grunt dress'
+  const testAddress = '0x0Cc5261AB8cE458dc977078A3623E2BaDD27afD3'
   const testPrivateKey2 = '14abe6f4aab7f9f626fe981c864d0adeb5685f289ac9270c27b8fd790b4235d6'
+  const testPrivateKey3 = 'F4EC2590A0C10DE95FBF4547845178910E40F5035320C516A18C117DE02B5669'
+  const tinyDelayMs = 200
   const regularDelayMs = 1000
   const largeDelayMs = regularDelayMs * 2
 
@@ -76,7 +78,18 @@ describe('Using MetaMask with an existing account', function () {
       'Promise.resolve({ json: () => Promise.resolve(JSON.parse(\'' + fetchMockResponses.metametrics + '\')) }); } else if ' +
       '(args[0] === "https://dev.blockscale.net/api/gasexpress.json") { return ' +
       'Promise.resolve({ json: () => Promise.resolve(JSON.parse(\'' + fetchMockResponses.gasExpress + '\')) }); } ' +
-      'return window.origFetch(...args); }'
+      'return window.origFetch(...args); };' +
+      'function cancelInfuraRequest(requestDetails) {' +
+        'console.log("Canceling: " + requestDetails.url);' +
+        'return {' +
+          'cancel: true' +
+        '};' +
+     ' }' +
+      'window.chrome && window.chrome.webRequest && window.chrome.webRequest.onBeforeRequest.addListener(' +
+        'cancelInfuraRequest,' +
+        '{urls: ["https://*.infura.io/*"]},' +
+        '["blocking"]' +
+      ');'
     )
   })
 
@@ -301,7 +314,7 @@ describe('Using MetaMask with an existing account', function () {
 
     it('should show the correct account name', async () => {
       const [accountName] = await findElements(driver, By.css('.account-name'))
-      assert.equal(await accountName.getText(), 'Account 3')
+      assert.equal(await accountName.getText(), 'Account 4')
       await delay(regularDelayMs)
     })
 
@@ -312,11 +325,60 @@ describe('Using MetaMask with an existing account', function () {
     })
   })
 
-  describe('Connects to a Hardware wallet', () => {
-    it('choose Connect Hardware Wallet from the account menu', async () => {
+  describe('Imports and removes an account', () => {
+    it('choose Create Account from the account menu', async () => {
       await driver.findElement(By.css('.account-menu__icon')).click()
       await delay(regularDelayMs)
 
+      const [importAccount] = await findElements(driver, By.xpath(`//div[contains(text(), 'Import Account')]`))
+      await importAccount.click()
+      await delay(regularDelayMs)
+    })
+
+    it('enter private key', async () => {
+      const privateKeyInput = await findElement(driver, By.css('#private-key-box'))
+      await privateKeyInput.sendKeys(testPrivateKey3)
+      await delay(regularDelayMs)
+      const importButtons = await findElements(driver, By.xpath(`//button[contains(text(), 'Import')]`))
+      await importButtons[0].click()
+      await delay(regularDelayMs)
+    })
+
+    it('should open the remove account modal', async () => {
+      const [accountName] = await findElements(driver, By.css('.account-name'))
+      assert.equal(await accountName.getText(), 'Account 5')
+      await delay(regularDelayMs)
+
+      await driver.findElement(By.css('.account-menu__icon')).click()
+      await delay(regularDelayMs)
+
+      const accountListItems = await findElements(driver, By.css('.account-menu__account'))
+      assert.equal(accountListItems.length, 5)
+
+      const removeAccountIcons = await findElements(driver, By.css('.remove-account-icon'))
+      await removeAccountIcons[1].click()
+      await delay(tinyDelayMs)
+
+      await findElement(driver, By.css('.confirm-remove-account__account'))
+    })
+
+    it('should remove the account', async () => {
+      const removeButton = await findElement(driver, By.xpath(`//button[contains(text(), 'Remove')]`))
+      await removeButton.click()
+
+      await delay(regularDelayMs)
+
+      const [accountName] = await findElements(driver, By.css('.account-name'))
+      assert.equal(await accountName.getText(), 'Account 1')
+      await delay(regularDelayMs)
+
+      const accountListItems = await findElements(driver, By.css('.account-menu__account'))
+      assert.equal(accountListItems.length, 4)
+    })
+  })
+
+  describe('Connects to a Hardware wallet', () => {
+    it('choose Connect Hardware Wallet from the account menu', async () => {
       const [connectAccount] = await findElements(driver, By.xpath(`//div[contains(text(), 'Connect Hardware Wallet')]`))
       await connectAccount.click()
       await delay(regularDelayMs)

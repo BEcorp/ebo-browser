@@ -79,7 +79,7 @@
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "EBO",
     "description": "The name of the application"
   },
   "approved": {
@@ -120,7 +120,7 @@
     "message": "Взять в долг на Dharma (Beta)"
   },
   "builtInCalifornia": {
-    "message": "MetaMask спроектирован и разработан в Калифорнии."
+    "message": "EBO спроектирован и разработан в Калифорнии."
   },
   "buy": {
     "message": "Купить"
@@ -130,6 +130,12 @@
   },
   "buyCoinbaseExplainer": {
     "message": "Биржа Coinbase – это наиболее популярный способ купить или продать Bitcoin, Ethereum и Litecoin."
+  },
+  "buyCoinSwitch": {
+    "message": "Купить на CoinSwitch"
+  },
+  "buyCoinSwitchExplainer": {
+    "message": "CoinSwitch - это однонаправленное место для обмена более 300 криптоконверсий по наилучшей цене."
   },
   "ok": {
     "message": "ОК"
@@ -163,6 +169,9 @@
   },
   "continueToCoinbase": {
     "message": "Продолжить в Coinbase"
+  },
+  "continueToCoinSwitch": {
+    "message": "Продолжить в CoinSwitch"
   },
   "contractDeployment": {
     "message": "Развертывание контракта"
@@ -235,7 +244,7 @@
     "message": "Основная сеть Ethereum – это сеть по умолчанию для Ether транзакций."
   },
   "denExplainer": {
-    "message": "DEN – это зашифрованное паролем хранилище внутри MetaMask."
+    "message": "DEN – это зашифрованное паролем хранилище внутри EBO."
   },
   "deposit": {
     "message": "Пополнить"
@@ -263,7 +272,7 @@
     "message": "Пополнить через ShapeShift"
   },
   "depositShapeShiftExplainer": {
-    "message": "Если у вас есть другие криптовалюты, вы можете торговать и пополнять Ether напрямую в ваш MetaMask кошелек. Нет необходимости в счете."
+    "message": "Если у вас есть другие криптовалюты, вы можете торговать и пополнять Ether напрямую в ваш EBO кошелек. Нет необходимости в счете."
   },
   "details": {
     "message": "Детали"
@@ -304,8 +313,8 @@
   "enterPasswordConfirm": {
     "message": "Введите ваш пароль для подтверждения"
   },
-  "etherscanView": {
-    "message": "Просмотреть счет на Etherscan"
+  "etherblockchainView": {
+    "message": "Просмотреть счет на EtherBlockchain.io"
   },
   "exchangeRate": {
     "message": "Обменный курс"
@@ -411,7 +420,7 @@
     "message": "Импортировать счет"
   },
   "importAccountMsg": {
-    "message": " Импортированные счета не будут ассоциированы с вашей ключевой фразой, созданной MetaMask. Узнать больше про импорт счетов "
+    "message": " Импортированные счета не будут ассоциированы с вашей ключевой фразой, созданной EBO."
   },
   "importAnAccount": {
     "message": "Импортировать аккаунт"
@@ -458,7 +467,7 @@
     "description": "format for importing an account"
   },
   "keepTrackTokens": {
-    "message": "Следите за купленными вами токенами с помощью аккаунта MetaMask."
+    "message": "Следите за купленными вами токенами с помощью аккаунта EBO."
   },
   "kovan": {
     "message": "Тестовая сеть Kovan"
@@ -513,7 +522,7 @@
     "message": "Сообщение"
   },
   "metamaskDescription": {
-    "message": "MetaMask – безопасный кошелек для Ethereum."
+    "message": "EBO – безопасный кошелек для Ethereum."
   },
   "min": {
     "message": "Минимум"
@@ -525,7 +534,7 @@
     "message": "Необходимо выбрать как минимум 1 токен."
   },
   "needEtherInWallet": {
-    "message": "Для взаимодействия с децентрализованными приложениями с помощью MetaMask нужен Ether в вашем кошельке."
+    "message": "Для взаимодействия с децентрализованными приложениями с помощью EBO нужен Ether в вашем кошельке."
   },
   "needImportFile": {
     "message": "Вы должны выбрать файл для импорта.",
@@ -851,7 +860,7 @@
     "message": "Символ токена"
   },
   "tokenWarning1": {
-    "message": "Отслеживаются токены, купленные на счет в MetaMask. Если вы купили токены, используя другой счет, такие токены не будут тут отображены."
+    "message": "Отслеживаются токены, купленные на счет в EBO. Если вы купили токены, используя другой счет, такие токены не будут тут отображены."
   },
   "total": {
     "message": "Всего"
@@ -873,7 +882,7 @@
     "description": "Followed by a link (here) to view token balances"
   },
   "twelveWords": {
-    "message": "Эти 12 слов являются единственной возможностью восстановить ваши счета в MetaMask.\nСохраните из в надежном секретном месте."
+    "message": "Эти 12 слов являются единственной возможностью восстановить ваши счета в EBO.\nСохраните из в надежном секретном месте."
   },
   "typePassword": {
     "message": "Введите пароль"
@@ -882,7 +891,7 @@
     "message": "Новый интерфейс (Beta)"
   },
   "uiWelcomeMessage": {
-    "message": "Теперь вы используете новый интерфейс пользователя MetaMask. Осмотритесь, попробуйте новые функции, например, отправить токены и, если возникнут проблемы, сообщите нам."
+    "message": "Теперь вы используете новый интерфейс пользователя EBO. Осмотритесь, попробуйте новые функции, например, отправить токены и, если возникнут проблемы, сообщите нам."
   },
   "unapproved": {
     "message": "Не одобрена"
@@ -928,7 +937,7 @@
     "message": "Предупреждение"
   },
   "welcome": {
-    "message": "Добро пожаловать в MetaMask"
+    "message": "Добро пожаловать в EBO"
   },
   "whatsThis": {
     "message": "Что это?"

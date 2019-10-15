@@ -1,6 +1,34 @@
 @import url('./fonts/Font_Awesome/font-awesome.min.css');
 
 @font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy/gilroy-regularitalic-webfont.woff2") format("woff2"), url("fonts/Gilroy/gilroy-regularitalic-webfont.woff") format("woff");
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy/gilroy-regular-webfont.woff2") format("woff2"), url("fonts/Gilroy/gilroy-regular-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy/gilroy-bold-webfont.woff2") format("woff2"), url("fonts/Gilroy/gilroy-bold-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy/gilroy-black-webfont.woff2") format("woff2"), url("fonts/Gilroy/gilroy-black-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 100;
@@ -402,4 +430,41 @@
   src: url('./fonts/Lato/Lato-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+}
+
+@mixin fontScale($weight: 400, $size: 1rem) {
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin h1($weight: 400, $size: 2.5rem){
+  @include fontScale($weight, $size);
+}
+
+@mixin h2($weight: 400, $size: 2rem){
+  @include fontScale($weight, $size);
+}
+
+@mixin h3($weight: 400, $size: 1.5rem){
+  @include fontScale($weight, $size);
+}
+
+@mixin h4($weight: 400, $size: 1.125rem){
+  @include fontScale($weight, $size);
+}
+
+@mixin h5($weight: 400, $size: 1rem){
+  @include fontScale($weight, $size);
+}
+
+@mixin h6($weight: 400, $size: .875rem){
+  @include fontScale($weight, $size);
+}
+
+@mixin h7($weight: 400, $size: .75rem){
+  @include fontScale($weight, $size);
+}
+
+@mixin paragraph($weight: 400, $size: 1rem){
+  @include fontScale($weight, $size);
 }

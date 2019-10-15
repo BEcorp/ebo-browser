@@ -78,7 +78,7 @@
     "message": "Ajoute Token Yo Sikjere W"
   },
   "addAcquiredTokens": {
-    "message": "Ajoute tokens yo ou te achte lè l sèvi avèk MetaMask"
+    "message": "Ajoute tokens yo ou te achte lè l sèvi avèk EBO"
   },
   "amount": {
     "message": "Kantite lajan"
@@ -91,7 +91,7 @@
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "EBO",
     "description": "The name of the application"
   },
   "approve": {
@@ -144,7 +144,7 @@
     "message": "Navigatè ou a pa sipòte..."
   },
   "builtInCalifornia": {
-    "message": "MetaMask fèt e bati nan California."
+    "message": "EBO fèt e bati nan California."
   },
   "buy": {
     "message": "Achte"
@@ -154,6 +154,12 @@
   },
   "buyCoinbaseExplainer": {
     "message": "Coinbase se fason ki pi popilè nan mond lan yo achte ak vann Bitcoin, Ethereum, ak Litecoin."
+  },
+  "buyCoinSwitch": {
+    "message": "Achte sou CoinSwitch"
+  },
+  "buyCoinSwitchExplainer": {
+    "message": "CoinSwitch se destinasyon nan yon sèl-Stop nan echanj plis pase 300 kriptoksèr nan pousantaj la pi byen."
   },
   "bytes": {
     "message": "Bytes"
@@ -186,7 +192,7 @@
     "message": "Fèmen"
   },
   "chromeRequiredForHardwareWallets": {
-    "message": "Ou bezwen sèvi ak MetaMask sou Google Chrome yo nan lòd yo konekte sou Hardware Wallet."
+    "message": "Ou bezwen sèvi ak EBO sou Google Chrome yo nan lòd yo konekte sou Hardware Wallet."
   },
   "confirm": {
     "message": "Konfime"
@@ -238,6 +244,9 @@
   },
   "continueToCoinbase": {
     "message": "Kontinye Coinbase"
+  },
+  "continueToCoinSwitch": {
+    "message": "Kontinye CoinSwitch"
   },
   "contractDeployment": {
     "message": "Kontra Deplwaman"
@@ -319,7 +328,7 @@
     "message": "Dfo rezo a pou tranzaksyon Ether se Mainnet."
   },
   "denExplainer": {
-    "message": "DEN ou se depo modpas avèk chif ou nan MetaMask."
+    "message": "DEN ou se depo modpas avèk chif ou nan EBO."
   },
   "deposit": {
     "message": "Depo"
@@ -347,7 +356,7 @@
     "message": "Depo avèk ShapeShift"
   },
   "depositShapeShiftExplainer": {
-    "message": "Si ou posede lòt cryptocurrencies, ou ka chanje ak depo Ether dirèkteman nan Wallet MetaMask ou. Pa gen kont ki nesesè."
+    "message": "Si ou posede lòt cryptocurrencies, ou ka chanje ak depo Ether dirèkteman nan Wallet EBO ou. Pa gen kont ki nesesè."
   },
   "details": {
     "message": "Detay yo"
@@ -406,8 +415,8 @@
   "eth": {
     "message": "ETH"
   },
-  "etherscanView": {
-    "message": "Gade kont sou Etherscan"
+  "etherblockchainView": {
+    "message": "Gade kont sou EtherBlockchain.io"
   },
   "exchangeRate": {
     "message": "Chanje to"
@@ -511,7 +520,7 @@
     "message": "Materyèl Wallet konekte"
   },
   "hardwareWalletsMsg": {
-    "message": "Chwazi yon Materyèl Wallet ou ta renmen itilize ak MetaMask"
+    "message": "Chwazi yon Materyèl Wallet ou ta renmen itilize ak EBO"
   },
   "havingTroubleConnecting": {
     "message": "Èske w gen pwoblèm pou konekte?"
@@ -552,7 +561,7 @@
     "message": "Pòte Kont"
   },
   "importAccountMsg": {
-    "message": " Kont pòte pa pral asosye avèk orijinal ou te kreye nan kont MetaMask seed fraz. Aprann plis sou kont enpòte "
+    "message": " Kont pòte pa pral asosye avèk orijinal ou te kreye nan kont EBO seed fraz."
   },
   "importAnAccount": {
     "message": "Pòte yon kont"
@@ -611,7 +620,7 @@
     "description": "format for importing an account"
   },
   "keepTrackTokens": {
-    "message": "Gade tokens yo ou te achte ak kont MetaMask ou."
+    "message": "Gade tokens yo ou te achte ak kont EBO ou."
   },
   "kovan": {
     "message": "Kovan Tès Rezo"
@@ -672,13 +681,13 @@
     "message": "Mesaje"
   },
   "metamaskDescription": {
-    "message": "MetaMask sekirize idantite pou Ethereum."
+    "message": "EBO sekirize idantite pou Ethereum."
   },
   "metamaskSeedWords": {
-    "message": "MetaMask Seed Mo"
+    "message": "EBO Seed Mo"
   },
   "metamaskVersion": {
-    "message": "MetaMask Vèsyon"
+    "message": "EBO Vèsyon"
   },
   "min": {
     "message": "Minimòm"
@@ -693,7 +702,7 @@
     "message": "Ou dwe chwazi omwen 1 token."
   },
   "needEtherInWallet": {
-    "message": "Pou kominike avèk aplikasyon desantralize ou dwe itilize MetaMask, ou pral bezwen Ether nan Wallet ou."
+    "message": "Pou kominike avèk aplikasyon desantralize ou dwe itilize EBO, ou pral bezwen Ether nan Wallet ou."
   },
   "needImportFile": {
     "message": "Ou dwe chwazi yon dosye pou enpòte.",
@@ -1040,7 +1049,7 @@
     "message": "Chwazi yon kont"
   },
   "selectAnAccountHelp": {
-    "message": "Chwazi kont pou wè nan MetaMask"
+    "message": "Chwazi kont pou wè nan EBO"
   },
   "selectHdPath": {
     "message": "Chwazi chemen HD"
@@ -1179,7 +1188,7 @@
     "message": "Token Senbòl"
   },
   "tokenWarning1": {
-    "message": "Kenbe tras token yo ou te achte ak kont MetaMask ou. Si ou te achte tokens pandan wap itilize yon kont diferan tokens sa yo pa pral parèt la."
+    "message": "Kenbe tras token yo ou te achte ak kont EBO ou. Si ou te achte tokens pandan wap itilize yon kont diferan tokens sa yo pa pral parèt la."
   },
   "total": {
     "message": "Total"
@@ -1240,7 +1249,7 @@
     "message": "Eseye anko"
   },
   "twelveWords": {
-    "message": "12 mo sa yo se sèl fason pou retabli kont MetaMask ou yo. \nKenbe yo yon kote ki an sekirite ak sekrè."
+    "message": "12 mo sa yo se sèl fason pou retabli kont EBO ou yo. \nKenbe yo yon kote ki an sekirite ak sekrè."
   },
   "typePassword": {
     "message": "Tape modpas ou"
@@ -1249,7 +1258,7 @@
     "message": "Byenveni nan New itilizatè koòdone (Beta)"
   },
   "uiWelcomeMessage": {
-    "message": "Kounya w ap itilize nouvo MetaMask UI (itilizatè koòdone) a."
+    "message": "Kounya w ap itilize nouvo EBO UI (itilizatè koòdone) a."
   },
   "unapproved": {
     "message": "Pa apwouve"
@@ -1312,8 +1321,8 @@
   "viewAccount": {
     "message": "Wè Kont"
   },
-  "viewOnEtherscan": {
-    "message": "Wè sou Etherscan"
+  "viewOnEtherblockchain": {
+    "message": "Wè sou EtherBlockchain.io"
   },
   "visitWebSite": {
     "message": "Vizite sit entènèt nou an"
@@ -1328,7 +1337,7 @@
     "message": "Bon Retou!"
   },
   "welcome": {
-    "message": "Byenveni nan MetaMask"
+    "message": "Byenveni nan EBO"
   },
   "whatsThis": {
     "message": "Kisa sa ye?"

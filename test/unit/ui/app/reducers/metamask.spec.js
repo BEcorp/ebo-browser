@@ -1,8 +1,8 @@
 import assert from 'assert'
-import reduceMetamask from '../../../../../ui/app/reducers/metamask'
-import * as actions from '../../../../../ui/app/actions'
+import reduceMetamask from '../../../../../ui/app/ducks/metamask/metamask'
+import * as actions from '../../../../../ui/app/store/actions'
 
-describe('MetaMask Reducers', () => {
+describe('EBO Reducers', () => {
 
   it('init state', () => {
     const initState = reduceMetamask({metamask: {}}, {})
@@ -35,49 +35,6 @@ describe('MetaMask Reducers', () => {
     assert.equal(state.isRevealingSeedWords, false)
   })
 
-  it('shows notice', () => {
-    const notice = {
-      id: 0,
-      read: false,
-      date: 'Date',
-      title: 'Title',
-      body: 'Body',
-    }
-
-    const state = reduceMetamask({}, {
-      type: actions.SHOW_NOTICE,
-      value: notice,
-    })
-
-    assert.equal(state.noActiveNotices, false)
-    assert.equal(state.nextUnreadNotice, notice)
-  })
-
-  it('clears notice', () => {
-
-    const notice = {
-      id: 0,
-      read: false,
-      date: 'Date',
-      title: 'Title',
-      body: 'Body',
-    }
-
-    const noticesState = {
-      metamask: {
-        noActiveNotices: false,
-        nextUnreadNotice: notice,
-      },
-    }
-
-    const state = reduceMetamask(noticesState, {
-      type: actions.CLEAR_NOTICES,
-    })
-
-    assert.equal(state.noActiveNotices, true)
-    assert.equal(state.nextUnreadNotice, null)
-  })
-
   it('unlocks MetaMask', () => {
     const state = reduceMetamask({}, {
       type: actions.UNLOCK_METAMASK,
@@ -97,7 +54,7 @@ describe('MetaMask Reducers', () => {
         selectedAddress: 'test address',
       },
     }
-    const lockMetaMask = reduceMetamask(unlockMetaMaskState, {
+    const lockEBO = reduceMetamask(unlockMetaMaskState, {
       type: actions.LOCK_METAMASK,
     })
 

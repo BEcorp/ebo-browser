@@ -3,9 +3,8 @@
     "isInitialized": true,
     "isUnlocked": true,
     "isAccountMenuOpen": false,
-    "isMascara": false,
     "isPopup": false,
-    "rpcTarget": "https://rawtestrpc.metamask.io/",
+    "rpcTarget": "https://rawtestrpc.ebo.io/",
     "identities": {
       "0x8cf82b5aa41ff2282427be151dd328568684007a": {
         "address": "0x8cf82b5aa41ff2282427be151dd328568684007a",
@@ -231,7 +230,8 @@
       "kovan": "ok",
       "mainnet": "ok",
       "rinkeby": "ok",
-      "ropsten": "ok"
+      "ropsten": "ok",
+      "goerli": "ok"
     },
     "lostAccounts": []
   },

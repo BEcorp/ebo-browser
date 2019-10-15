@@ -18,20 +18,15 @@ describe('', function () {
   }
 
   it('returns coinbase url with amount and address for network 1', function () {
-    const coinbaseUrl = getBuyEthUrl(mainnet)
-    const coinbase = coinbaseUrl.match(/(https:\/\/buy.coinbase.com)/)
-    const amount = coinbaseUrl.match(/(amount)\D\d/)
-    const address = coinbaseUrl.match(/(address)(.*)(?=&)/)
+    const wyreUrl = getBuyEthUrl(mainnet)
 
-    assert.equal(coinbase[0], 'https://buy.coinbase.com')
-    assert.equal(amount[0], 'amount=5')
-    assert.equal(address[0], 'address=0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc')
+    assert.equal(wyreUrl, 'https://dash.sendwyre.com/sign-up')
 
   })
 
   it('returns metamask ropsten faucet for network 3', function () {
     const ropstenUrl = getBuyEthUrl(ropsten)
-    assert.equal(ropstenUrl, 'https://faucet.metamask.io/')
+    assert.equal(ropstenUrl, 'https://faucet.ebo.io/')
   })
 
   it('returns rinkeby dapp for network 4', function () {

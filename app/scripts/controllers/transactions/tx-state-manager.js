@@ -46,7 +46,7 @@ class TransactionStateManager extends EventEmitter {
   */
   generateTxMeta (opts) {
     const netId = this.getNetwork()
-    if (netId === 'loading') throw new Error('MetaMask is having trouble connecting to the network')
+    if (netId === 'loading') throw new Error('EBO is having trouble connecting to the network')
     return extend({
       id: createId(),
       time: (new Date()).getTime(),
@@ -126,10 +126,10 @@ class TransactionStateManager extends EventEmitter {
     @returns {object} the txMeta
   */
   addTx (txMeta) {
-    this.once(`${txMeta.id}:signed`, function (txId) {
+    this.once(`${txMeta.id}:signed`, function () {
       this.removeAllListeners(`${txMeta.id}:rejected`)
     })
-    this.once(`${txMeta.id}:rejected`, function (txId) {
+    this.once(`${txMeta.id}:rejected`, function () {
       this.removeAllListeners(`${txMeta.id}:signed`)
     })
     // initialize history

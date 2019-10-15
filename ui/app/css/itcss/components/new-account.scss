@@ -13,7 +13,7 @@
 
   &__title {
     color: $tundora;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 32px;
     font-weight: 500;
     line-height: 43px;
@@ -30,7 +30,7 @@
       height: 54px;
       padding: 15px 10px;
       color: $dusty-gray;
-      font-family: Roboto;
+      font-family: Gilroy, Roboto;
       font-size: 18px;
       line-height: 24px;
       text-align: center;
@@ -76,7 +76,7 @@
 
   &__select-label {
     color: $scorpion;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 16px;
     line-height: 21px;
   }
@@ -85,7 +85,7 @@
     height: 54px;
     width: 210px;
     border: 1px solid #D2D8DD;
-    border-radius: 4px;
+    border-radius: 0;
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
@@ -112,7 +112,7 @@
 
   &__instruction {
     color: $scorpion;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 16px;
     line-height: 21px;
     align-self: flex-start;
@@ -129,11 +129,11 @@
     height: 54px;
     width: 315px;
     border: 1px solid $geyser;
-    border-radius: 4px;
+    border-radius: 0;
     background-color: $white;
     margin-top: 16px;
     color: $scorpion;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 16px;
     padding: 0px 20px;
   }
@@ -351,7 +351,7 @@
     margin-bottom: 23px;
     align-self: flex-start;
     color: $scorpion;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 16px;
     line-height: 21px;
     font-weight: bold;
@@ -363,7 +363,7 @@
     margin-bottom: 23px;
     align-self: flex-end;
     color: $scorpion;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 16px;
     line-height: 21px;
     font-weight: normal;
@@ -448,7 +448,7 @@
     margin-left: 16px;
     padding: 0px;
     text-transform: uppercase;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
   }
 }
 
@@ -503,7 +503,7 @@
 
   &__input-label {
     color: $scorpion;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 16px;
     line-height: 21px;
     align-self: flex-start;
@@ -513,10 +513,10 @@
     height: 54px;
     width: 315.84px;
     border: 1px solid $geyser;
-    border-radius: 4px;
+    border-radius: 0;
     background-color: $white;
     color: $scorpion;
-    font-family: Roboto;
+    font-family: Gilroy, Roboto;
     font-size: 16px;
     line-height: 21px;
     margin-top: 15px;

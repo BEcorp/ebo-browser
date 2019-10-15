@@ -1,5 +1,5 @@
 const extension = require('extensionizer')
-const {createExplorerLink: explorerLink} = require('etherscan-link')
+const explorerLink = (hash, network) => `https://www.etherblockchain.io/blockchain/transactions/${hash}`
 
 class ExtensionPlatform {
 
@@ -60,20 +60,6 @@ class ExtensionPlatform {
     }
   }
 
-  addMessageListener (cb) {
-    extension.runtime.onMessage.addListener(cb)
-  }
-
-  sendMessage (message, query = {}) {
-    const id = query.id
-    delete query.id
-    extension.tabs.query({ ...query }, tabs => {
-      tabs.forEach(tab => {
-        extension.tabs.sendMessage(id || tab.id, message)
-      })
-    })
-  }
-
   _showConfirmedTransaction (txMeta) {
 
     this._subscribeToNotificationClicked()
@@ -82,16 +68,16 @@ class ExtensionPlatform {
     const nonce = parseInt(txMeta.txParams.nonce, 16)
 
     const title = 'Confirmed transaction'
-    const message = `Transaction ${nonce} confirmed! View on EtherScan`
+    const message = `Transaction ${nonce} confirmed! View on EtherBlockchain.io`
     this._showNotification(title, message, url)
   }
 
   _showFailedTransaction (txMeta, errorMessage) {
-
+    const url = explorerLink(txMeta.hash, parseInt(txMeta.metamaskNetworkId))
     const nonce = parseInt(txMeta.txParams.nonce, 16)
     const title = 'Failed transaction'
     const message = `Transaction ${nonce} failed! ${errorMessage || txMeta.err.message}`
-    this._showNotification(title, message)
+    this._showNotification(title, message, url)
   }
 
   _showNotification (title, message, url) {
@@ -112,9 +98,9 @@ class ExtensionPlatform {
   }
 
   _viewOnEtherScan (txId) {
-    if (txId.startsWith('http://')) {
+    // if (txId.startsWith('http://')) {
       extension.tabs.create({ url: txId })
-    }
+    // }
   }
 }
 
