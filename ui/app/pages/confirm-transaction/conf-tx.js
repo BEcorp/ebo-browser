@@ -9,10 +9,10 @@ const txHelper = require('../../../lib/tx-helper')
 const log = require('loglevel')
 const R = require('ramda')
 
-const SignatureRequest = require('../../components/app/signature-request')
+const SignatureRequest = require('../../components/app/signature-request').default
+const SignatureRequestOriginal = require('../../components/app/signature-request-original')
 const Loading = require('../../components/ui/loading-screen')
 const { DEFAULT_ROUTE } = require('../../helpers/constants/routes')
-const { getMetaMaskAccounts } = require('../../selectors/selectors')
 
 module.exports = compose(
   withRouter,
@@ -29,8 +29,6 @@ function mapStateToProps (state) {
 
   return {
     identities: state.metamask.identities,
-    accounts: getMetaMaskAccounts(state),
-    selectedAddress: state.metamask.selectedAddress,
     unapprovedTxs: state.metamask.unapprovedTxs,
     unapprovedMsgs: state.metamask.unapprovedMsgs,
     unapprovedPersonalMsgs: state.metamask.unapprovedPersonalMsgs,
@@ -39,10 +37,8 @@ function mapStateToProps (state) {
     warning: state.appState.warning,
     network: state.metamask.network,
     provider: state.metamask.provider,
-    conversionRate: state.metamask.conversionRate,
     currentCurrency: state.metamask.currentCurrency,
     blockGasLimit: state.metamask.currentBlockGasLimit,
-    computedBalances: state.metamask.computedBalances,
     unapprovedMsgCount,
     unapprovedPersonalMsgCount,
     unapprovedTypedMessagesCount,
@@ -142,38 +138,45 @@ ConfirmTxScreen.prototype.getTxData = function () {
     : unconfTxList[index]
 }
 
+ConfirmTxScreen.prototype.signatureSelect = function (type, version) {
+  // Temporarily direct only v3 and v4 requests to new code.
+  if (type === 'eth_signTypedData' && (version === 'V3' || version === 'V4')) {
+    return SignatureRequest
+  }
+
+  return SignatureRequestOriginal
+}
+
 ConfirmTxScreen.prototype.render = function () {
   const props = this.props
   const {
     currentCurrency,
-    conversionRate,
     blockGasLimit,
+    conversionRate,
   } = props
 
   var txData = this.getTxData() || {}
-  const { msgParams } = txData
+  const { msgParams, type, msgParams: { version } } = txData
   log.debug('msgParams detected, rendering pending msg')
 
-  return msgParams
-    ? h(SignatureRequest, {
-      // Properties
-      txData: txData,
-      key: txData.id,
-      selectedAddress: props.selectedAddress,
-      accounts: props.accounts,
-      identities: props.identities,
-      conversionRate,
-      currentCurrency,
-      blockGasLimit,
-      // Actions
-      signMessage: this.signMessage.bind(this, txData),
-      signPersonalMessage: this.signPersonalMessage.bind(this, txData),
-      signTypedMessage: this.signTypedMessage.bind(this, txData),
-      cancelMessage: this.cancelMessage.bind(this, txData),
-      cancelPersonalMessage: this.cancelPersonalMessage.bind(this, txData),
-      cancelTypedMessage: this.cancelTypedMessage.bind(this, txData),
-    })
-    : h(Loading)
+  return msgParams ? h(this.signatureSelect(type, version), {
+    // Properties
+    txData: txData,
+    key: txData.id,
+    selectedAddress: props.selectedAddress,
+    accounts: props.accounts,
+    identities: props.identities,
+    conversionRate,
+    currentCurrency,
+    blockGasLimit,
+    // Actions
+    signMessage: this.signMessage.bind(this, txData),
+    signPersonalMessage: this.signPersonalMessage.bind(this, txData),
+    signTypedMessage: this.signTypedMessage.bind(this, txData),
+    cancelMessage: this.cancelMessage.bind(this, txData),
+    cancelPersonalMessage: this.cancelPersonalMessage.bind(this, txData),
+    cancelTypedMessage: this.cancelTypedMessage.bind(this, txData),
+  }) : h(Loading)
 }
 
 ConfirmTxScreen.prototype.signMessage = function (msgData, event) {

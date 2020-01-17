@@ -8,8 +8,6 @@
  *
  * This is a convenient way to develop and test the plugin
  * without having to re-open the plugin or even re-build it.
- *
- * To use, run `npm run mock`.
  */
 
 const render = require('react-dom').render
@@ -17,13 +15,15 @@ const h = require('react-hyperscript')
 const Root = require('../ui/app/pages')
 const configureStore = require('../ui/app/store/store')
 const actions = require('../ui/app/store/actions')
-const states = require('./states')
 const backGroundConnectionModifiers = require('./backGroundConnectionModifiers')
 const Selector = require('./selector')
 const MetamaskController = require('../app/scripts/metamask-controller')
 const firstTimeState = require('../app/scripts/first-time-state')
 const ExtensionPlatform = require('../app/scripts/platforms/extension')
 const noop = function () {}
+
+// the states file is generated before this file is run, but after `lint` is run
+const states = require('./states') /* eslint-disable-line import/no-unresolved */
 
 const log = require('loglevel')
 window.log = log
@@ -59,20 +59,12 @@ function updateQueryParams (newView) {
 }
 
 //
-// CSS
-//
-
-const MetaMaskUiCss = require('../ui/css')
-const injectCss = require('inject-css')
-
-//
 // MetaMask Controller
 //
 
 const controller = new MetamaskController({
   // User confirmation callbacks:
   showUnconfirmedMessage: noop,
-  unlockAccountMessage: noop,
   showUnapprovedTx: noop,
   platform: {},
   // initial state
@@ -100,9 +92,6 @@ function modifyBackgroundConnection (backgroundConnectionModifier) {
   const modifiedBackgroundConnection = Object.assign({}, controller.getApi(), backgroundConnectionModifier)
   actions._setBackgroundConnection(modifiedBackgroundConnection)
 }
-
-var css = MetaMaskUiCss()
-injectCss(css)
 
 // parse opts
 var store = configureStore(firstState)
@@ -147,10 +136,10 @@ function startApp () {
         },
       }, [
         h(Root, {
-         store: store,
+          store: store,
         }),
       ]),
 
     ]
-  ), container)
+    ), container)
 }

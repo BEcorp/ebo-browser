@@ -68,6 +68,22 @@ async function getDecimals (tokenAddress) {
   return decimals
 }
 
+export async function fetchSymbolAndDecimals (tokenAddress) {
+  let symbol, decimals
+
+  try {
+    symbol = await getSymbol(tokenAddress)
+    decimals = await getDecimals(tokenAddress)
+  } catch (error) {
+    log.warn(`symbol() and decimal() calls for token at address ${tokenAddress} resulted in error:`, error)
+  }
+
+  return {
+    symbol: symbol || DEFAULT_SYMBOL,
+    decimals: decimals || DEFAULT_DECIMALS,
+  }
+}
+
 export async function getSymbolAndDecimals (tokenAddress, existingTokens = []) {
   const existingToken = existingTokens.find(({ address }) => tokenAddress === address)
 
@@ -112,7 +128,17 @@ export function calcTokenAmount (value, decimals) {
   return new BigNumber(String(value)).div(multiplier)
 }
 
+export function calcTokenValue (value, decimals) {
+  const multiplier = Math.pow(10, Number(decimals || 0))
+  return new BigNumber(String(value)).times(multiplier)
+}
+
 export function getTokenValue (tokenParams = []) {
   const valueData = tokenParams.find(param => param.name === '_value')
   return valueData && valueData.value
+}
+
+export function getTokenToAddress (tokenParams = []) {
+  const toAddressData = tokenParams.find(param => param.name === '_to')
+  return toAddressData ? toAddressData.value : tokenParams[0].value
 }

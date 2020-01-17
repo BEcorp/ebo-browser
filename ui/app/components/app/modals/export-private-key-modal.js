@@ -86,12 +86,12 @@ ExportPrivateKeyModal.prototype.renderPasswordInput = function (privateKey) {
 
   return privateKey
     ? h(ReadOnlyInput, {
-        wrapperClass: 'private-key-password-display-wrapper',
-        inputClass: 'private-key-password-display-textarea',
-        textarea: true,
-        value: plainKey,
-        onClick: () => copyToClipboard(plainKey),
-      })
+      wrapperClass: 'private-key-password-display-wrapper',
+      inputClass: 'private-key-password-display-textarea',
+      textarea: true,
+      value: plainKey,
+      onClick: () => copyToClipboard(plainKey),
+    })
     : h('input.private-key-password-input', {
       type: 'password',
       onChange: event => this.setState({ password: event.target.value }),
@@ -109,17 +109,18 @@ ExportPrivateKeyModal.prototype.renderButtons = function (privateKey, address, h
 
     (privateKey
       ? (
-          h(Button, {
+        h(Button, {
           type: 'secondary',
           large: true,
           className: 'export-private-key__button',
           onClick: () => hideModal(),
         }, this.context.t('done'))
       ) : (
-          h(Button, {
+        h(Button, {
           type: 'secondary',
           large: true,
           className: 'export-private-key__button',
+          disabled: !this.state.password,
           onClick: () => this.exportAccountAndGetPrivateKey(this.state.password, address),
         }, this.context.t('confirm'))
       )
@@ -149,29 +150,29 @@ ExportPrivateKeyModal.prototype.render = function () {
     backButtonAction: () => showAccountDetailModal(),
   }, [
 
-      h('span.account-name', name),
+    h('span.account-name', name),
 
-      h(ReadOnlyInput, {
-        wrapperClass: 'ellip-address-wrapper',
-        inputClass: 'qr-ellip-address ellip-address',
-        value: checksumAddress(address),
-      }),
+    h(ReadOnlyInput, {
+      wrapperClass: 'ellip-address-wrapper',
+      inputClass: 'qr-ellip-address ellip-address',
+      value: checksumAddress(address),
+    }),
 
-      h('div.account-modal-divider'),
+    h('div.account-modal-divider'),
 
-      h('span.modal-body-title', this.context.t('showPrivateKeys')),
+    h('span.modal-body-title', this.context.t('showPrivateKeys')),
 
-      h('div.private-key-password', {}, [
-        this.renderPasswordLabel(privateKey),
+    h('div.private-key-password', {}, [
+      this.renderPasswordLabel(privateKey),
 
-        this.renderPasswordInput(privateKey),
+      this.renderPasswordInput(privateKey),
 
-        showWarning && warning ? h('span.private-key-password-error', warning) : null,
-      ]),
+      showWarning && warning ? h('span.private-key-password-error', warning) : null,
+    ]),
 
-      h('div.private-key-password-warning', this.context.t('privateKeyWarning')),
+    h('div.private-key-password-warning', this.context.t('privateKeyWarning')),
 
-      this.renderButtons(privateKey, address, hideModal),
+    this.renderButtons(privateKey, address, hideModal),
 
   ])
 }

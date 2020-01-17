@@ -25,6 +25,7 @@ function reduceMetamask (state, action) {
     tokenExchangeRates: {},
     tokens: [],
     pendingTokens: {},
+    customNonceValue: '',
     send: {
       gasLimit: null,
       gasPrice: null,
@@ -39,12 +40,13 @@ function reduceMetamask (state, action) {
       editingTransactionId: null,
       forceGasMin: null,
       toNickname: '',
+      ensResolution: null,
+      ensResolutionError: '',
     },
     coinOptions: {},
     useBlockie: false,
     featureFlags: {},
     networkEndpointType: OLD_UI_NETWORK_TYPE,
-    isRevealingSeedWords: false,
     welcomeScreenSeen: false,
     currentLocale: '',
     preferences: {
@@ -56,16 +58,10 @@ function reduceMetamask (state, action) {
     knownMethodData: {},
     participateInMetaMetrics: null,
     metaMetricsSendCount: 0,
+    nextNonce: null,
   }, state.metamask)
 
   switch (action.type) {
-
-    case actions.SHOW_ACCOUNTS_PAGE:
-      newState = extend(metamaskState, {
-        isRevealingSeedWords: false,
-      })
-      delete newState.seedWords
-      return newState
 
     case actions.UPDATE_METAMASK_STATE:
       return extend(metamaskState, action.value)
@@ -128,20 +124,12 @@ function reduceMetamask (state, action) {
         },
       })
 
-
-    case actions.SHOW_NEW_VAULT_SEED:
-      return extend(metamaskState, {
-        isRevealingSeedWords: true,
-        seedWords: action.value,
-      })
-
     case actions.CLEAR_SEED_WORD_CACHE:
       newState = extend(metamaskState, {
         isUnlocked: true,
         isInitialized: true,
         selectedAddress: action.value,
       })
-      delete newState.seedWords
       return newState
 
     case actions.SHOW_ACCOUNT_DETAIL:
@@ -150,7 +138,6 @@ function reduceMetamask (state, action) {
         isInitialized: true,
         selectedAddress: action.value,
       })
-      delete newState.seedWords
       return newState
 
     case actions.SET_SELECTED_TOKEN:
@@ -203,7 +190,10 @@ function reduceMetamask (state, action) {
           gasLimit: action.value,
         },
       })
-
+    case actions.UPDATE_CUSTOM_NONCE:
+      return extend(metamaskState, {
+        customNonceValue: action.value,
+      })
     case actions.UPDATE_GAS_PRICE:
       return extend(metamaskState, {
         send: {
@@ -290,6 +280,24 @@ function reduceMetamask (state, action) {
         },
       })
 
+    case actions.UPDATE_SEND_ENS_RESOLUTION:
+      return extend(metamaskState, {
+        send: {
+          ...metamaskState.send,
+          ensResolution: action.payload,
+          ensResolutionError: '',
+        },
+      })
+
+    case actions.UPDATE_SEND_ENS_RESOLUTION_ERROR:
+      return extend(metamaskState, {
+        send: {
+          ...metamaskState.send,
+          ensResolution: null,
+          ensResolutionError: action.payload,
+        },
+      })
+
     case actions.CLEAR_SEND:
       return extend(metamaskState, {
         send: {
@@ -314,7 +322,9 @@ function reduceMetamask (state, action) {
       let { selectedAddressTxList } = metamaskState
       selectedAddressTxList = selectedAddressTxList.map(tx => {
         if (tx.id === txId) {
-          tx.txParams = value
+          const newTx = Object.assign({}, tx)
+          newTx.txParams = value
+          return newTx
         }
         return tx
       })
@@ -374,7 +384,7 @@ function reduceMetamask (state, action) {
 
     case actions.SET_CURRENT_LOCALE:
       return extend(metamaskState, {
-        currentLocale: action.value,
+        currentLocale: action.value.locale,
       })
 
     case actions.SET_PENDING_TOKENS:
@@ -403,15 +413,15 @@ function reduceMetamask (state, action) {
       })
     }
 
-    case actions.COMPLETE_UI_MIGRATION: {
-      return extend(metamaskState, {
-        completedUiMigration: true,
-      })
-    }
-
     case actions.SET_FIRST_TIME_FLOW_TYPE: {
       return extend(metamaskState, {
         firstTimeFlowType: action.value,
+      })
+    }
+
+    case actions.SET_NEXT_NONCE: {
+      return extend(metamaskState, {
+        nextNonce: action.value,
       })
     }
 

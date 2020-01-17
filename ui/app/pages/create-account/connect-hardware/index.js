@@ -116,26 +116,27 @@ class ConnectHardwareForm extends Component {
         }
       })
       .catch(e => {
-        if (e === 'Window blocked') {
+        const errorMessage = e.message
+        if (errorMessage === 'Window blocked') {
           this.setState({ browserSupported: false, error: null})
-        } else if (e !== 'Window closed' && e !== 'Popup closed') {
-          this.setState({ error: e.toString() })
+        } else if (errorMessage !== 'Window closed' && errorMessage !== 'Popup closed') {
+          this.setState({ error: errorMessage })
         }
       })
   }
 
   onForgetDevice = (device) => {
     this.props.forgetDevice(device)
-    .then(_ => {
-      this.setState({
-        error: null,
-        selectedAccount: null,
-        accounts: [],
-        unlocked: false,
+      .then(_ => {
+        this.setState({
+          error: null,
+          selectedAccount: null,
+          accounts: [],
+          unlocked: false,
+        })
+      }).catch(e => {
+        this.setState({ error: e.message })
       })
-    }).catch(e => {
-      this.setState({ error: e.toString() })
-    })
   }
 
   onUnlockAccount = (device) => {
@@ -145,28 +146,28 @@ class ConnectHardwareForm extends Component {
     }
 
     this.props.unlockHardwareWalletAccount(this.state.selectedAccount, device)
-    .then(_ => {
-      this.context.metricsEvent({
-        eventOpts: {
-          category: 'Accounts',
-          action: 'Connected Hardware Wallet',
-          name: 'Connected Account with: ' + device,
-        },
+      .then(_ => {
+        this.context.metricsEvent({
+          eventOpts: {
+            category: 'Accounts',
+            action: 'Connected Hardware Wallet',
+            name: 'Connected Account with: ' + device,
+          },
+        })
+        this.props.history.push(DEFAULT_ROUTE)
+      }).catch(e => {
+        this.context.metricsEvent({
+          eventOpts: {
+            category: 'Accounts',
+            action: 'Connected Hardware Wallet',
+            name: 'Error connecting hardware wallet',
+          },
+          customVariables: {
+            error: e.message,
+          },
+        })
+        this.setState({ error: e.message })
       })
-      this.props.history.push(DEFAULT_ROUTE)
-    }).catch(e => {
-      this.context.metricsEvent({
-        eventOpts: {
-          category: 'Accounts',
-          action: 'Connected Hardware Wallet',
-          name: 'Error connecting hardware wallet',
-        },
-        customVariables: {
-          error: e.toString(),
-        },
-      })
-      this.setState({ error: e.toString() })
-    })
   }
 
   onCancel = () => {

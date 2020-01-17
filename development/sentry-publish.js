@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const pify = require('pify')
 const exec = pify(require('child_process').exec, { multiArgs: true })
-const VERSION = require('../dist/chrome/manifest.json').version
+const VERSION = require('../dist/chrome/manifest.json').version // eslint-disable-line import/no-unresolved
 
 start().catch(console.error)
 
@@ -16,7 +16,7 @@ async function start () {
   if (versionAlreadyExists) {
     console.log(`Version "${VERSION}" already exists on Sentry, skipping version creation`)
   } else {
-     // create sentry release
+    // create sentry release
     console.log(`creating Sentry release for "${VERSION}"...`)
     await exec(`sentry-cli releases --org 'metamask' --project 'metamask' new ${VERSION}`)
     console.log(`removing any existing files from Sentry release "${VERSION}"...`)

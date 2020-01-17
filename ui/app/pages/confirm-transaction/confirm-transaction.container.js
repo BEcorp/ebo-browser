@@ -6,28 +6,67 @@ import {
   clearConfirmTransaction,
 } from '../../ducks/confirm-transaction/confirm-transaction.duck'
 import {
+  isTokenMethodAction,
+} from '../../helpers/utils/transactions.util'
+import {
   fetchBasicGasAndTimeEstimates,
 } from '../../ducks/gas/gas.duck'
+
+import {
+  getContractMethodData,
+  getTokenParams,
+} from '../../store/actions'
 import ConfirmTransaction from './confirm-transaction.component'
-import { getTotalUnapprovedCount } from '../../selectors/selectors'
 import { unconfirmedTransactionsListSelector } from '../../selectors/confirm-transaction'
 
-const mapStateToProps = state => {
-  const { metamask: { send }, confirmTransaction } = state
+const mapStateToProps = (state, ownProps) => {
+  const {
+    metamask: {
+      send,
+      unapprovedTxs,
+      abTests: { fullScreenVsPopup },
+      conversionRate,
+    },
+    confirmTransaction,
+  } = state
+  const { match: { params = {} } } = ownProps
+  const { id } = params
+
+  const unconfirmedTransactions = unconfirmedTransactionsListSelector(state)
+  const totalUnconfirmed = unconfirmedTransactions.length
+  const transaction = totalUnconfirmed
+    ? unapprovedTxs[id] || unconfirmedTransactions[0]
+    : {}
+  const { id: transactionId, transactionCategory } = transaction
+
+  const trackABTest = false
 
   return {
-    totalUnapprovedCount: getTotalUnapprovedCount(state),
+    totalUnapprovedCount: totalUnconfirmed,
     send,
     confirmTransaction,
-    unconfirmedTransactions: unconfirmedTransactionsListSelector(state),
+    unapprovedTxs,
+    id,
+    paramsTransactionId: id && String(id),
+    transactionId: transactionId && String(transactionId),
+    unconfirmedTransactions,
+    transaction,
+    isTokenMethodAction: isTokenMethodAction(transactionCategory),
+    trackABTest,
+    fullScreenVsPopupTestGroup: fullScreenVsPopup,
+    conversionRate,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setTransactionToConfirm: transactionId => dispatch(setTransactionToConfirm(transactionId)),
+    setTransactionToConfirm: transactionId => {
+      dispatch(setTransactionToConfirm(transactionId))
+    },
     clearConfirmTransaction: () => dispatch(clearConfirmTransaction()),
     fetchBasicGasAndTimeEstimates: () => dispatch(fetchBasicGasAndTimeEstimates()),
+    getContractMethodData: (data) => dispatch(getContractMethodData(data)),
+    getTokenParams: (tokenAddress) => dispatch(getTokenParams(tokenAddress)),
   }
 }
 

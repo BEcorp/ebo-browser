@@ -1,11 +1,12 @@
 import * as d3 from 'd3'
 import c3 from 'c3'
-import BigNumber from 'bignumber.js'
-
-const newBigSigDig = n => (new BigNumber(n.toPrecision(15)))
-const createOp = (a, b, op) => (newBigSigDig(a))[op](newBigSigDig(b))
-const bigNumMinus = (a = 0, b = 0) => createOp(a, b, 'minus')
-const bigNumDiv = (a = 0, b = 1) => createOp(a, b, 'div')
+import {
+  extrapolateY,
+  getAdjacentGasPrices,
+  newBigSigDig,
+  bigNumMinus,
+  bigNumDiv,
+} from '../../../../helpers/utils/gas-time-estimates.util'
 
 export function handleMouseMove ({ xMousePos, chartXStart, chartWidth, gasPrices, estimatedTimes, chart }) {
   const { currentPosValue, newTimeEstimate } = getNewXandTimeEstimate({
@@ -65,25 +66,6 @@ export function handleChartUpdate ({ chart, gasPrices, newPrice, cssId }) {
     hideDataUI(chart, cssId)
   }
 }
-
-export function getAdjacentGasPrices ({ gasPrices, priceToPosition }) {
-  const closestLowerValueIndex = gasPrices.findIndex((e, i, a) => e <= priceToPosition && a[i + 1] >= priceToPosition)
-  const closestHigherValueIndex = gasPrices.findIndex((e) => e > priceToPosition)
-  return {
-    closestLowerValueIndex,
-    closestHigherValueIndex,
-    closestHigherValue: gasPrices[closestHigherValueIndex],
-    closestLowerValue: gasPrices[closestLowerValueIndex],
-  }
-}
-
-export function extrapolateY ({ higherY = 0, lowerY = 0, higherX = 0, lowerX = 0, xForExtrapolation = 0 }) {
-  const slope = bigNumMinus(higherY, lowerY).div(bigNumMinus(higherX, lowerX))
-  const newTimeEstimate = slope.times(bigNumMinus(higherX, xForExtrapolation)).minus(newBigSigDig(higherY)).negated()
-
-  return newTimeEstimate.toNumber()
-}
-
 
 export function getNewXandTimeEstimate ({ xMousePos, chartXStart, chartWidth, gasPrices, estimatedTimes }) {
   const chartMouseXPos = bigNumMinus(xMousePos, chartXStart)
@@ -210,17 +192,17 @@ export function generateChart (gasPrices, estimatedTimes, gasPricesMax, estimate
     },
     padding: {left: 20, right: 15, top: 6, bottom: 10},
     data: {
-        x: 'x',
-        columns: [
-            ['x', ...gasPrices],
-            ['data1', ...estimatedTimes],
-        ],
-        types: {
-          data1: 'area',
-        },
-        selection: {
-          enabled: false,
-        },
+      x: 'x',
+      columns: [
+        ['x', ...gasPrices],
+        ['data1', ...estimatedTimes],
+      ],
+      types: {
+        data1: 'area',
+      },
+      selection: {
+        enabled: false,
+      },
     },
     color: {
       data1: '#259de5',
@@ -254,13 +236,13 @@ export function generateChart (gasPrices, estimatedTimes, gasPricesMax, estimate
       },
     },
     legend: {
-        show: false,
+      show: false,
     },
     grid: {
-        x: {},
-        lines: {
-          front: false,
-        },
+      x: {},
+      lines: {
+        front: false,
+      },
     },
     point: {
       focus: {
@@ -296,8 +278,8 @@ export function generateChart (gasPrices, estimatedTimes, gasPricesMax, estimate
         const flipTooltip = circleY - circleWidth < chartYStart + 5
 
         d3
-        .select('.tooltip-arrow')
-        .style('margin-top', flipTooltip ? '-16px' : '4px')
+          .select('.tooltip-arrow')
+          .style('margin-top', flipTooltip ? '-16px' : '4px')
 
         return {
           top: bigNumMinus(circleY, chartYStart).minus(19).plus(flipTooltip ? circleWidth + 38 : 0).toNumber(),

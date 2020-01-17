@@ -2,16 +2,19 @@
  * @file The entry point for the web extension singleton process.
  */
 
-// this needs to run before anything else
+
+// these need to run before anything else
+require('./lib/freezeGlobals')
 require('./lib/setupFetchDebugging')()
 
-const urlUtil = require('url')
+// polyfills
+import 'abortcontroller-polyfill/dist/polyfill-patch-fetch'
+
 const endOfStream = require('end-of-stream')
 const pump = require('pump')
 const debounce = require('debounce-stream')
 const log = require('loglevel')
 const extension = require('extensionizer')
-const LocalStorageStore = require('obs-store/lib/localStorage')
 const LocalStore = require('./lib/local-store')
 const storeTransform = require('obs-store/lib/transform')
 const asStream = require('obs-store/lib/asStream')
@@ -40,7 +43,6 @@ const {
 // METAMASK_TEST_CONFIG is used in e2e tests to set the default network to localhost
 const firstTimeState = Object.assign({}, rawFirstTimeState, global.METAMASK_TEST_CONFIG)
 
-const STORAGE_KEY = 'metamask-config'
 const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 
 log.setDefaultLevel(process.env.METAMASK_DEBUG ? 'debug' : 'warn')
@@ -64,7 +66,6 @@ let notificationIsOpen = false
 const openMetamaskTabsIDs = {}
 
 // state persistence
-const diskStore = new LocalStorageStore({ storageKey: STORAGE_KEY })
 const localStore = new LocalStore()
 let versionedData
 
@@ -72,7 +73,7 @@ let versionedData
 initialize().catch(log.error)
 
 // setup metamask mesh testing container
-setupMetamaskMeshMetrics()
+const { submitMeshMetricsEntry } = setupMetamaskMeshMetrics()
 
 
 /**
@@ -116,7 +117,6 @@ setupMetamaskMeshMetrics()
  * @property {boolean} useBlockie - Indicates preferred user identicon format. True for blockie, false for Jazzicon.
  * @property {Object} featureFlags - An object for optional feature flags.
  * @property {string} networkEndpointType - TODO: Document
- * @property {boolean} isRevealingSeedWords - True if seed words are currently being recovered, and should be shown to user.
  * @property {boolean} welcomeScreen - True if welcome screen should be shown.
  * @property {string} currentLocale - A locale string matching the user's preferred display language.
  * @property {Object} provider - The current selected network provider.
@@ -134,7 +134,6 @@ setupMetamaskMeshMetrics()
  * @property {number} unapprovedTypedMsgCount - The number of messages in unapprovedTypedMsgs.
  * @property {string[]} keyringTypes - An array of unique keyring identifying strings, representing available strategies for creating accounts.
  * @property {Keyring[]} keyrings - An array of keyring descriptions, summarizing the accounts that are available for use, and what keyrings they belong to.
- * @property {Object} computedBalances - Maps accounts to their balances, accounting for balance changes from pending transactions.
  * @property {string} currentAccountTab - A view identifying string for displaying the current displayed view, allows user to have a preferred tab in the old UI (between tokens and history).
  * @property {string} selectedAddress - A lower case hex string of the currently selected address.
  * @property {string} currentCurrency - A string identifying the user's preferred display currency, for use in showing conversion rates.
@@ -143,7 +142,6 @@ setupMetamaskMeshMetrics()
  * @property {Object} infuraNetworkStatus - An object of infura network status checks.
  * @property {Block[]} recentBlocks - An array of recent blocks, used to calculate an effective but cheap gas price.
  * @property {Array} shapeShiftTxList - An array of objects describing shapeshift exchange attempts.
- * @property {Array} lostAccounts - TODO: Remove this feature. A leftover from the version-3 migration where our seed-phrase library changed to fix a bug where some accounts were mis-generated, but we recovered the old accounts as "lost" instead of losing them.
  * @property {boolean} forgottenPassword - Returns true if the user has initiated the password recovery screen, is recovering from seed phrase.
  */
 
@@ -180,7 +178,6 @@ async function loadStateFromPersistence () {
   // read from disk
   // first from preferred, async API:
   versionedData = (await localStore.get()) ||
-                  diskStore.getState() ||
                   migrator.generateInitialState(firstTimeState)
 
   // check if somehow state is empty
@@ -188,21 +185,9 @@ async function loadStateFromPersistence () {
   // for a small number of users
   // https://github.com/metamask/metamask-extension/issues/3919
   if (versionedData && !versionedData.data) {
-    // try to recover from diskStore incase only localStore is bad
-    const diskStoreState = diskStore.getState()
-    if (diskStoreState && diskStoreState.data) {
-      // we were able to recover (though it might be old)
-      versionedData = diskStoreState
-      const vaultStructure = getObjStructure(versionedData)
-      sentry.captureMessage('MetaMask - Empty vault found - recovered from diskStore', {
-        // "extra" key is required by Sentry
-        extra: { vaultStructure },
-      })
-    } else {
-      // unable to recover, clear state
-      versionedData = migrator.generateInitialState(firstTimeState)
-      sentry.captureMessage('MetaMask - Empty vault found - unable to recover')
-    }
+    // unable to recover, clear state
+    versionedData = migrator.generateInitialState(firstTimeState)
+    sentry.captureMessage('MetaMask - Empty vault found - unable to recover')
   }
 
   // report migration errors to sentry
@@ -253,7 +238,6 @@ function setupController (initState, initLangCode) {
   const controller = new MetamaskController({
     // User confirmation callbacks:
     showUnconfirmedMessage: triggerUi,
-    unlockAccountMessage: triggerUi,
     showUnapprovedTx: triggerUi,
     openPopup: openPopup,
     closePopup: notificationManager.closePopup.bind(notificationManager),
@@ -268,6 +252,11 @@ function setupController (initState, initLangCode) {
 
   const provider = controller.provider
   setupEnsIpfsResolver({ provider })
+
+  // submit rpc requests to mesh-metrics
+  controller.networkController.on('rpc-req', (data) => {
+    submitMeshMetricsEntry({ type: 'rpc', data })
+  })
 
   // report failed transactions to Sentry
   controller.txController.on(`tx:status-update`, (txId, status) => {
@@ -362,7 +351,10 @@ function setupController (initState, initLangCode) {
       const portStream = new PortStream(remotePort)
       // communication with popup
       controller.isClientOpen = true
-      controller.setupTrustedCommunication(portStream, 'MetaMask')
+      // construct fake URL for identifying internal messages
+      const metamaskUrl = new URL(window.location)
+      metamaskUrl.hostname = 'metamask'
+      controller.setupTrustedCommunication(portStream, metamaskUrl)
 
       if (processName === ENVIRONMENT_TYPE_POPUP) {
         popupIsOpen = true
@@ -398,9 +390,13 @@ function setupController (initState, initLangCode) {
 
   // communication with page or other extension
   function connectExternal (remotePort) {
-    const originDomain = urlUtil.parse(remotePort.sender.url).hostname
+    const senderUrl = new URL(remotePort.sender.url)
+    let extensionId
+    if (remotePort.sender.id !== extension.runtime.id) {
+      extensionId = remotePort.sender.id
+    }
     const portStream = new PortStream(remotePort)
-    controller.setupUntrustedCommunication(portStream, originDomain)
+    controller.setupUntrustedCommunication(portStream, senderUrl, extensionId)
   }
 
   //
@@ -412,7 +408,7 @@ function setupController (initState, initLangCode) {
   controller.messageManager.on('updateBadge', updateBadge)
   controller.personalMessageManager.on('updateBadge', updateBadge)
   controller.typedMessageManager.on('updateBadge', updateBadge)
-  controller.providerApprovalController.store.on('update', updateBadge)
+  controller.providerApprovalController.memStore.on('update', updateBadge)
 
   /**
    * Updates the Web Extension's "badge" number, on the little fox in the toolbar.
@@ -424,13 +420,13 @@ function setupController (initState, initLangCode) {
     const unapprovedMsgCount = controller.messageManager.unapprovedMsgCount
     const unapprovedPersonalMsgs = controller.personalMessageManager.unapprovedPersonalMsgCount
     const unapprovedTypedMsgs = controller.typedMessageManager.unapprovedTypedMessagesCount
-    const pendingProviderRequests = controller.providerApprovalController.store.getState().providerRequests.length
+    const pendingProviderRequests = controller.providerApprovalController.memStore.getState().providerRequests.length
     const count = unapprovedTxCount + unapprovedMsgCount + unapprovedPersonalMsgs + unapprovedTypedMsgs + pendingProviderRequests
     if (count) {
       label = String(count)
     }
     extension.browserAction.setBadgeText({ text: label })
-    extension.browserAction.setBadgeBackgroundColor({ color: '#506F8B' })
+    extension.browserAction.setBadgeBackgroundColor({ color: '#037DD6' })
   }
 
   return Promise.resolve()

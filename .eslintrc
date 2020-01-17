@@ -14,7 +14,7 @@
       "templateStrings": true,
       "classes": true,
       "jsx": true
-    },
+    }
   },
 
   "extends": ["plugin:react/recommended"],
@@ -30,7 +30,8 @@
     "mocha",
     "chai",
     "react",
-    "json"
+    "json",
+    "import"
   ],
 
   "globals": {
@@ -43,6 +44,7 @@
   },
 
   "rules": {
+    "import/no-unresolved": ["error", { "commonjs": true }],
     "no-restricted-globals": ["error", "event"],
     "accessor-pairs": 2,
     "arrow-spacing": [2, { "before": true, "after": true }],
@@ -59,7 +61,7 @@
     "eqeqeq": [2, "allow-null"],
     "generator-star-spacing": [2, { "before": true, "after": true }],
     "handle-callback-err": [2, "^(err|error)$" ],
-    "indent": "off",
+    "indent": [2, 2,{ "SwitchCase": 1 }],
     "jsx-quotes": [2, "prefer-double"],
     "key-spacing": 2,
     "keyword-spacing": [2, { "before": true, "after": true }],
@@ -133,7 +135,9 @@
     "no-unneeded-ternary": [2, { "defaultAssignment": false }],
     "no-unreachable": 2,
     "no-unsafe-finally": 2,
+    "no-unused-expressions": ["error", { "allowShortCircuit" : true, "allowTernary": true }],
     "no-unused-vars": [2, { "vars": "all", "args": "all", "argsIgnorePattern": "[_]+" }],
+    "no-use-before-define": [2, { "functions": false }],
     "no-useless-call": 2,
     "no-useless-computed-key": 2,
     "no-useless-constructor": 2,
@@ -144,7 +148,11 @@
     "operator-linebreak": [2, "after", { "overrides": { "?": "ignore", ":": "ignore" } }],
     "padded-blocks": "off",
     "quotes": [2, "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+    "react/jsx-boolean-value": 2,
+    "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
+    "react/jsx-equals-spacing": 2,
     "react/no-deprecated": 0,
+    "react/default-props-match-prop-types": 2,
     "semi": [2, "never"],
     "semi-spacing": [2, { "before": false, "after": true }],
     "space-before-blocks": [2, "always"],

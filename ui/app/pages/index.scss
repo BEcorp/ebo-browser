@@ -2,6 +2,8 @@
 
 @import 'add-token/index';
 
+@import 'send/send';
+
 @import 'confirm-add-token/index';
 
 @import 'settings/index';
@@ -9,3 +11,5 @@
 @import 'first-time-flow/index';
 
 @import 'keychains/index';
+
+@import 'confirm-approve/index';

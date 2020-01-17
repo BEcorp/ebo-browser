@@ -90,26 +90,26 @@ export default class SendGasRow extends Component {
     const { metricsEvent } = this.context
 
     const gasPriceButtonGroup = <div>
-        <GasPriceButtonGroup
-          className="gas-price-button-group--small"
-          showCheck={false}
-          {...gasPriceButtonGroupProps}
-          handleGasPriceSelection={async (...args) => {
-            metricsEvent({
-              eventOpts: {
-                category: 'Transactions',
-                action: 'Edit Screen',
-                name: 'Changed Gas Button',
-              },
-            })
-            await gasPriceButtonGroupProps.handleGasPriceSelection(...args)
-            if (maxModeOn) {
-              this.setMaxAmount()
-            }
-          }}
-        />
-        { this.renderAdvancedOptionsButton() }
-      </div>
+      <GasPriceButtonGroup
+        className="gas-price-button-group--small"
+        showCheck={false}
+        {...gasPriceButtonGroupProps}
+        handleGasPriceSelection={async (...args) => {
+          metricsEvent({
+            eventOpts: {
+              category: 'Transactions',
+              action: 'Edit Screen',
+              name: 'Changed Gas Button',
+            },
+          })
+          await gasPriceButtonGroupProps.handleGasPriceSelection(...args)
+          if (maxModeOn) {
+            this.setMaxAmount()
+          }
+        }}
+      />
+      { this.renderAdvancedOptionsButton() }
+    </div>
     const gasFeeDisplay = <GasFeeDisplay
       conversionRate={conversionRate}
       convertedCurrency={convertedCurrency}
@@ -130,11 +130,11 @@ export default class SendGasRow extends Component {
         customGasPrice={gasPrice}
         customGasLimit={gasLimit}
         insufficientBalance={insufficientBalance}
-        customPriceIsSafe={true}
+        customPriceIsSafe
         isSpeedUp={false}
       />
       { this.renderAdvancedOptionsButton() }
-     </div>
+    </div>
 
     if (advancedInlineGasShown) {
       return advancedGasInputs
@@ -152,7 +152,7 @@ export default class SendGasRow extends Component {
       <SendRowWrapper
         label={`${this.context.t('transactionFee')}:`}
         showError={gasFeeError}
-        errorType={'gasFee'}
+        errorType="gasFee"
       >
         { this.renderContent() }
       </SendRowWrapper>

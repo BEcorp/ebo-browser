@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import MetaFoxLogo from '../../../components/ui/metafox-logo'
 import PageContainerFooter from '../../../components/ui/page-container/page-container-footer'
 
 export default class MetaMetricsOptIn extends Component {
@@ -28,19 +29,7 @@ export default class MetaMetricsOptIn extends Component {
     return (
       <div className="metametrics-opt-in">
         <div className="metametrics-opt-in__main">
-          <div className="app-header__logo-container">
-            <img
-              className="app-header__metafox-logo app-header__metafox-logo--horizontal"
-              src="/images/logo/metamask-logo-horizontal.svg"
-              height={30}
-            />
-            <img
-              className="app-header__metafox-logo app-header__metafox-logo--icon"
-              src="/images/logo/metamask-fox.svg"
-              height={42}
-              width={42}
-            />
-          </div>
+          <MetaFoxLogo />
           <div className="metametrics-opt-in__body-graphic">
             <img src="images/metrics-chart.svg" />
           </div>
@@ -113,9 +102,9 @@ export default class MetaMetricsOptIn extends Component {
                       .then(() => {
                         history.push(nextRoute)
                       })
-                })
+                  })
               }}
-              cancelText={'No Thanks'}
+              cancelText="No Thanks"
               hideCancel={false}
               onSubmit={() => {
                 setParticipateInMetaMetrics(true)
@@ -146,10 +135,10 @@ export default class MetaMetricsOptIn extends Component {
                       .then(() => {
                         history.push(nextRoute)
                       })
-                })
+                  })
               }}
-              submitText={'I agree'}
-              submitButtonType={'primary'}
+              submitText="I agree"
+              submitButtonType="primary"
               disabled={false}
             />
             <div className="metametrics-opt-in__bottom-text">

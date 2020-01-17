@@ -19,11 +19,15 @@ export default class ConfirmPageContainer extends Component {
     subtitleComponent: PropTypes.node,
     title: PropTypes.string,
     titleComponent: PropTypes.node,
+    hideSenderToRecipient: PropTypes.bool,
+    showAccountInHeader: PropTypes.bool,
     // Sender to Recipient
     fromAddress: PropTypes.string,
     fromName: PropTypes.string,
     toAddress: PropTypes.string,
     toName: PropTypes.string,
+    toEns: PropTypes.string,
+    toNickname: PropTypes.string,
     // Content
     contentComponent: PropTypes.node,
     errorKey: PropTypes.string,
@@ -68,6 +72,8 @@ export default class ConfirmPageContainer extends Component {
       fromName,
       fromAddress,
       toName,
+      toEns,
+      toNickname,
       toAddress,
       disabled,
       errorKey,
@@ -100,34 +106,43 @@ export default class ConfirmPageContainer extends Component {
       lastTx,
       ofText,
       requestsWaitingText,
+      hideSenderToRecipient,
+      showAccountInHeader,
     } = this.props
     const renderAssetImage = contentComponent || (!contentComponent && !identiconAddress)
 
     return (
       <div className="page-container">
         <ConfirmPageContainerNavigation
-            totalTx={totalTx}
-            positionOfCurrentTx={positionOfCurrentTx}
-            nextTxId={nextTxId}
-            prevTxId={prevTxId}
-            showNavigation={showNavigation}
-            onNextTx={(txId) => onNextTx(txId)}
-            firstTx={firstTx}
-            lastTx={lastTx}
-            ofText={ofText}
-            requestsWaitingText={requestsWaitingText}
+          totalTx={totalTx}
+          positionOfCurrentTx={positionOfCurrentTx}
+          nextTxId={nextTxId}
+          prevTxId={prevTxId}
+          showNavigation={showNavigation}
+          onNextTx={(txId) => onNextTx(txId)}
+          firstTx={firstTx}
+          lastTx={lastTx}
+          ofText={ofText}
+          requestsWaitingText={requestsWaitingText}
         />
         <ConfirmPageContainerHeader
           showEdit={showEdit}
           onEdit={() => onEdit()}
+          showAccountInHeader={showAccountInHeader}
+          accountAddress={fromAddress}
         >
-          <SenderToRecipient
-            senderName={fromName}
-            senderAddress={fromAddress}
-            recipientName={toName}
-            recipientAddress={toAddress}
-            assetImage={renderAssetImage ? assetImage : undefined}
-          />
+          { hideSenderToRecipient
+            ? null
+            : <SenderToRecipient
+              senderName={fromName}
+              senderAddress={fromAddress}
+              recipientName={toName}
+              recipientAddress={toAddress}
+              recipientEns={toEns}
+              recipientNickname={toNickname}
+              assetImage={renderAssetImage ? assetImage : undefined}
+            />
+          }
         </ConfirmPageContainerHeader>
         {
           contentComponent || (

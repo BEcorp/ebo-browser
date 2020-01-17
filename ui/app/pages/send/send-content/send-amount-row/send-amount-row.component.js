@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import debounce from 'lodash.debounce'
 import SendRowWrapper from '../send-row-wrapper'
 import AmountMaxButton from './amount-max-button'
 import UserPreferencedCurrencyInput from '../../../../components/app/user-preferenced-currency-input'
@@ -31,6 +32,8 @@ export default class SendAmountRow extends Component {
   static contextTypes = {
     t: PropTypes.func,
   }
+
+  updateGas = debounce(this.updateGas.bind(this), 500)
 
   validateAmount (amount) {
     const {
@@ -90,8 +93,8 @@ export default class SendAmountRow extends Component {
 
     return (
       <Component
-        onChange={newAmount => this.validateAmount(newAmount)}
-        onBlur={newAmount => {
+        onChange={newAmount => {
+          this.validateAmount(newAmount)
           this.updateGas(newAmount)
           this.updateAmount(newAmount)
         }}
@@ -108,7 +111,7 @@ export default class SendAmountRow extends Component {
       <SendRowWrapper
         label={`${this.context.t('amount')}:`}
         showError={inError}
-        errorType={'amount'}
+        errorType="amount"
       >
         {gasTotal && <AmountMaxButton inError={inError} />}
         { this.renderInput() }

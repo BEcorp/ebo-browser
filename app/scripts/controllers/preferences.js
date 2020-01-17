@@ -17,6 +17,7 @@ class PreferencesController {
    * @property {object} store.accountTokens The tokens stored per account and then per network type
    * @property {object} store.assetImages Contains assets objects related to assets added
    * @property {boolean} store.useBlockie The users preference for blockie identicons within the UI
+   * @property {boolean} store.useNonceField The users preference for nonce field within the UI
    * @property {object} store.featureFlags A key-boolean map, where keys refer to features and booleans to whether the
    * user wishes to see that feature.
    *
@@ -35,13 +36,15 @@ class PreferencesController {
       tokens: [],
       suggestedTokens: {},
       useBlockie: false,
+      useNonceField: false,
 
       // WARNING: Do not use feature flags for security-sensitive things.
       // Feature flag toggling is available in the global namespace
       // for convenient testing of pre-release features, and should never
       // perform sensitive operations.
       featureFlags: {
-        privacyMode: true,
+        showIncomingTransactions: true,
+        transactionTime: false,
       },
       knownMethodData: {},
       participateInMetaMetrics: null,
@@ -49,13 +52,12 @@ class PreferencesController {
       currentLocale: opts.initLangCode,
       identities: {},
       lostIdentities: {},
-      seedWords: null,
       forgottenPassword: false,
       preferences: {
         useNativeCurrencyAsPrimaryCurrency: true,
       },
       completedOnboarding: false,
-      completedUiMigration: true,
+      migratedPrivacyMode: false,
       metaMetricsId: null,
       metaMetricsSendCount: 0,
     }, opts.initState)
@@ -70,7 +72,7 @@ class PreferencesController {
       return this.setFeatureFlag(key, value)
     }
   }
-// PUBLIC METHODS
+  // PUBLIC METHODS
 
   /**
    * Sets the {@code forgottenPassword} state property
@@ -81,14 +83,6 @@ class PreferencesController {
   }
 
   /**
-   * Sets the {@code seedWords} seed words
-   * @param {string|null} seedWords the seed words
-   */
-  setSeedWords (seedWords) {
-    this.store.updateState({ seedWords })
-  }
-
-  /**
    * Setter for the `useBlockie` property
    *
    * @param {boolean} val Whether or not the user prefers blockie indicators
@@ -96,6 +90,16 @@ class PreferencesController {
    */
   setUseBlockie (val) {
     this.store.updateState({ useBlockie: val })
+  }
+
+  /**
+   * Setter for the `useNonceField` property
+   *
+   * @param {boolean} val Whether or not the user prefers to set nonce
+   *
+   */
+  setUseNonceField (val) {
+    this.store.updateState({ useNonceField: val })
   }
 
   /**
@@ -139,9 +143,9 @@ class PreferencesController {
    * @param {String} type Indicates the type of first time flow - create or import - the user wishes to follow
    *
    */
-   setFirstTimeFlowType (type) {
-     this.store.updateState({ firstTimeFlowType: type })
-   }
+  setFirstTimeFlowType (type) {
+    this.store.updateState({ firstTimeFlowType: type })
+  }
 
 
   getSuggestedTokens () {
@@ -214,13 +218,28 @@ class PreferencesController {
   }
 
   /**
+   * Getter for the `getUseNonceField` property
+   *
+   * @returns {boolean} this.store.getUseNonceField
+   *
+   */
+  getUseNonceField () {
+    return this.store.getState().useNonceField
+  }
+
+  /**
    * Setter for the `currentLocale` property
    *
    * @param {string} key he preferred language locale key
    *
    */
   setCurrentLocale (key) {
-    this.store.updateState({ currentLocale: key })
+    const textDirection = (['ar', 'dv', 'fa', 'he', 'ku'].includes(key)) ? 'rtl' : 'auto'
+    this.store.updateState({
+      currentLocale: key,
+      textDirection: textDirection,
+    })
+    return textDirection
   }
 
   /**
@@ -503,22 +522,22 @@ class PreferencesController {
    * @returns {Promise<array>} Promise resolving to updated frequentRpcList.
    *
    */
-    addToFrequentRpcList (url, chainId, ticker = 'ETH', nickname = '', rpcPrefs = {}) {
-      const rpcList = this.getFrequentRpcListDetail()
-      const index = rpcList.findIndex((element) => { return element.rpcUrl === url })
-      if (index !== -1) {
-        rpcList.splice(index, 1)
-      }
-      if (url !== 'http://localhost:8545') {
-        let checkedChainId
-        if (!!chainId && !Number.isNaN(parseInt(chainId))) {
-          checkedChainId = chainId
-        }
-        rpcList.push({ rpcUrl: url, chainId: checkedChainId, ticker, nickname, rpcPrefs })
-      }
-      this.store.updateState({ frequentRpcListDetail: rpcList })
-      return Promise.resolve(rpcList)
+  addToFrequentRpcList (url, chainId, ticker = 'ETH', nickname = '', rpcPrefs = {}) {
+    const rpcList = this.getFrequentRpcListDetail()
+    const index = rpcList.findIndex((element) => { return element.rpcUrl === url })
+    if (index !== -1) {
+      rpcList.splice(index, 1)
     }
+    if (url !== 'http://localhost:8545') {
+      let checkedChainId
+      if (!!chainId && !Number.isNaN(parseInt(chainId))) {
+        checkedChainId = chainId
+      }
+      rpcList.push({ rpcUrl: url, chainId: checkedChainId, ticker, nickname, rpcPrefs })
+    }
+    this.store.updateState({ frequentRpcListDetail: rpcList })
+    return Promise.resolve(rpcList)
+  }
 
   /**
    * Removes custom RPC url from state.
@@ -613,12 +632,11 @@ class PreferencesController {
     return Promise.resolve(true)
   }
 
-  /**
-   * Sets the {@code completedUiMigration} state to {@code true}, indicating that the user has completed the UI switch.
-   */
-  completeUiMigration () {
-    this.store.updateState({ completedUiMigration: true })
-    return Promise.resolve(true)
+  unsetMigratedPrivacyMode () {
+    this.store.updateState({
+      migratedPrivacyMode: false,
+    })
+    return Promise.resolve()
   }
 
   //
