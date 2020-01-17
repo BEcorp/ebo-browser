@@ -1,4 +1,4 @@
-# MetaMask Browser Extension Fork
+# EBO Browser Extension
 
 This is a forked version of MetaMask which is a start point for BEIO browser wallet.
 
