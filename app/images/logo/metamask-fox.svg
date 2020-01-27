@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
-    <title>ebo_o</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M512,1024 C229.230208,1024 0,794.769792 0,512 C0,229.230208 229.230208,0 512,0 C794.769792,0 1024,229.230208 1024,512 C1024,794.769792 794.769792,1024 512,1024 Z M512,927.536232 C741.494324,927.536232 927.536232,741.494324 927.536232,512 C927.536232,282.505676 741.494324,96.4637681 512,96.4637681 C282.505676,96.4637681 96.4637681,282.505676 96.4637681,512 C96.4637681,741.494324 282.505676,927.536232 512,927.536232 Z M512,831.072464 C335.781144,831.072464 192.927536,688.218856 192.927536,512 C192.927536,335.781144 335.781144,192.927536 512,192.927536 C688.218856,192.927536 831.072464,335.781144 831.072464,512 C831.072464,688.218856 688.218856,831.072464 512,831.072464 Z M430.323171,408.115942 C418.058457,408.115942 408.115942,418.058457 408.115942,430.323171 L408.115942,597.128127 C408.115942,609.392841 418.058457,619.335356 430.323171,619.335356 L597.128127,619.335356 C609.392841,619.335356 619.335356,609.392841 619.335356,597.128127 L619.335356,430.323171 C619.335356,418.058457 609.392841,408.115942 597.128127,408.115942 L430.323171,408.115942 Z" id="path-1"></path>
-        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-3">
-            <stop stop-color="#FFE74C" offset="0%"></stop>
-            <stop stop-color="#6BF178" offset="50.5120355%"></stop>
-            <stop stop-color="#35A7FF" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="02.1_eth_ebo_o" transform="translate(-38.000000, -38.000000)">
-            <g id="ebo_o" transform="translate(38.000000, 38.000000)">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <use id="ebo" fill="#00FF78" xlink:href="#path-1"></use>
-                <rect id="Rectangle" fill="url(#linearGradient-3)" mask="url(#mask-2)" x="0" y="0" width="1024" height="1024"></rect>
-            </g>
-        </g>
-    </g>
+  <defs>
+    <linearGradient id="a" x1="14.6221%" x2="85.3517%" y1="14.6366%" y2="85.3663%">
+      <stop offset="0%" stop-color="#0CFC0A"/>
+      <stop offset="37%" stop-color="#07F16F"/>
+      <stop offset="67%" stop-color="#03E9BC"/>
+      <stop offset="89%" stop-color="#01E4EC"/>
+      <stop offset="100%" stop-color="#00E2FF"/>
+    </linearGradient>
+    <linearGradient id="b" x1="50%" x2="50%" y1="-4.4778%" y2="104.4783%">
+      <stop offset="0%" stop-color="#0CFC0A"/>
+      <stop offset="37%" stop-color="#07F16F"/>
+      <stop offset="67%" stop-color="#03E9BC"/>
+      <stop offset="89%" stop-color="#01E4EC"/>
+      <stop offset="100%" stop-color="#00E2FF"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-143 -143)">
+    <path fill="url(#a)" fill-rule="nonzero" d="M986.5675 656.4227c0 182.6038-148.0296 330.6334-330.6334 330.6334S325.3006 839.0265 325.3006 656.4227s148.0297-330.6334 330.6335-330.6334c182.5818.053 330.5803 148.0516 330.6334 330.6334zm-239.2287 67.7222V589.9884a24.7014 24.7014 0 00-24.7014-24.7013H588.2888c-13.6422 0-24.7014 11.0591-24.7014 24.7013V724.145c0 13.6422 11.0592 24.7014 24.7014 24.7014h134.3486a24.7014 24.7014 0 0024.7014-24.7014z"/>
+    <circle cx="655.5" cy="655.5" r="463.2713" stroke="url(#b)" stroke-width="82.9659" transform="rotate(-45 655.5 655.5)"/>
+  </g>
 </svg>
